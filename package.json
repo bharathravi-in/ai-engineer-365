@@ -1,10 +1,15 @@
 {
-  "name": "ai-career-upgrade",
+  "name": "ai-engineer-365",
   "version": "1.0.0",
-  "description": "Interactive AI career upgrade planner",
   "private": true,
+  "description": "Learning Management Dashboard for a 365-day AI engineering study plan.",
   "scripts": {
-    "start": "python3 -m http.server 5173",
-    "build": "node scripts/build.js"
-  }
+    "dev": "npm --prefix app run dev",
+    "build": "npm --prefix app run build",
+    "preview": "npm --prefix app run preview",
+    "check:json": "python3 -m json.tool package.json >/dev/null && python3 -m json.tool app/package.json >/dev/null && python3 -m json.tool planner/month-01.json >/dev/null && python3 -m json.tool planner/month-02.json >/dev/null"
+  },
+  "workspaces": [
+    "app"
+  ]
 }
