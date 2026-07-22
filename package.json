@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "npm --prefix app run dev",
     "build": "npm --prefix app run build",
-    "preview": "npm --prefix app run preview"
+    "preview": "npm --prefix app run preview",
+    "check:json": "python3 -m json.tool package.json >/dev/null && python3 -m json.tool app/package.json >/dev/null && python3 -m json.tool planner/month-01.json >/dev/null && python3 -m json.tool planner/month-02.json >/dev/null"
   },
   "workspaces": [
     "app"

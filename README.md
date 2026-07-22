@@ -40,10 +40,18 @@ npm install
 npm run dev
 ```
 
+> Note: this repository is configured as an npm workspace. Run commands from the repository root unless you intentionally want to work only inside `app/`.
+
 ## Build
 
 ```bash
 npm run build
+```
+
+## Validate planner JSON
+
+```bash
+npm run check:json
 ```
 
 ## Planner format
@@ -73,3 +81,7 @@ Each month lives in `planner/month-XX.json`. Each day follows this shape:
 - `feat(day-001): add PostgreSQL learning plan`
 - `feat(ui): dashboard progress cards`
 - `docs(day-001): add study notes`
+
+## Conflict resolution notes
+
+The root `.gitignore`, `package.json`, and `README.md` are the canonical versions for this branch. Keep root scripts delegating into `app/`, keep generated outputs ignored, and keep planner content documented as JSON-first source data.
