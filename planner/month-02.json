@@ -1,0 +1,31 @@
+{
+  "month": 2,
+  "title": "APIs + AI Product Workflows",
+  "goal": "Connect backend services to AI-enabled product workflows.",
+  "project": {
+    "name": "AI Mentor API",
+    "prd": "Expose endpoints that generate practice questions, summarize notes, and recommend next tasks.",
+    "architecture": "Frontend calls backend APIs; backend integrates LLM provider and stores generated artifacts.",
+    "techStack": ["TypeScript", "Node.js", "REST", "LLM APIs", "PostgreSQL"],
+    "tasks": ["Design API routes", "Create prompt templates", "Add safety review", "Log generations"],
+    "progress": 0,
+    "githubUrl": ""
+  },
+  "days": [
+    {
+      "day": 32,
+      "title": "REST API Design",
+      "duration": "2h",
+      "learningObjective": "Design resource-oriented endpoints for planner days, notes, and projects.",
+      "videos": ["REST API design fundamentals"],
+      "docs": ["https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods"],
+      "reading": ["HTTP methods", "Status codes", "Pagination"],
+      "practice": ["Draft OpenAPI-style route list", "Map dashboard actions to endpoints"],
+      "tasks": ["Create API route document", "Define request and response shapes"],
+      "miniProject": "Document the first API contract for the dashboard.",
+      "interviewQuestions": ["What makes an API RESTful?", "When should an endpoint return 201?"],
+      "notes": "Keep examples short and implementation-ready.",
+      "completed": false
+    }
+  ]
+}

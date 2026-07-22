@@ -1,0 +1,13 @@
+html { scroll-behavior: smooth; }
+body { min-width: 320px; }
+a { text-decoration: none; }
+.page-section { margin-bottom: 48px; scroll-margin-top: 32px; }
+.soft-card { border: 1px solid rgba(15, 23, 42, 0.08); box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06); height: 100%; }
+.chart-card { min-height: 260px; }
+.mini-project { margin-top: 20px; padding: 18px; border-radius: 18px; background: #eef6ff; }
+.markdown-preview { min-height: 100%; }
+.markdown-preview pre { background: #0f172a; color: #e2e8f0; padding: 16px; border-radius: 12px; overflow-x: auto; }
+@media (max-width: 900px) {
+  .MuiDrawer-root { display: none; }
+  main.MuiBox-root { margin-left: 0 !important; }
+}

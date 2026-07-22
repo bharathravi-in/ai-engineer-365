@@ -1,0 +1,61 @@
+{
+  "month": 1,
+  "title": "Backend Foundations + PostgreSQL",
+  "goal": "Build durable backend fundamentals while creating portfolio evidence for AI engineering roles.",
+  "project": {
+    "name": "Study Planner API",
+    "prd": "Create a small API that stores daily learning plans, completion state, and notes.",
+    "architecture": "React dashboard consumes JSON first, then API and database storage in later sprints.",
+    "techStack": ["TypeScript", "React", "Vite", "PostgreSQL", "Node.js"],
+    "tasks": ["Define planner schema", "Render dashboard from JSON", "Track completion", "Document API design"],
+    "progress": 25,
+    "githubUrl": ""
+  },
+  "days": [
+    {
+      "day": 1,
+      "title": "PostgreSQL Installation",
+      "duration": "2h",
+      "learningObjective": "Install PostgreSQL, understand roles/databases, and connect with a GUI or CLI.",
+      "videos": ["PostgreSQL installation walkthrough", "psql basics crash course"],
+      "docs": ["https://www.postgresql.org/docs/current/tutorial-install.html", "https://www.postgresql.org/docs/current/app-psql.html"],
+      "reading": ["PostgreSQL concepts: server, database, schema, table, role"],
+      "practice": ["Create a local database", "Create a table", "Insert and query three rows"],
+      "tasks": ["Install PostgreSQL", "Connect with psql", "Save setup notes"],
+      "miniProject": "Create a learning_log table for daily study entries.",
+      "interviewQuestions": ["What is the difference between a database and schema?", "How do PostgreSQL roles differ from users?"],
+      "notes": "Record install issues, commands used, and connection string format.",
+      "completed": false
+    },
+    {
+      "day": 2,
+      "title": "SQL Fundamentals",
+      "duration": "2h",
+      "learningObjective": "Use SELECT, WHERE, ORDER BY, LIMIT, INSERT, UPDATE, and DELETE safely.",
+      "videos": ["SQL basics for backend developers"],
+      "docs": ["https://www.postgresql.org/docs/current/tutorial-select.html"],
+      "reading": ["SQL query execution order", "Filtering and sorting patterns"],
+      "practice": ["Write 10 SELECT queries", "Update rows with WHERE clauses", "Delete test rows inside a transaction"],
+      "tasks": ["Create practice seed data", "Write SQL query notes", "Add examples to notes/day-002.md"],
+      "miniProject": "Build a query cookbook for the learning_log table.",
+      "interviewQuestions": ["Why is UPDATE without WHERE dangerous?", "What does LIMIT do?"],
+      "notes": "Capture common query patterns and mistakes.",
+      "completed": false
+    },
+    {
+      "day": 3,
+      "title": "Tables, Constraints, and Data Modeling",
+      "duration": "2.5h",
+      "learningObjective": "Design normalized tables with primary keys, foreign keys, constraints, and indexes.",
+      "videos": ["Database normalization explained"],
+      "docs": ["https://www.postgresql.org/docs/current/ddl-constraints.html", "https://www.postgresql.org/docs/current/indexes.html"],
+      "reading": ["Entity relationship modeling", "Primary keys versus unique constraints"],
+      "practice": ["Model months, days, resources, and tasks", "Add foreign keys", "Inspect indexes"],
+      "tasks": ["Sketch ERD", "Create schema.sql", "Document tradeoffs"],
+      "miniProject": "Draft the database schema for AI Engineer 365 planner content.",
+      "interviewQuestions": ["When should you add an index?", "What problem does normalization solve?"],
+      "notes": "Save an architecture diagram in notes or docs.",
+      "completed": false
+    }
+  ]
+}

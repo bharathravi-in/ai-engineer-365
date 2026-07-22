@@ -1,0 +1,26 @@
+{
+  "name": "ai-engineer-365-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "typescript": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "@mui/material": "latest",
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "zustand": "latest",
+    "recharts": "latest",
+    "react-markdown": "latest",
+    "@mui/icons-material": "latest"
+  },
+  "devDependencies": {}
+}
