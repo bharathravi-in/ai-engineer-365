@@ -1,0 +1,10 @@
+{
+  "name": "ai-career-upgrade",
+  "version": "1.0.0",
+  "description": "Interactive AI career upgrade planner",
+  "private": true,
+  "scripts": {
+    "start": "python3 -m http.server 5173",
+    "build": "node scripts/build.js"
+  }
+}
