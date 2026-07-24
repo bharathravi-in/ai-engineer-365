@@ -1,0 +1,776 @@
+{
+  "month": 8,
+  "title": "ClickHouse + Kafka",
+  "goal": "Build real-time analytics pipelines over streaming event data.",
+  "project": {
+    "name": "Real-time Analytics Platform",
+    "prd": "Ingest events via Kafka, store in ClickHouse, and serve real-time aggregations through an API.",
+    "architecture": "FastAPI producers → Kafka → consumer → ClickHouse → analytics API and dashboards.",
+    "techStack": [
+      "ClickHouse",
+      "Kafka",
+      "FastAPI",
+      "Python"
+    ],
+    "tasks": [
+      "Define scope",
+      "Build core features",
+      "Test and document",
+      "Ship and push to GitHub"
+    ],
+    "progress": 0,
+    "githubUrl": ""
+  },
+  "days": [
+    {
+      "day": 211,
+      "title": "OLTP vs OLAP",
+      "duration": "2h",
+      "learningObjective": "Distinguish transactional and analytical workloads.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Classify example queries",
+        "Pick a store per workload"
+      ],
+      "tasks": [
+        "Learn: OLTP vs OLAP (45 min)",
+        "Code: apply oltp vs olap in practice (45 min)",
+        "Notes + GitHub commit for Day 211 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "OLTP vs OLAP?",
+        "Why not run analytics on Postgres at scale?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 212,
+      "title": "ClickHouse Concepts & Install",
+      "duration": "2h",
+      "learningObjective": "Install ClickHouse and understand its model.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Run ClickHouse locally",
+        "Connect with the client"
+      ],
+      "tasks": [
+        "Learn: ClickHouse Concepts & Install (45 min)",
+        "Code: apply clickhouse concepts & install in practice (45 min)",
+        "Notes + GitHub commit for Day 212 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why is ClickHouse fast for analytics?",
+        "What is columnar storage?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 213,
+      "title": "Tables & Engines",
+      "duration": "2h",
+      "learningObjective": "Choose the right table engine.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a table with an engine",
+        "Compare engines"
+      ],
+      "tasks": [
+        "Learn: Tables & Engines (45 min)",
+        "Code: apply tables & engines in practice (45 min)",
+        "Notes + GitHub commit for Day 213 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a table engine?",
+        "When use Log vs MergeTree?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 214,
+      "title": "MergeTree Deep Dive",
+      "duration": "2h",
+      "learningObjective": "Understand the MergeTree family.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a MergeTree table",
+        "Set ORDER BY / PRIMARY KEY"
+      ],
+      "tasks": [
+        "Learn: MergeTree Deep Dive (45 min)",
+        "Code: apply mergetree deep dive in practice (45 min)",
+        "Notes + GitHub commit for Day 214 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How does MergeTree sort data?",
+        "What does ORDER BY do here?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 215,
+      "title": "Inserting & Querying",
+      "duration": "2h",
+      "learningObjective": "Load and query large datasets efficiently.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Bulk insert rows",
+        "Run aggregation queries"
+      ],
+      "tasks": [
+        "Learn: Inserting & Querying (45 min)",
+        "Code: apply inserting & querying in practice (45 min)",
+        "Notes + GitHub commit for Day 215 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why batch inserts?",
+        "What makes queries fast?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 216,
+      "title": "Materialized Views",
+      "duration": "4h",
+      "learningObjective": "Precompute aggregates with materialized views.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a materialized view",
+        "Query the rollup"
+      ],
+      "tasks": [
+        "Learn: Materialized Views (45 min)",
+        "Code: apply materialized views in practice (45 min)",
+        "Notes + GitHub commit for Day 216 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a materialized view?",
+        "How do they stay updated?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 217,
+      "title": "Aggregations at Scale",
+      "duration": "4h",
+      "learningObjective": "Use aggregate functions and combinators.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Use uniq/quantile functions",
+        "Aggregate by time bucket"
+      ],
+      "tasks": [
+        "Learn: Aggregations at Scale (45 min)",
+        "Code: apply aggregations at scale in practice (45 min)",
+        "Notes + GitHub commit for Day 217 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is an aggregate combinator?",
+        "How do you compute percentiles?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 218,
+      "title": "Partitioning & Sharding",
+      "duration": "2h",
+      "learningObjective": "Partition data and understand sharding.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Partition by month",
+        "Explain a sharding scheme"
+      ],
+      "tasks": [
+        "Learn: Partitioning & Sharding (45 min)",
+        "Code: apply partitioning & sharding in practice (45 min)",
+        "Notes + GitHub commit for Day 218 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Partition vs shard?",
+        "How do you drop old data cheaply?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 219,
+      "title": "Performance Tuning",
+      "duration": "2h",
+      "learningObjective": "Optimize ClickHouse queries.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Read a query plan",
+        "Optimize a slow query"
+      ],
+      "tasks": [
+        "Learn: Performance Tuning (45 min)",
+        "Code: apply performance tuning in practice (45 min)",
+        "Notes + GitHub commit for Day 219 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you speed up a query?",
+        "What is a primary index in ClickHouse?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 220,
+      "title": "Connecting to Apps",
+      "duration": "2h",
+      "learningObjective": "Query ClickHouse from Python.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Connect and query from Python",
+        "Stream results"
+      ],
+      "tasks": [
+        "Learn: Connecting to Apps (45 min)",
+        "Code: apply connecting to apps in practice (45 min)",
+        "Notes + GitHub commit for Day 220 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do apps connect to ClickHouse?",
+        "How do you handle large results?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 221,
+      "title": "Event Data Modeling",
+      "duration": "2h",
+      "learningObjective": "Model events for analytics.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Design an events schema",
+        "Choose a sort key"
+      ],
+      "tasks": [
+        "Learn: Event Data Modeling (45 min)",
+        "Code: apply event data modeling in practice (45 min)",
+        "Notes + GitHub commit for Day 221 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you model event data?",
+        "What columns go in the sort key?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 222,
+      "title": "Kafka Concepts",
+      "duration": "2h",
+      "learningObjective": "Understand topics, partitions, offsets.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Diagram a topic with partitions",
+        "Explain offsets"
+      ],
+      "tasks": [
+        "Learn: Kafka Concepts (45 min)",
+        "Code: apply kafka concepts in practice (45 min)",
+        "Notes + GitHub commit for Day 222 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a partition?",
+        "What is an offset?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 223,
+      "title": "Kafka Setup",
+      "duration": "4h",
+      "learningObjective": "Run Kafka locally.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Start a broker",
+        "Create a topic"
+      ],
+      "tasks": [
+        "Learn: Kafka Setup (45 min)",
+        "Code: apply kafka setup in practice (45 min)",
+        "Notes + GitHub commit for Day 223 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a broker?",
+        "How many partitions should a topic have?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 224,
+      "title": "Producers",
+      "duration": "4h",
+      "learningObjective": "Publish messages to Kafka.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write a producer",
+        "Choose a partition key"
+      ],
+      "tasks": [
+        "Learn: Producers (45 min)",
+        "Code: apply producers in practice (45 min)",
+        "Notes + GitHub commit for Day 224 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How does a producer choose a partition?",
+        "What is acks?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 225,
+      "title": "Consumers & Groups",
+      "duration": "2h",
+      "learningObjective": "Consume messages with consumer groups.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write a consumer",
+        "Scale with a consumer group"
+      ],
+      "tasks": [
+        "Learn: Consumers & Groups (45 min)",
+        "Code: apply consumers & groups in practice (45 min)",
+        "Notes + GitHub commit for Day 225 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do consumer groups scale?",
+        "What is a rebalance?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 226,
+      "title": "Serialization",
+      "duration": "2h",
+      "learningObjective": "Serialize with JSON and Avro.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Produce/consume JSON",
+        "Compare with Avro"
+      ],
+      "tasks": [
+        "Learn: Serialization (45 min)",
+        "Code: apply serialization in practice (45 min)",
+        "Notes + GitHub commit for Day 226 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why use Avro?",
+        "JSON vs Avro tradeoffs?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 227,
+      "title": "Schema Registry",
+      "duration": "2h",
+      "learningObjective": "Manage schemas centrally.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Register a schema",
+        "Evolve it safely"
+      ],
+      "tasks": [
+        "Learn: Schema Registry (45 min)",
+        "Code: apply schema registry in practice (45 min)",
+        "Notes + GitHub commit for Day 227 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a schema registry?",
+        "What is schema evolution?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 228,
+      "title": "Kafka Connect",
+      "duration": "2h",
+      "learningObjective": "Move data with connectors.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Configure a sink connector",
+        "Stream to a store"
+      ],
+      "tasks": [
+        "Learn: Kafka Connect (45 min)",
+        "Code: apply kafka connect in practice (45 min)",
+        "Notes + GitHub commit for Day 228 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is Kafka Connect?",
+        "Source vs sink connector?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 229,
+      "title": "Stream Processing Concepts",
+      "duration": "2h",
+      "learningObjective": "Understand windows and stateful processing.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Define a tumbling window",
+        "Explain event vs processing time"
+      ],
+      "tasks": [
+        "Learn: Stream Processing Concepts (45 min)",
+        "Code: apply stream processing concepts in practice (45 min)",
+        "Notes + GitHub commit for Day 229 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Tumbling vs sliding window?",
+        "Event time vs processing time?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 230,
+      "title": "Kafka → ClickHouse Pipeline",
+      "duration": "4h",
+      "learningObjective": "Stream Kafka events into ClickHouse.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Consume and insert into ClickHouse",
+        "Batch inserts"
+      ],
+      "tasks": [
+        "Learn: Kafka → ClickHouse Pipeline (45 min)",
+        "Code: apply kafka → clickhouse pipeline in practice (45 min)",
+        "Notes + GitHub commit for Day 230 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you stream Kafka into ClickHouse?",
+        "Why batch on the consumer?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 231,
+      "title": "Delivery Guarantees",
+      "duration": "4h",
+      "learningObjective": "Understand at-least/at-most/exactly-once.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Reason about duplicates",
+        "Make a consumer idempotent"
+      ],
+      "tasks": [
+        "Learn: Delivery Guarantees (45 min)",
+        "Code: apply delivery guarantees in practice (45 min)",
+        "Notes + GitHub commit for Day 231 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is exactly-once?",
+        "How do you dedupe events?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 232,
+      "title": "Retention & Compaction",
+      "duration": "2h",
+      "learningObjective": "Configure retention and log compaction.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Set topic retention",
+        "Enable compaction"
+      ],
+      "tasks": [
+        "Learn: Retention & Compaction (45 min)",
+        "Code: apply retention & compaction in practice (45 min)",
+        "Notes + GitHub commit for Day 232 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Retention vs compaction?",
+        "When use a compacted topic?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 233,
+      "title": "Monitoring Kafka",
+      "duration": "2h",
+      "learningObjective": "Track lag and broker health.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Measure consumer lag",
+        "Watch throughput"
+      ],
+      "tasks": [
+        "Learn: Monitoring Kafka (45 min)",
+        "Code: apply monitoring kafka in practice (45 min)",
+        "Notes + GitHub commit for Day 233 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is consumer lag?",
+        "Why does lag matter?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 234,
+      "title": "Dead Letter Queues",
+      "duration": "2h",
+      "learningObjective": "Handle poison messages.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Route failures to a DLQ",
+        "Reprocess from the DLQ"
+      ],
+      "tasks": [
+        "Learn: Dead Letter Queues (45 min)",
+        "Code: apply dead letter queues in practice (45 min)",
+        "Notes + GitHub commit for Day 234 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a DLQ?",
+        "When does a message go to the DLQ?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 235,
+      "title": "Ingesting Events from FastAPI",
+      "duration": "2h",
+      "learningObjective": "Produce events from your API.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Emit events on API actions",
+        "Buffer and flush"
+      ],
+      "tasks": [
+        "Learn: Ingesting Events from FastAPI (45 min)",
+        "Code: apply ingesting events from fastapi in practice (45 min)",
+        "Notes + GitHub commit for Day 235 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Where do you produce events?",
+        "How do you avoid blocking requests?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 236,
+      "title": "Real-time Aggregation",
+      "duration": "2h",
+      "learningObjective": "Compute live metrics from the stream.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Aggregate events per minute",
+        "Serve current metrics"
+      ],
+      "tasks": [
+        "Learn: Real-time Aggregation (45 min)",
+        "Code: apply real-time aggregation in practice (45 min)",
+        "Notes + GitHub commit for Day 236 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you compute rolling metrics?",
+        "How fresh can metrics be?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 237,
+      "title": "Dashboards over ClickHouse",
+      "duration": "4h",
+      "learningObjective": "Visualize analytics data.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Build a metrics query",
+        "Feed a chart"
+      ],
+      "tasks": [
+        "Learn: Dashboards over ClickHouse (45 min)",
+        "Code: apply dashboards over clickhouse in practice (45 min)",
+        "Notes + GitHub commit for Day 237 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What queries power dashboards?",
+        "How do you keep dashboards fast?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 238,
+      "title": "Scaling the Pipeline",
+      "duration": "4h",
+      "learningObjective": "Scale producers, consumers, and storage.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add partitions and consumers",
+        "Plan storage growth"
+      ],
+      "tasks": [
+        "Learn: Scaling the Pipeline (45 min)",
+        "Code: apply scaling the pipeline in practice (45 min)",
+        "Notes + GitHub commit for Day 238 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you scale throughput?",
+        "What limits pipeline scale?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 239,
+      "title": "Analytics API Layer",
+      "duration": "2h",
+      "learningObjective": "Expose analytics via an API.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add metrics endpoints",
+        "Cache hot queries"
+      ],
+      "tasks": [
+        "Learn: Analytics API Layer (45 min)",
+        "Code: apply analytics api layer in practice (45 min)",
+        "Notes + GitHub commit for Day 239 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you serve analytics safely?",
+        "How do you cache heavy queries?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 240,
+      "title": "Project: Analytics Platform",
+      "duration": "2h",
+      "learningObjective": "Ship an end-to-end real-time analytics pipeline.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Finalize Kafka → ClickHouse → API",
+        "Add a dashboard"
+      ],
+      "tasks": [
+        "Learn: Project: Analytics Platform (45 min)",
+        "Code: apply project: analytics platform in practice (45 min)",
+        "Notes + GitHub commit for Day 240 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Walk through an event's journey.",
+        "How does it stay real-time at scale?"
+      ],
+      "notes": "",
+      "completed": false
+    }
+  ]
+}

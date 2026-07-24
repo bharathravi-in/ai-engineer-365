@@ -10,6 +10,9 @@ app/dist/
 npm-debug.log*
 .env
 .env.*
+!.env.example
+!app/.env.example
+!server/.env.example
 
 # OS/editor files
 .DS_Store

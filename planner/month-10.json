@@ -1,0 +1,777 @@
+{
+  "month": 10,
+  "title": "AWS + GCP + Azure",
+  "goal": "Deploy and operate applications across the major cloud providers.",
+  "project": {
+    "name": "Cloud-Deployed AI Service",
+    "prd": "Deploy the AI service to a cloud provider with IaC, managed data stores, CI/CD, and monitoring.",
+    "architecture": "Containerized app on managed compute (ECS/Cloud Run/App Service) + managed Postgres + object storage.",
+    "techStack": [
+      "AWS",
+      "GCP",
+      "Azure",
+      "Terraform",
+      "CI/CD"
+    ],
+    "tasks": [
+      "Define scope",
+      "Build core features",
+      "Test and document",
+      "Ship and push to GitHub"
+    ],
+    "progress": 0,
+    "githubUrl": ""
+  },
+  "days": [
+    {
+      "day": 271,
+      "title": "Cloud Fundamentals",
+      "duration": "2h",
+      "learningObjective": "Understand cloud service models and regions.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Map IaaS/PaaS/SaaS examples",
+        "Explain regions and AZs"
+      ],
+      "tasks": [
+        "Learn: Cloud Fundamentals (45 min)",
+        "Code: apply cloud fundamentals in practice (45 min)",
+        "Notes + GitHub commit for Day 271 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "IaaS vs PaaS vs SaaS?",
+        "What is an availability zone?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 272,
+      "title": "IAM & Security Basics",
+      "duration": "4h",
+      "learningObjective": "Manage identity and least-privilege access.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a scoped IAM role",
+        "Apply least privilege"
+      ],
+      "tasks": [
+        "Learn: IAM & Security Basics (45 min)",
+        "Code: apply iam & security basics in practice (45 min)",
+        "Notes + GitHub commit for Day 272 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is least privilege?",
+        "Role vs user vs policy?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 273,
+      "title": "AWS EC2",
+      "duration": "4h",
+      "learningObjective": "Provision and access virtual machines.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Launch an EC2 instance",
+        "SSH and run the app"
+      ],
+      "tasks": [
+        "Learn: AWS EC2 (45 min)",
+        "Code: apply aws ec2 in practice (45 min)",
+        "Notes + GitHub commit for Day 273 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is an AMI?",
+        "What is a security group?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 274,
+      "title": "AWS S3",
+      "duration": "2h",
+      "learningObjective": "Store objects and serve files.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a bucket",
+        "Upload and fetch objects"
+      ],
+      "tasks": [
+        "Learn: AWS S3 (45 min)",
+        "Code: apply aws s3 in practice (45 min)",
+        "Notes + GitHub commit for Day 274 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is object storage?",
+        "How do you make objects private?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 275,
+      "title": "AWS RDS",
+      "duration": "2h",
+      "learningObjective": "Run managed PostgreSQL.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Provision an RDS instance",
+        "Connect the app"
+      ],
+      "tasks": [
+        "Learn: AWS RDS (45 min)",
+        "Code: apply aws rds in practice (45 min)",
+        "Notes + GitHub commit for Day 275 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why use managed databases?",
+        "What does RDS handle for you?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 276,
+      "title": "AWS Networking (VPC)",
+      "duration": "2h",
+      "learningObjective": "Understand VPCs, subnets, and routing.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Diagram a VPC",
+        "Place resources in subnets"
+      ],
+      "tasks": [
+        "Learn: AWS Networking (VPC) (45 min)",
+        "Code: apply aws networking (vpc) in practice (45 min)",
+        "Notes + GitHub commit for Day 276 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Public vs private subnet?",
+        "What is a NAT gateway?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 277,
+      "title": "AWS Lambda & Serverless",
+      "duration": "2h",
+      "learningObjective": "Run code without managing servers.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Deploy a Lambda",
+        "Trigger it from an event"
+      ],
+      "tasks": [
+        "Learn: AWS Lambda & Serverless (45 min)",
+        "Code: apply aws lambda & serverless in practice (45 min)",
+        "Notes + GitHub commit for Day 277 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is serverless?",
+        "What is a cold start?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 278,
+      "title": "AWS ECS / EKS",
+      "duration": "2h",
+      "learningObjective": "Run containers on AWS.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Deploy a container to ECS",
+        "Compare ECS and EKS"
+      ],
+      "tasks": [
+        "Learn: AWS ECS / EKS (45 min)",
+        "Code: apply aws ecs / eks in practice (45 min)",
+        "Notes + GitHub commit for Day 278 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "ECS vs EKS?",
+        "What is Fargate?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 279,
+      "title": "CloudWatch & Logging",
+      "duration": "4h",
+      "learningObjective": "Observe apps with logs and metrics.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Ship logs to CloudWatch",
+        "Create an alarm"
+      ],
+      "tasks": [
+        "Learn: CloudWatch & Logging (45 min)",
+        "Code: apply cloudwatch & logging in practice (45 min)",
+        "Notes + GitHub commit for Day 279 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a metric alarm?",
+        "How do you centralize logs?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 280,
+      "title": "Secrets Manager",
+      "duration": "4h",
+      "learningObjective": "Store and rotate secrets.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Store a secret",
+        "Read it from the app"
+      ],
+      "tasks": [
+        "Learn: Secrets Manager (45 min)",
+        "Code: apply secrets manager in practice (45 min)",
+        "Notes + GitHub commit for Day 280 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why use a secrets manager?",
+        "How do you rotate secrets?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 281,
+      "title": "Deploying FastAPI on AWS",
+      "duration": "2h",
+      "learningObjective": "Deploy the API to AWS.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Containerize and deploy",
+        "Wire up RDS and secrets"
+      ],
+      "tasks": [
+        "Learn: Deploying FastAPI on AWS (45 min)",
+        "Code: apply deploying fastapi on aws in practice (45 min)",
+        "Notes + GitHub commit for Day 281 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you deploy a container to AWS?",
+        "Where do env vars come from?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 282,
+      "title": "Infrastructure as Code",
+      "duration": "2h",
+      "learningObjective": "Provision infra with Terraform.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write Terraform for a bucket + DB",
+        "Plan and apply"
+      ],
+      "tasks": [
+        "Learn: Infrastructure as Code (45 min)",
+        "Code: apply infrastructure as code in practice (45 min)",
+        "Notes + GitHub commit for Day 282 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why use IaC?",
+        "What is Terraform state?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 283,
+      "title": "GCP Compute & Cloud Run",
+      "duration": "2h",
+      "learningObjective": "Deploy containers on Cloud Run.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Deploy to Cloud Run",
+        "Set concurrency"
+      ],
+      "tasks": [
+        "Learn: GCP Compute & Cloud Run (45 min)",
+        "Code: apply gcp compute & cloud run in practice (45 min)",
+        "Notes + GitHub commit for Day 283 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is Cloud Run?",
+        "How does it scale to zero?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 284,
+      "title": "GCP Storage & BigQuery",
+      "duration": "2h",
+      "learningObjective": "Use GCS and query with BigQuery.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Store objects in GCS",
+        "Run a BigQuery query"
+      ],
+      "tasks": [
+        "Learn: GCP Storage & BigQuery (45 min)",
+        "Code: apply gcp storage & bigquery in practice (45 min)",
+        "Notes + GitHub commit for Day 284 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is BigQuery?",
+        "GCS vs S3?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 285,
+      "title": "GCP GKE",
+      "duration": "2h",
+      "learningObjective": "Run Kubernetes on GCP.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a GKE cluster",
+        "Deploy the app"
+      ],
+      "tasks": [
+        "Learn: GCP GKE (45 min)",
+        "Code: apply gcp gke in practice (45 min)",
+        "Notes + GitHub commit for Day 285 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does GKE manage?",
+        "Autopilot vs standard?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 286,
+      "title": "GCP IAM & Networking",
+      "duration": "4h",
+      "learningObjective": "Configure GCP identity and networks.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a service account",
+        "Set up a VPC"
+      ],
+      "tasks": [
+        "Learn: GCP IAM & Networking (45 min)",
+        "Code: apply gcp iam & networking in practice (45 min)",
+        "Notes + GitHub commit for Day 286 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a service account?",
+        "How does GCP IAM differ from AWS?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 287,
+      "title": "Deploying to Cloud Run",
+      "duration": "4h",
+      "learningObjective": "Ship the AI service on Cloud Run.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Deploy with env + secrets",
+        "Connect Cloud SQL"
+      ],
+      "tasks": [
+        "Learn: Deploying to Cloud Run (45 min)",
+        "Code: apply deploying to cloud run in practice (45 min)",
+        "Notes + GitHub commit for Day 287 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you connect Cloud SQL?",
+        "How do you manage secrets on GCP?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 288,
+      "title": "Azure App Service & VMs",
+      "duration": "2h",
+      "learningObjective": "Deploy apps on Azure.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Deploy to App Service",
+        "Compare with VMs"
+      ],
+      "tasks": [
+        "Learn: Azure App Service & VMs (45 min)",
+        "Code: apply azure app service & vms in practice (45 min)",
+        "Notes + GitHub commit for Day 288 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is App Service?",
+        "When use a VM instead?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 289,
+      "title": "Azure Storage & Postgres",
+      "duration": "2h",
+      "learningObjective": "Use Azure storage and managed Postgres.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a storage account",
+        "Provision Azure Database for PostgreSQL"
+      ],
+      "tasks": [
+        "Learn: Azure Storage & Postgres (45 min)",
+        "Code: apply azure storage & postgres in practice (45 min)",
+        "Notes + GitHub commit for Day 289 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a storage account?",
+        "How does Azure manage Postgres?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 290,
+      "title": "Azure AKS",
+      "duration": "2h",
+      "learningObjective": "Run Kubernetes on Azure.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create an AKS cluster",
+        "Deploy the app"
+      ],
+      "tasks": [
+        "Learn: Azure AKS (45 min)",
+        "Code: apply azure aks in practice (45 min)",
+        "Notes + GitHub commit for Day 290 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does AKS manage?",
+        "How does AKS integrate with Azure AD?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 291,
+      "title": "Azure AI Services",
+      "duration": "2h",
+      "learningObjective": "Use Azure OpenAI / AI services.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Call an Azure AI endpoint",
+        "Compare with direct API"
+      ],
+      "tasks": [
+        "Learn: Azure AI Services (45 min)",
+        "Code: apply azure ai services in practice (45 min)",
+        "Notes + GitHub commit for Day 291 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does Azure OpenAI provide?",
+        "Why use a cloud AI service?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 292,
+      "title": "Multi-cloud Considerations",
+      "duration": "2h",
+      "learningObjective": "Weigh portability vs lock-in.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "List lock-in risks",
+        "Design for portability"
+      ],
+      "tasks": [
+        "Learn: Multi-cloud Considerations (45 min)",
+        "Code: apply multi-cloud considerations in practice (45 min)",
+        "Notes + GitHub commit for Day 292 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is vendor lock-in?",
+        "How do you stay portable?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 293,
+      "title": "Cost Management",
+      "duration": "4h",
+      "learningObjective": "Monitor and control cloud spend.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Set a budget alert",
+        "Estimate monthly cost"
+      ],
+      "tasks": [
+        "Learn: Cost Management (45 min)",
+        "Code: apply cost management in practice (45 min)",
+        "Notes + GitHub commit for Day 293 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you control cloud cost?",
+        "What is a common cost surprise?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 294,
+      "title": "CDN & Caching",
+      "duration": "4h",
+      "learningObjective": "Serve content fast with a CDN.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Put a CDN in front of assets",
+        "Set cache headers"
+      ],
+      "tasks": [
+        "Learn: CDN & Caching (45 min)",
+        "Code: apply cdn & caching in practice (45 min)",
+        "Notes + GitHub commit for Day 294 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does a CDN do?",
+        "What is cache TTL at the edge?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 295,
+      "title": "Load Balancers & Auto Scaling",
+      "duration": "2h",
+      "learningObjective": "Scale compute behind a load balancer.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add a load balancer",
+        "Configure autoscaling"
+      ],
+      "tasks": [
+        "Learn: Load Balancers & Auto Scaling (45 min)",
+        "Code: apply load balancers & auto scaling in practice (45 min)",
+        "Notes + GitHub commit for Day 295 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How does a load balancer distribute traffic?",
+        "What triggers autoscaling?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 296,
+      "title": "Managed Vector/Search Services",
+      "duration": "2h",
+      "learningObjective": "Use managed vector and search offerings.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Try a managed vector service",
+        "Compare with self-hosted"
+      ],
+      "tasks": [
+        "Learn: Managed Vector/Search Services (45 min)",
+        "Code: apply managed vector/search services in practice (45 min)",
+        "Notes + GitHub commit for Day 296 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Managed vs self-hosted tradeoffs?",
+        "When use a managed vector DB?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 297,
+      "title": "Secrets & Config Management",
+      "duration": "2h",
+      "learningObjective": "Manage config across environments.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Separate config per environment",
+        "Inject secrets at deploy"
+      ],
+      "tasks": [
+        "Learn: Secrets & Config Management (45 min)",
+        "Code: apply secrets & config management in practice (45 min)",
+        "Notes + GitHub commit for Day 297 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you manage multi-env config?",
+        "Where should secrets live?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 298,
+      "title": "CI/CD to Cloud",
+      "duration": "2h",
+      "learningObjective": "Automate deploys with a pipeline.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Build a deploy pipeline",
+        "Deploy on merge"
+      ],
+      "tasks": [
+        "Learn: CI/CD to Cloud (45 min)",
+        "Code: apply ci/cd to cloud in practice (45 min)",
+        "Notes + GitHub commit for Day 298 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What are CI/CD stages?",
+        "How do you gate a deploy?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 299,
+      "title": "Cloud Security Best Practices",
+      "duration": "2h",
+      "learningObjective": "Harden a cloud deployment.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Audit IAM and network rules",
+        "Enable encryption at rest"
+      ],
+      "tasks": [
+        "Learn: Cloud Security Best Practices (45 min)",
+        "Code: apply cloud security best practices in practice (45 min)",
+        "Notes + GitHub commit for Day 299 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What are cloud security basics?",
+        "What is encryption at rest?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 300,
+      "title": "Project: Cloud-Deployed AI Service",
+      "duration": "4h",
+      "learningObjective": "Ship the AI service to the cloud with IaC and CI/CD.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Finalize IaC and pipeline",
+        "Add monitoring and alerts"
+      ],
+      "tasks": [
+        "Learn: Project: Cloud-Deployed AI Service (45 min)",
+        "Code: apply project: cloud-deployed ai service in practice (45 min)",
+        "Notes + GitHub commit for Day 300 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Walk through your cloud architecture.",
+        "How is it deployed and monitored?"
+      ],
+      "notes": "",
+      "completed": false
+    }
+  ]
+}

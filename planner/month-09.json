@@ -1,0 +1,777 @@
+{
+  "month": 9,
+  "title": "Elasticsearch + Neo4j",
+  "goal": "Build powerful search and graph-based intelligence into applications.",
+  "project": {
+    "name": "AI Search Engine",
+    "prd": "A search engine combining full-text, vector, and graph relationships with an AI answer layer.",
+    "architecture": "Elasticsearch for search + Neo4j for relationships + LLM for answers, behind a FastAPI API.",
+    "techStack": [
+      "Elasticsearch",
+      "Neo4j",
+      "Cypher",
+      "Claude API",
+      "FastAPI"
+    ],
+    "tasks": [
+      "Define scope",
+      "Build core features",
+      "Test and document",
+      "Ship and push to GitHub"
+    ],
+    "progress": 0,
+    "githubUrl": ""
+  },
+  "days": [
+    {
+      "day": 241,
+      "title": "Search Fundamentals",
+      "duration": "2h",
+      "learningObjective": "Understand inverted indexes and relevance.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Explain an inverted index",
+        "List search use cases"
+      ],
+      "tasks": [
+        "Learn: Search Fundamentals (45 min)",
+        "Code: apply search fundamentals in practice (45 min)",
+        "Notes + GitHub commit for Day 241 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is an inverted index?",
+        "Search vs database query?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 242,
+      "title": "Elasticsearch Concepts & Install",
+      "duration": "2h",
+      "learningObjective": "Run Elasticsearch and learn its model.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Start a node",
+        "Check cluster health"
+      ],
+      "tasks": [
+        "Learn: Elasticsearch Concepts & Install (45 min)",
+        "Code: apply elasticsearch concepts & install in practice (45 min)",
+        "Notes + GitHub commit for Day 242 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a shard?",
+        "What is a replica?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 243,
+      "title": "Indexes, Documents, Mappings",
+      "duration": "2h",
+      "learningObjective": "Model data with indexes and mappings.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create an index with a mapping",
+        "Index a document"
+      ],
+      "tasks": [
+        "Learn: Indexes, Documents, Mappings (45 min)",
+        "Code: apply indexes, documents, mappings in practice (45 min)",
+        "Notes + GitHub commit for Day 243 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a mapping?",
+        "Dynamic vs explicit mapping?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 244,
+      "title": "Indexing Data",
+      "duration": "4h",
+      "learningObjective": "Bulk-index documents efficiently.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Bulk index a dataset",
+        "Update a document"
+      ],
+      "tasks": [
+        "Learn: Indexing Data (45 min)",
+        "Code: apply indexing data in practice (45 min)",
+        "Notes + GitHub commit for Day 244 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why use the bulk API?",
+        "How are updates handled?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 245,
+      "title": "Query DSL Basics",
+      "duration": "4h",
+      "learningObjective": "Query with the Elasticsearch Query DSL.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write match and term queries",
+        "Combine with bool"
+      ],
+      "tasks": [
+        "Learn: Query DSL Basics (45 min)",
+        "Code: apply query dsl basics in practice (45 min)",
+        "Notes + GitHub commit for Day 245 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "match vs term query?",
+        "What does bool do?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 246,
+      "title": "Full-text Queries",
+      "duration": "2h",
+      "learningObjective": "Run analyzed full-text searches.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Search across fields",
+        "Boost fields"
+      ],
+      "tasks": [
+        "Learn: Full-text Queries (45 min)",
+        "Code: apply full-text queries in practice (45 min)",
+        "Notes + GitHub commit for Day 246 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How does full-text scoring work?",
+        "How do you boost a field?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 247,
+      "title": "Filters & Aggregations",
+      "duration": "2h",
+      "learningObjective": "Filter and aggregate results.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add filters to a query",
+        "Build a terms aggregation"
+      ],
+      "tasks": [
+        "Learn: Filters & Aggregations (45 min)",
+        "Code: apply filters & aggregations in practice (45 min)",
+        "Notes + GitHub commit for Day 247 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Query context vs filter context?",
+        "What are aggregations?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 248,
+      "title": "Analyzers & Tokenizers",
+      "duration": "2h",
+      "learningObjective": "Control how text is analyzed.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Test an analyzer",
+        "Add a custom analyzer"
+      ],
+      "tasks": [
+        "Learn: Analyzers & Tokenizers (45 min)",
+        "Code: apply analyzers & tokenizers in practice (45 min)",
+        "Notes + GitHub commit for Day 248 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does an analyzer do?",
+        "Why customize tokenization?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 249,
+      "title": "Relevance & Scoring",
+      "duration": "2h",
+      "learningObjective": "Understand and tune relevance (BM25).",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Inspect _score",
+        "Tune with boosting"
+      ],
+      "tasks": [
+        "Learn: Relevance & Scoring (45 min)",
+        "Code: apply relevance & scoring in practice (45 min)",
+        "Notes + GitHub commit for Day 249 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is BM25?",
+        "How do you tune relevance?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 250,
+      "title": "Autocomplete & Suggesters",
+      "duration": "2h",
+      "learningObjective": "Build search-as-you-type.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add a completion suggester",
+        "Handle typos with fuzziness"
+      ],
+      "tasks": [
+        "Learn: Autocomplete & Suggesters (45 min)",
+        "Code: apply autocomplete & suggesters in practice (45 min)",
+        "Notes + GitHub commit for Day 250 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you build autocomplete?",
+        "What is fuzziness?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 251,
+      "title": "Pagination & Sorting",
+      "duration": "4h",
+      "learningObjective": "Page and sort large result sets.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Paginate with search_after",
+        "Sort by field"
+      ],
+      "tasks": [
+        "Learn: Pagination & Sorting (45 min)",
+        "Code: apply pagination & sorting in practice (45 min)",
+        "Notes + GitHub commit for Day 251 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why avoid deep from/size paging?",
+        "What is search_after?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 252,
+      "title": "Vector + Keyword (kNN)",
+      "duration": "4h",
+      "learningObjective": "Combine kNN vector search with keyword.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add a dense_vector field",
+        "Run a hybrid query"
+      ],
+      "tasks": [
+        "Learn: Vector + Keyword (kNN) (45 min)",
+        "Code: apply vector + keyword (knn) in practice (45 min)",
+        "Notes + GitHub commit for Day 252 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How does ES do vector search?",
+        "Why combine vector and keyword?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 253,
+      "title": "Elasticsearch Performance",
+      "duration": "2h",
+      "learningObjective": "Optimize indexing and search.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Tune shard count",
+        "Optimize a slow query"
+      ],
+      "tasks": [
+        "Learn: Elasticsearch Performance (45 min)",
+        "Code: apply elasticsearch performance in practice (45 min)",
+        "Notes + GitHub commit for Day 253 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How many shards should you use?",
+        "What slows down search?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 254,
+      "title": "Kibana Basics",
+      "duration": "2h",
+      "learningObjective": "Explore and visualize data in Kibana.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Explore data in Discover",
+        "Build a visualization"
+      ],
+      "tasks": [
+        "Learn: Kibana Basics (45 min)",
+        "Code: apply kibana basics in practice (45 min)",
+        "Notes + GitHub commit for Day 254 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is Kibana for?",
+        "How do you inspect a query?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 255,
+      "title": "Building a Search API",
+      "duration": "2h",
+      "learningObjective": "Expose search behind FastAPI.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add a search endpoint",
+        "Return highlighted snippets"
+      ],
+      "tasks": [
+        "Learn: Building a Search API (45 min)",
+        "Code: apply building a search api in practice (45 min)",
+        "Notes + GitHub commit for Day 255 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you build a search API?",
+        "What is highlighting?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 256,
+      "title": "Graph Databases Intro",
+      "duration": "2h",
+      "learningObjective": "Understand when graphs beat tables.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "List graph use cases",
+        "Compare to relational joins"
+      ],
+      "tasks": [
+        "Learn: Graph Databases Intro (45 min)",
+        "Code: apply graph databases intro in practice (45 min)",
+        "Notes + GitHub commit for Day 256 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "When is a graph DB better?",
+        "Graph vs relational for relationships?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 257,
+      "title": "Neo4j Setup",
+      "duration": "2h",
+      "learningObjective": "Run Neo4j and use the browser.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Start Neo4j",
+        "Run a query in the browser"
+      ],
+      "tasks": [
+        "Learn: Neo4j Setup (45 min)",
+        "Code: apply neo4j setup in practice (45 min)",
+        "Notes + GitHub commit for Day 257 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a property graph?",
+        "What is Neo4j Browser?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 258,
+      "title": "Nodes, Relationships, Properties",
+      "duration": "4h",
+      "learningObjective": "Model the graph data model.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create nodes and relationships",
+        "Add properties"
+      ],
+      "tasks": [
+        "Learn: Nodes, Relationships, Properties (45 min)",
+        "Code: apply nodes, relationships, properties in practice (45 min)",
+        "Notes + GitHub commit for Day 258 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a relationship type?",
+        "Where do properties live?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 259,
+      "title": "Cypher Query Language",
+      "duration": "4h",
+      "learningObjective": "Query graphs with Cypher.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write MATCH/CREATE queries",
+        "Filter with WHERE"
+      ],
+      "tasks": [
+        "Learn: Cypher Query Language (45 min)",
+        "Code: apply cypher query language in practice (45 min)",
+        "Notes + GitHub commit for Day 259 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does MATCH do?",
+        "How do you create a relationship?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 260,
+      "title": "Modeling Graphs",
+      "duration": "2h",
+      "learningObjective": "Design an effective graph model.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Model a domain as a graph",
+        "Choose relationship directions"
+      ],
+      "tasks": [
+        "Learn: Modeling Graphs (45 min)",
+        "Code: apply modeling graphs in practice (45 min)",
+        "Notes + GitHub commit for Day 260 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you model a graph?",
+        "When use a relationship vs property?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 261,
+      "title": "Graph Traversals & Paths",
+      "duration": "2h",
+      "learningObjective": "Find paths and traverse relationships.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Find shortest paths",
+        "Traverse variable-length paths"
+      ],
+      "tasks": [
+        "Learn: Graph Traversals & Paths (45 min)",
+        "Code: apply graph traversals & paths in practice (45 min)",
+        "Notes + GitHub commit for Day 261 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a variable-length path?",
+        "How do you find shortest paths?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 262,
+      "title": "Recommendations with Graphs",
+      "duration": "2h",
+      "learningObjective": "Build recommendations via traversal.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Recommend by shared connections",
+        "Rank recommendations"
+      ],
+      "tasks": [
+        "Learn: Recommendations with Graphs (45 min)",
+        "Code: apply recommendations with graphs in practice (45 min)",
+        "Notes + GitHub commit for Day 262 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do graphs power recommendations?",
+        "What is collaborative filtering (graph view)?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 263,
+      "title": "Knowledge Graphs",
+      "duration": "2h",
+      "learningObjective": "Represent knowledge as a graph.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Model entities and relations",
+        "Query connected facts"
+      ],
+      "tasks": [
+        "Learn: Knowledge Graphs (45 min)",
+        "Code: apply knowledge graphs in practice (45 min)",
+        "Notes + GitHub commit for Day 263 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a knowledge graph?",
+        "How do you extract entities?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 264,
+      "title": "GraphRAG Concepts",
+      "duration": "2h",
+      "learningObjective": "Combine graphs with retrieval for LLMs.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Sketch a GraphRAG flow",
+        "Retrieve subgraphs for context"
+      ],
+      "tasks": [
+        "Learn: GraphRAG Concepts (45 min)",
+        "Code: apply graphrag concepts in practice (45 min)",
+        "Notes + GitHub commit for Day 264 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is GraphRAG?",
+        "Why add a graph to RAG?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 265,
+      "title": "Neo4j + LLM Integration",
+      "duration": "4h",
+      "learningObjective": "Let an LLM query the graph.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Generate Cypher from a question",
+        "Ground answers in the graph"
+      ],
+      "tasks": [
+        "Learn: Neo4j + LLM Integration (45 min)",
+        "Code: apply neo4j + llm integration in practice (45 min)",
+        "Notes + GitHub commit for Day 265 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you translate NL to Cypher?",
+        "How do you keep generated Cypher safe?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 266,
+      "title": "Combining Search + Graph",
+      "duration": "4h",
+      "learningObjective": "Blend Elasticsearch and Neo4j results.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Search then expand via graph",
+        "Merge and rank results"
+      ],
+      "tasks": [
+        "Learn: Combining Search + Graph (45 min)",
+        "Code: apply combining search + graph in practice (45 min)",
+        "Notes + GitHub commit for Day 266 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "When combine search and graph?",
+        "How do you merge result sets?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 267,
+      "title": "Indexing Strategy",
+      "duration": "2h",
+      "learningObjective": "Plan indexing across both stores.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Design an indexing pipeline",
+        "Keep stores in sync"
+      ],
+      "tasks": [
+        "Learn: Indexing Strategy (45 min)",
+        "Code: apply indexing strategy in practice (45 min)",
+        "Notes + GitHub commit for Day 267 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you keep two stores in sync?",
+        "What owns the source of truth?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 268,
+      "title": "Search Relevance Tuning",
+      "duration": "2h",
+      "learningObjective": "Improve end-to-end relevance.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Tune boosts and reranking",
+        "Evaluate with judgments"
+      ],
+      "tasks": [
+        "Learn: Search Relevance Tuning (45 min)",
+        "Code: apply search relevance tuning in practice (45 min)",
+        "Notes + GitHub commit for Day 268 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you measure relevance?",
+        "What is a relevance judgment?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 269,
+      "title": "Search Observability",
+      "duration": "2h",
+      "learningObjective": "Monitor search quality and latency.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Log slow queries",
+        "Track zero-result rate"
+      ],
+      "tasks": [
+        "Learn: Search Observability (45 min)",
+        "Code: apply search observability in practice (45 min)",
+        "Notes + GitHub commit for Day 269 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What do you monitor in search?",
+        "Why track zero-result queries?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 270,
+      "title": "Project: AI Search Engine",
+      "duration": "2h",
+      "learningObjective": "Ship search + graph + AI answers behind an API.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Finalize hybrid search + graph",
+        "Add an AI answer layer"
+      ],
+      "tasks": [
+        "Learn: Project: AI Search Engine (45 min)",
+        "Code: apply project: ai search engine in practice (45 min)",
+        "Notes + GitHub commit for Day 270 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Walk through a search query.",
+        "How do search, graph, and LLM combine?"
+      ],
+      "notes": "",
+      "completed": false
+    }
+  ]
+}

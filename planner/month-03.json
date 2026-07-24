@@ -1,0 +1,777 @@
+{
+  "month": 3,
+  "title": "FastAPI + Redis",
+  "goal": "Build production-style REST APIs with authentication, databases, caching, and queues.",
+  "project": {
+    "name": "URL Shortener API",
+    "prd": "A FastAPI service that shortens URLs, tracks clicks, and caches lookups in Redis with JWT auth.",
+    "architecture": "FastAPI + SQLAlchemy + PostgreSQL for storage, Redis for caching and rate limiting, Celery for async.",
+    "techStack": [
+      "FastAPI",
+      "Redis",
+      "SQLAlchemy",
+      "PostgreSQL",
+      "Celery"
+    ],
+    "tasks": [
+      "Define scope",
+      "Build core features",
+      "Test and document",
+      "Ship and push to GitHub"
+    ],
+    "progress": 0,
+    "githubUrl": ""
+  },
+  "days": [
+    {
+      "day": 61,
+      "title": "HTTP & REST Refresher",
+      "duration": "2h",
+      "learningObjective": "Review HTTP methods, status codes, and REST principles.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Map CRUD to HTTP methods",
+        "List status codes for common cases"
+      ],
+      "tasks": [
+        "Learn: HTTP & REST Refresher (45 min)",
+        "Code: apply http & rest refresher in practice (45 min)",
+        "Notes + GitHub commit for Day 61 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What makes an API RESTful?",
+        "When return 201 vs 200?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 62,
+      "title": "FastAPI Setup & First Endpoint",
+      "duration": "4h",
+      "learningObjective": "Scaffold a FastAPI app and run it with uvicorn.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a hello endpoint",
+        "Open the /docs UI"
+      ],
+      "tasks": [
+        "Learn: FastAPI Setup & First Endpoint (45 min)",
+        "Code: apply fastapi setup & first endpoint in practice (45 min)",
+        "Notes + GitHub commit for Day 62 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is ASGI?",
+        "How does FastAPI generate docs?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 63,
+      "title": "Path & Query Parameters",
+      "duration": "4h",
+      "learningObjective": "Accept typed path and query parameters.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add path and query params",
+        "Add default and optional params"
+      ],
+      "tasks": [
+        "Learn: Path & Query Parameters (45 min)",
+        "Code: apply path & query parameters in practice (45 min)",
+        "Notes + GitHub commit for Day 63 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Path vs query parameters?",
+        "How are types validated?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 64,
+      "title": "Pydantic Models & Validation",
+      "duration": "2h",
+      "learningObjective": "Validate input with Pydantic models.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Define request models",
+        "Add field validators"
+      ],
+      "tasks": [
+        "Learn: Pydantic Models & Validation (45 min)",
+        "Code: apply pydantic models & validation in practice (45 min)",
+        "Notes + GitHub commit for Day 64 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does Pydantic do?",
+        "How do you add custom validation?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 65,
+      "title": "Request Body & Response Models",
+      "duration": "2h",
+      "learningObjective": "Shape requests and responses with models.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add a response_model",
+        "Exclude fields from responses"
+      ],
+      "tasks": [
+        "Learn: Request Body & Response Models (45 min)",
+        "Code: apply request body & response models in practice (45 min)",
+        "Notes + GitHub commit for Day 65 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why use response_model?",
+        "How do you hide fields?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 66,
+      "title": "Status Codes & Error Handling",
+      "duration": "2h",
+      "learningObjective": "Return correct statuses and raise HTTPException.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Raise 404 and 400 errors",
+        "Add an exception handler"
+      ],
+      "tasks": [
+        "Learn: Status Codes & Error Handling (45 min)",
+        "Code: apply status codes & error handling in practice (45 min)",
+        "Notes + GitHub commit for Day 66 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "When return 422?",
+        "How do you customize errors?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 67,
+      "title": "Dependency Injection",
+      "duration": "2h",
+      "learningObjective": "Share logic with Depends().",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write a dependency for DB sessions",
+        "Inject query params"
+      ],
+      "tasks": [
+        "Learn: Dependency Injection (45 min)",
+        "Code: apply dependency injection in practice (45 min)",
+        "Notes + GitHub commit for Day 67 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why use dependency injection?",
+        "What can a dependency return?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 68,
+      "title": "Routers & Project Structure",
+      "duration": "2h",
+      "learningObjective": "Organize endpoints with APIRouter.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Split routes into routers",
+        "Structure the project into packages"
+      ],
+      "tasks": [
+        "Learn: Routers & Project Structure (45 min)",
+        "Code: apply routers & project structure in practice (45 min)",
+        "Notes + GitHub commit for Day 68 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why split into routers?",
+        "How do you version an API?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 69,
+      "title": "Async Endpoints",
+      "duration": "4h",
+      "learningObjective": "Write async endpoints and understand when they help.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Convert an endpoint to async",
+        "Await an async DB call"
+      ],
+      "tasks": [
+        "Learn: Async Endpoints (45 min)",
+        "Code: apply async endpoints in practice (45 min)",
+        "Notes + GitHub commit for Day 69 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "When is async worth it?",
+        "What blocks the event loop?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 70,
+      "title": "Database Integration",
+      "duration": "4h",
+      "learningObjective": "Connect PostgreSQL with SQLAlchemy.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Define ORM models",
+        "Open sessions via a dependency"
+      ],
+      "tasks": [
+        "Learn: Database Integration (45 min)",
+        "Code: apply database integration in practice (45 min)",
+        "Notes + GitHub commit for Day 70 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is an ORM?",
+        "How do you manage sessions?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 71,
+      "title": "CRUD API with Postgres",
+      "duration": "2h",
+      "learningObjective": "Build full CRUD endpoints backed by the DB.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Implement create/read/update/delete",
+        "Return proper status codes"
+      ],
+      "tasks": [
+        "Learn: CRUD API with Postgres (45 min)",
+        "Code: apply crud api with postgres in practice (45 min)",
+        "Notes + GitHub commit for Day 71 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you prevent SQL injection?",
+        "Where does validation belong?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 72,
+      "title": "Migrations with Alembic",
+      "duration": "2h",
+      "learningObjective": "Version the schema with Alembic.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Init Alembic",
+        "Autogenerate and apply a migration"
+      ],
+      "tasks": [
+        "Learn: Migrations with Alembic (45 min)",
+        "Code: apply migrations with alembic in practice (45 min)",
+        "Notes + GitHub commit for Day 72 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why version schema changes?",
+        "What is autogenerate?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 73,
+      "title": "Password Hashing",
+      "duration": "2h",
+      "learningObjective": "Store passwords securely with bcrypt/argon2.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Hash and verify a password",
+        "Add a users table"
+      ],
+      "tasks": [
+        "Learn: Password Hashing (45 min)",
+        "Code: apply password hashing in practice (45 min)",
+        "Notes + GitHub commit for Day 73 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why never store plaintext passwords?",
+        "What is a salt?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 74,
+      "title": "JWT Authentication",
+      "duration": "2h",
+      "learningObjective": "Issue and verify JWT access tokens.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a login endpoint",
+        "Protect a route with a token"
+      ],
+      "tasks": [
+        "Learn: JWT Authentication (45 min)",
+        "Code: apply jwt authentication in practice (45 min)",
+        "Notes + GitHub commit for Day 74 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is inside a JWT?",
+        "Where do you store tokens?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 75,
+      "title": "OAuth2 & Scopes",
+      "duration": "2h",
+      "learningObjective": "Use OAuth2 password flow and scopes.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add OAuth2PasswordBearer",
+        "Enforce a scope"
+      ],
+      "tasks": [
+        "Learn: OAuth2 & Scopes (45 min)",
+        "Code: apply oauth2 & scopes in practice (45 min)",
+        "Notes + GitHub commit for Day 75 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is OAuth2?",
+        "What are scopes for?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 76,
+      "title": "Middleware & CORS",
+      "duration": "4h",
+      "learningObjective": "Add middleware and configure CORS.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add a request-timing middleware",
+        "Enable CORS for a frontend"
+      ],
+      "tasks": [
+        "Learn: Middleware & CORS (45 min)",
+        "Code: apply middleware & cors in practice (45 min)",
+        "Notes + GitHub commit for Day 76 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is CORS?",
+        "When do you need middleware?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 77,
+      "title": "Background Tasks",
+      "duration": "4h",
+      "learningObjective": "Run work after responding with BackgroundTasks.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Send a fake email in the background",
+        "Log asynchronously"
+      ],
+      "tasks": [
+        "Learn: Background Tasks (45 min)",
+        "Code: apply background tasks in practice (45 min)",
+        "Notes + GitHub commit for Day 77 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "BackgroundTasks vs a task queue?",
+        "When is background work unsafe?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 78,
+      "title": "File Uploads",
+      "duration": "2h",
+      "learningObjective": "Accept and store uploaded files.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Accept an UploadFile",
+        "Validate content type"
+      ],
+      "tasks": [
+        "Learn: File Uploads (45 min)",
+        "Code: apply file uploads in practice (45 min)",
+        "Notes + GitHub commit for Day 78 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you stream large uploads?",
+        "How do you limit file size?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 79,
+      "title": "Redis Setup & Basics",
+      "duration": "2h",
+      "learningObjective": "Run Redis and use core data types.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Set/get keys",
+        "Use hashes and lists"
+      ],
+      "tasks": [
+        "Learn: Redis Setup & Basics (45 min)",
+        "Code: apply redis setup & basics in practice (45 min)",
+        "Notes + GitHub commit for Day 79 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is Redis used for?",
+        "Is Redis single-threaded?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 80,
+      "title": "Caching with Redis",
+      "duration": "2h",
+      "learningObjective": "Cache expensive results with TTLs.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Cache a DB lookup",
+        "Set an expiry"
+      ],
+      "tasks": [
+        "Learn: Caching with Redis (45 min)",
+        "Code: apply caching with redis in practice (45 min)",
+        "Notes + GitHub commit for Day 80 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is cache invalidation?",
+        "What is a TTL?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 81,
+      "title": "Redis as Session Store",
+      "duration": "2h",
+      "learningObjective": "Store sessions and short-lived state in Redis.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Store a session token",
+        "Expire idle sessions"
+      ],
+      "tasks": [
+        "Learn: Redis as Session Store (45 min)",
+        "Code: apply redis as session store in practice (45 min)",
+        "Notes + GitHub commit for Day 81 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why store sessions in Redis?",
+        "Cookie vs token sessions?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 82,
+      "title": "Rate Limiting with Redis",
+      "duration": "2h",
+      "learningObjective": "Limit request rates per client.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Implement a fixed-window limiter",
+        "Return 429 on overflow"
+      ],
+      "tasks": [
+        "Learn: Rate Limiting with Redis (45 min)",
+        "Code: apply rate limiting with redis in practice (45 min)",
+        "Notes + GitHub commit for Day 82 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Fixed vs sliding window?",
+        "What status code for rate limits?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 83,
+      "title": "Redis Pub/Sub",
+      "duration": "4h",
+      "learningObjective": "Publish and subscribe to channels.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Publish an event",
+        "Subscribe and react"
+      ],
+      "tasks": [
+        "Learn: Redis Pub/Sub (45 min)",
+        "Code: apply redis pub/sub in practice (45 min)",
+        "Notes + GitHub commit for Day 83 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "When use pub/sub?",
+        "Pub/sub vs a queue?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 84,
+      "title": "Celery Task Queue",
+      "duration": "4h",
+      "learningObjective": "Offload work to Celery workers with Redis broker.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Define a Celery task",
+        "Call it asynchronously"
+      ],
+      "tasks": [
+        "Learn: Celery Task Queue (45 min)",
+        "Code: apply celery task queue in practice (45 min)",
+        "Notes + GitHub commit for Day 84 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why use a task queue?",
+        "What is a broker?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 85,
+      "title": "WebSockets",
+      "duration": "2h",
+      "learningObjective": "Push real-time updates over WebSockets.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add a WebSocket endpoint",
+        "Broadcast messages"
+      ],
+      "tasks": [
+        "Learn: WebSockets (45 min)",
+        "Code: apply websockets in practice (45 min)",
+        "Notes + GitHub commit for Day 85 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "WebSocket vs HTTP polling?",
+        "How do you scale WebSockets?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 86,
+      "title": "API Testing",
+      "duration": "2h",
+      "learningObjective": "Test endpoints with pytest and httpx.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write tests for auth and CRUD",
+        "Use a test database"
+      ],
+      "tasks": [
+        "Learn: API Testing (45 min)",
+        "Code: apply api testing in practice (45 min)",
+        "Notes + GitHub commit for Day 86 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you test protected routes?",
+        "What is a test client?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 87,
+      "title": "API Documentation & OpenAPI",
+      "duration": "2h",
+      "learningObjective": "Improve auto-generated OpenAPI docs.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add descriptions and examples",
+        "Tag and group routes"
+      ],
+      "tasks": [
+        "Learn: API Documentation & OpenAPI (45 min)",
+        "Code: apply api documentation & openapi in practice (45 min)",
+        "Notes + GitHub commit for Day 87 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is OpenAPI?",
+        "How do you document errors?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 88,
+      "title": "Pagination & Filtering",
+      "duration": "2h",
+      "learningObjective": "Add pagination, sorting, and filtering.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add limit/offset paging",
+        "Add query filters"
+      ],
+      "tasks": [
+        "Learn: Pagination & Filtering (45 min)",
+        "Code: apply pagination & filtering in practice (45 min)",
+        "Notes + GitHub commit for Day 88 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Offset vs cursor pagination?",
+        "How do you paginate large tables?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 89,
+      "title": "Deployment Prep",
+      "duration": "2h",
+      "learningObjective": "Run with gunicorn/uvicorn workers and config.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add settings via env vars",
+        "Run multiple workers"
+      ],
+      "tasks": [
+        "Learn: Deployment Prep (45 min)",
+        "Code: apply deployment prep in practice (45 min)",
+        "Notes + GitHub commit for Day 89 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How many workers should you run?",
+        "How do you manage config?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 90,
+      "title": "Project: URL Shortener API",
+      "duration": "4h",
+      "learningObjective": "Ship a cached, authenticated URL shortener with tests.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Finalize endpoints and Redis caching",
+        "Add tests and docs"
+      ],
+      "tasks": [
+        "Learn: Project: URL Shortener API (45 min)",
+        "Code: apply project: url shortener api in practice (45 min)",
+        "Notes + GitHub commit for Day 90 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Walk through the request flow.",
+        "How does caching improve it?"
+      ],
+      "notes": "",
+      "completed": false
+    }
+  ]
+}
