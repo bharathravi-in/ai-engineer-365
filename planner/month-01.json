@@ -1,60 +1,775 @@
 {
   "month": 1,
-  "title": "Backend Foundations + PostgreSQL",
-  "goal": "Build durable backend fundamentals while creating portfolio evidence for AI engineering roles.",
+  "title": "PostgreSQL + SQL",
+  "goal": "Build durable relational-database foundations and query fluency for backend and AI systems.",
   "project": {
-    "name": "Study Planner API",
-    "prd": "Create a small API that stores daily learning plans, completion state, and notes.",
-    "architecture": "React dashboard consumes JSON first, then API and database storage in later sprints.",
-    "techStack": ["TypeScript", "React", "Vite", "PostgreSQL", "Node.js"],
-    "tasks": ["Define planner schema", "Render dashboard from JSON", "Track completion", "Document API design"],
-    "progress": 25,
+    "name": "School Management Database",
+    "prd": "Design and query a normalized PostgreSQL database for students, courses, teachers, and enrollments.",
+    "architecture": "PostgreSQL schema with constraints, indexes, and views; queried from psql and a small Python client.",
+    "techStack": [
+      "PostgreSQL",
+      "SQL",
+      "psql",
+      "pgAdmin"
+    ],
+    "tasks": [
+      "Define scope",
+      "Build core features",
+      "Test and document",
+      "Ship and push to GitHub"
+    ],
+    "progress": 0,
     "githubUrl": ""
   },
   "days": [
     {
       "day": 1,
-      "title": "PostgreSQL Installation",
+      "title": "PostgreSQL Installation & Setup",
       "duration": "2h",
-      "learningObjective": "Install PostgreSQL, understand roles/databases, and connect with a GUI or CLI.",
-      "videos": ["PostgreSQL installation walkthrough", "psql basics crash course"],
-      "docs": ["https://www.postgresql.org/docs/current/tutorial-install.html", "https://www.postgresql.org/docs/current/app-psql.html"],
-      "reading": ["PostgreSQL concepts: server, database, schema, table, role"],
-      "practice": ["Create a local database", "Create a table", "Insert and query three rows"],
-      "tasks": ["Install PostgreSQL", "Connect with psql", "Save setup notes"],
-      "miniProject": "Create a learning_log table for daily study entries.",
-      "interviewQuestions": ["What is the difference between a database and schema?", "How do PostgreSQL roles differ from users?"],
-      "notes": "Record install issues, commands used, and connection string format.",
+      "learningObjective": "Install PostgreSQL and connect via CLI and a GUI client.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a local database and a table",
+        "Insert and query three rows"
+      ],
+      "tasks": [
+        "Learn: PostgreSQL Installation & Setup (45 min)",
+        "Code: apply postgresql installation & setup in practice (45 min)",
+        "Notes + GitHub commit for Day 1 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is the difference between a database and a schema?",
+        "How do PostgreSQL roles differ from OS users?"
+      ],
+      "notes": "",
       "completed": false
     },
     {
       "day": 2,
-      "title": "SQL Fundamentals",
+      "title": "psql & GUI Clients",
       "duration": "2h",
-      "learningObjective": "Use SELECT, WHERE, ORDER BY, LIMIT, INSERT, UPDATE, and DELETE safely.",
-      "videos": ["SQL basics for backend developers"],
-      "docs": ["https://www.postgresql.org/docs/current/tutorial-select.html"],
-      "reading": ["SQL query execution order", "Filtering and sorting patterns"],
-      "practice": ["Write 10 SELECT queries", "Update rows with WHERE clauses", "Delete test rows inside a transaction"],
-      "tasks": ["Create practice seed data", "Write SQL query notes", "Add examples to notes/day-002.md"],
-      "miniProject": "Build a query cookbook for the learning_log table.",
-      "interviewQuestions": ["Why is UPDATE without WHERE dangerous?", "What does LIMIT do?"],
-      "notes": "Capture common query patterns and mistakes.",
+      "learningObjective": "Navigate psql meta-commands and pgAdmin/DBeaver comfortably.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Run \\dt, \\d, \\l in psql",
+        "Browse a table in a GUI client"
+      ],
+      "tasks": [
+        "Learn: psql & GUI Clients (45 min)",
+        "Code: apply psql & gui clients in practice (45 min)",
+        "Notes + GitHub commit for Day 2 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does \\d do in psql?",
+        "When would you use a GUI over psql?"
+      ],
+      "notes": "",
       "completed": false
     },
     {
       "day": 3,
-      "title": "Tables, Constraints, and Data Modeling",
-      "duration": "2.5h",
-      "learningObjective": "Design normalized tables with primary keys, foreign keys, constraints, and indexes.",
-      "videos": ["Database normalization explained"],
-      "docs": ["https://www.postgresql.org/docs/current/ddl-constraints.html", "https://www.postgresql.org/docs/current/indexes.html"],
-      "reading": ["Entity relationship modeling", "Primary keys versus unique constraints"],
-      "practice": ["Model months, days, resources, and tasks", "Add foreign keys", "Inspect indexes"],
-      "tasks": ["Sketch ERD", "Create schema.sql", "Document tradeoffs"],
-      "miniProject": "Draft the database schema for AI Engineer 365 planner content.",
-      "interviewQuestions": ["When should you add an index?", "What problem does normalization solve?"],
-      "notes": "Save an architecture diagram in notes or docs.",
+      "title": "Databases, Schemas, Roles",
+      "duration": "2h",
+      "learningObjective": "Understand how databases, schemas, and roles organize data and access.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a schema and a role",
+        "Grant read access to the role"
+      ],
+      "tasks": [
+        "Learn: Databases, Schemas, Roles (45 min)",
+        "Code: apply databases, schemas, roles in practice (45 min)",
+        "Notes + GitHub commit for Day 3 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a schema used for?",
+        "How do you grant table permissions?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 4,
+      "title": "Data Types & Table Creation",
+      "duration": "2h",
+      "learningObjective": "Choose correct column types and create tables.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create tables with text, numeric, boolean, timestamp columns",
+        "Alter a table to add a column"
+      ],
+      "tasks": [
+        "Learn: Data Types & Table Creation (45 min)",
+        "Code: apply data types & table creation in practice (45 min)",
+        "Notes + GitHub commit for Day 4 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "When use NUMERIC vs FLOAT?",
+        "What is the difference between VARCHAR and TEXT?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 5,
+      "title": "CRUD Operations",
+      "duration": "2h",
+      "learningObjective": "Perform INSERT, SELECT, UPDATE, DELETE safely.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Insert 10 rows",
+        "Update and delete rows inside a transaction"
+      ],
+      "tasks": [
+        "Learn: CRUD Operations (45 min)",
+        "Code: apply crud operations in practice (45 min)",
+        "Notes + GitHub commit for Day 5 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why is UPDATE without WHERE dangerous?",
+        "What does RETURNING do?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 6,
+      "title": "Filtering with WHERE",
+      "duration": "4h",
+      "learningObjective": "Filter rows with comparison, BETWEEN, IN, LIKE, and NULL checks.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write 8 WHERE queries",
+        "Filter with IN and LIKE"
+      ],
+      "tasks": [
+        "Learn: Filtering with WHERE (45 min)",
+        "Code: apply filtering with where in practice (45 min)",
+        "Notes + GitHub commit for Day 6 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you test for NULL?",
+        "What is the difference between = and LIKE?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 7,
+      "title": "Sorting, LIMIT, DISTINCT",
+      "duration": "4h",
+      "learningObjective": "Order, paginate, and deduplicate result sets.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Sort by multiple columns",
+        "Use LIMIT/OFFSET for paging"
+      ],
+      "tasks": [
+        "Learn: Sorting, LIMIT, DISTINCT (45 min)",
+        "Code: apply sorting, limit, distinct in practice (45 min)",
+        "Notes + GitHub commit for Day 7 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How does ORDER BY handle NULLs?",
+        "What does DISTINCT do?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 8,
+      "title": "Aggregate Functions",
+      "duration": "2h",
+      "learningObjective": "Summarize data with COUNT, SUM, AVG, MIN, MAX.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Compute totals and averages",
+        "Count rows per condition"
+      ],
+      "tasks": [
+        "Learn: Aggregate Functions (45 min)",
+        "Code: apply aggregate functions in practice (45 min)",
+        "Notes + GitHub commit for Day 8 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does COUNT(*) vs COUNT(col) return?",
+        "How are NULLs treated in AVG?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 9,
+      "title": "GROUP BY & HAVING",
+      "duration": "2h",
+      "learningObjective": "Group rows and filter aggregates.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Group enrollments by course",
+        "Filter groups with HAVING"
+      ],
+      "tasks": [
+        "Learn: GROUP BY & HAVING (45 min)",
+        "Code: apply group by & having in practice (45 min)",
+        "Notes + GitHub commit for Day 9 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is the difference between WHERE and HAVING?",
+        "Can you use aggregates in WHERE?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 10,
+      "title": "Constraints",
+      "duration": "2h",
+      "learningObjective": "Enforce data integrity with PK, FK, UNIQUE, CHECK, NOT NULL.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add primary and unique keys",
+        "Add a CHECK constraint"
+      ],
+      "tasks": [
+        "Learn: Constraints (45 min)",
+        "Code: apply constraints in practice (45 min)",
+        "Notes + GitHub commit for Day 10 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What problem do foreign keys solve?",
+        "Difference between UNIQUE and PRIMARY KEY?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 11,
+      "title": "Data Modeling & Normalization",
+      "duration": "2h",
+      "learningObjective": "Model entities and normalize to 3NF.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Sketch an ERD for the school domain",
+        "Normalize a denormalized table"
+      ],
+      "tasks": [
+        "Learn: Data Modeling & Normalization (45 min)",
+        "Code: apply data modeling & normalization in practice (45 min)",
+        "Notes + GitHub commit for Day 11 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What problem does normalization solve?",
+        "When would you denormalize?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 12,
+      "title": "Relationships & Foreign Keys",
+      "duration": "2h",
+      "learningObjective": "Model one-to-many and many-to-many relationships.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a join table for enrollments",
+        "Add ON DELETE CASCADE"
+      ],
+      "tasks": [
+        "Learn: Relationships & Foreign Keys (45 min)",
+        "Code: apply relationships & foreign keys in practice (45 min)",
+        "Notes + GitHub commit for Day 12 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you model many-to-many?",
+        "What does ON DELETE CASCADE do?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 13,
+      "title": "INNER & OUTER Joins",
+      "duration": "4h",
+      "learningObjective": "Combine tables with INNER, LEFT, RIGHT, FULL joins.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Join students to courses",
+        "Use LEFT JOIN to find gaps"
+      ],
+      "tasks": [
+        "Learn: INNER & OUTER Joins (45 min)",
+        "Code: apply inner & outer joins in practice (45 min)",
+        "Notes + GitHub commit for Day 13 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Difference between INNER and LEFT JOIN?",
+        "When do you get NULLs from a join?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 14,
+      "title": "Subqueries",
+      "duration": "4h",
+      "learningObjective": "Use scalar, correlated, and IN/EXISTS subqueries.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write a correlated subquery",
+        "Use EXISTS to filter"
+      ],
+      "tasks": [
+        "Learn: Subqueries (45 min)",
+        "Code: apply subqueries in practice (45 min)",
+        "Notes + GitHub commit for Day 14 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Difference between IN and EXISTS?",
+        "What is a correlated subquery?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 15,
+      "title": "Views",
+      "duration": "2h",
+      "learningObjective": "Create and use views to simplify queries.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a view for active enrollments",
+        "Query the view"
+      ],
+      "tasks": [
+        "Learn: Views (45 min)",
+        "Code: apply views in practice (45 min)",
+        "Notes + GitHub commit for Day 15 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "When would you use a view?",
+        "What is a materialized view?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 16,
+      "title": "Indexes & Query Performance",
+      "duration": "2h",
+      "learningObjective": "Speed up queries with the right indexes.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add a B-tree index",
+        "Measure query time before/after"
+      ],
+      "tasks": [
+        "Learn: Indexes & Query Performance (45 min)",
+        "Code: apply indexes & query performance in practice (45 min)",
+        "Notes + GitHub commit for Day 16 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "When should you add an index?",
+        "What is the cost of an index?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 17,
+      "title": "Transactions & ACID",
+      "duration": "2h",
+      "learningObjective": "Group operations atomically with transactions.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Run a multi-statement transaction",
+        "Test ROLLBACK"
+      ],
+      "tasks": [
+        "Learn: Transactions & ACID (45 min)",
+        "Code: apply transactions & acid in practice (45 min)",
+        "Notes + GitHub commit for Day 17 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does ACID stand for?",
+        "What are isolation levels?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 18,
+      "title": "Window Functions",
+      "duration": "2h",
+      "learningObjective": "Compute running totals and rankings with OVER().",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Rank students per course",
+        "Compute a running total"
+      ],
+      "tasks": [
+        "Learn: Window Functions (45 min)",
+        "Code: apply window functions in practice (45 min)",
+        "Notes + GitHub commit for Day 18 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Difference between GROUP BY and window functions?",
+        "What does PARTITION BY do?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 19,
+      "title": "Common Table Expressions",
+      "duration": "2h",
+      "learningObjective": "Structure queries with WITH and recursive CTEs.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Rewrite a subquery as a CTE",
+        "Write a recursive CTE"
+      ],
+      "tasks": [
+        "Learn: Common Table Expressions (45 min)",
+        "Code: apply common table expressions in practice (45 min)",
+        "Notes + GitHub commit for Day 19 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "When is a CTE clearer than a subquery?",
+        "How do recursive CTEs work?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 20,
+      "title": "String & Date Functions",
+      "duration": "4h",
+      "learningObjective": "Manipulate text and timestamps in SQL.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Format dates and extract parts",
+        "Concatenate and split strings"
+      ],
+      "tasks": [
+        "Learn: String & Date Functions (45 min)",
+        "Code: apply string & date functions in practice (45 min)",
+        "Notes + GitHub commit for Day 20 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you get the current timestamp?",
+        "How do you extract the year from a date?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 21,
+      "title": "JSON & JSONB",
+      "duration": "4h",
+      "learningObjective": "Store and query semi-structured data with JSONB.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Store a JSONB column",
+        "Query nested keys"
+      ],
+      "tasks": [
+        "Learn: JSON & JSONB (45 min)",
+        "Code: apply json & jsonb in practice (45 min)",
+        "Notes + GitHub commit for Day 21 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Difference between JSON and JSONB?",
+        "How do you index JSONB?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 22,
+      "title": "Full-Text Search Basics",
+      "duration": "2h",
+      "learningObjective": "Search text with tsvector and tsquery.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a tsvector column",
+        "Run a full-text query"
+      ],
+      "tasks": [
+        "Learn: Full-Text Search Basics (45 min)",
+        "Code: apply full-text search basics in practice (45 min)",
+        "Notes + GitHub commit for Day 22 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a tsvector?",
+        "How does full-text differ from LIKE?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 23,
+      "title": "Functions & Stored Procedures",
+      "duration": "2h",
+      "learningObjective": "Encapsulate logic with PL/pgSQL.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write a SQL function",
+        "Write a procedure with parameters"
+      ],
+      "tasks": [
+        "Learn: Functions & Stored Procedures (45 min)",
+        "Code: apply functions & stored procedures in practice (45 min)",
+        "Notes + GitHub commit for Day 23 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Difference between a function and a procedure?",
+        "What is PL/pgSQL?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 24,
+      "title": "Triggers",
+      "duration": "2h",
+      "learningObjective": "React to data changes with triggers.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create an updated_at trigger",
+        "Log deletes with a trigger"
+      ],
+      "tasks": [
+        "Learn: Triggers (45 min)",
+        "Code: apply triggers in practice (45 min)",
+        "Notes + GitHub commit for Day 24 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "When would you use a trigger?",
+        "What are the downsides of triggers?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 25,
+      "title": "Backup & Restore",
+      "duration": "2h",
+      "learningObjective": "Back up and restore databases with pg_dump/pg_restore.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Dump a database to a file",
+        "Restore into a fresh database"
+      ],
+      "tasks": [
+        "Learn: Backup & Restore (45 min)",
+        "Code: apply backup & restore in practice (45 min)",
+        "Notes + GitHub commit for Day 25 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Difference between logical and physical backups?",
+        "What does pg_dump produce?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 26,
+      "title": "Roles & Permissions",
+      "duration": "2h",
+      "learningObjective": "Manage access with roles and GRANT/REVOKE.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a read-only role",
+        "Grant and revoke privileges"
+      ],
+      "tasks": [
+        "Learn: Roles & Permissions (45 min)",
+        "Code: apply roles & permissions in practice (45 min)",
+        "Notes + GitHub commit for Day 26 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is role inheritance?",
+        "How do you make a read-only user?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 27,
+      "title": "EXPLAIN & Optimization",
+      "duration": "4h",
+      "learningObjective": "Read query plans and optimize slow queries.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Run EXPLAIN ANALYZE",
+        "Fix a sequential scan with an index"
+      ],
+      "tasks": [
+        "Learn: EXPLAIN & Optimization (45 min)",
+        "Code: apply explain & optimization in practice (45 min)",
+        "Notes + GitHub commit for Day 27 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does EXPLAIN ANALYZE show?",
+        "What is a sequential scan?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 28,
+      "title": "Connection Pooling",
+      "duration": "4h",
+      "learningObjective": "Understand pooling with PgBouncer and app pools.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Configure a connection pool in code",
+        "Read pool metrics"
+      ],
+      "tasks": [
+        "Learn: Connection Pooling (45 min)",
+        "Code: apply connection pooling in practice (45 min)",
+        "Notes + GitHub commit for Day 28 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why do you need connection pooling?",
+        "What does PgBouncer do?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 29,
+      "title": "Schema Design Review",
+      "duration": "2h",
+      "learningObjective": "Review and refactor the full school schema.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Audit constraints and indexes",
+        "Write schema.sql for the project"
+      ],
+      "tasks": [
+        "Learn: Schema Design Review (45 min)",
+        "Code: apply schema design review in practice (45 min)",
+        "Notes + GitHub commit for Day 29 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you review a schema for scale?",
+        "What indexes does a read-heavy app need?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 30,
+      "title": "Project: School Management Database",
+      "duration": "2h",
+      "learningObjective": "Ship a normalized, indexed school database with example queries.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Finalize schema.sql and seed data",
+        "Write 15 reporting queries"
+      ],
+      "tasks": [
+        "Learn: Project: School Management Database (45 min)",
+        "Code: apply project: school management database in practice (45 min)",
+        "Notes + GitHub commit for Day 30 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Walk through your schema design.",
+        "How would you scale reads on this database?"
+      ],
+      "notes": "",
       "completed": false
     }
   ]

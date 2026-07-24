@@ -1,30 +1,776 @@
 {
   "month": 2,
-  "title": "APIs + AI Product Workflows",
-  "goal": "Connect backend services to AI-enabled product workflows.",
+  "title": "Python",
+  "goal": "Become fluent in Python for backend services, automation, and AI engineering.",
   "project": {
-    "name": "AI Mentor API",
-    "prd": "Expose endpoints that generate practice questions, summarize notes, and recommend next tasks.",
-    "architecture": "Frontend calls backend APIs; backend integrates LLM provider and stores generated artifacts.",
-    "techStack": ["TypeScript", "Node.js", "REST", "LLM APIs", "PostgreSQL"],
-    "tasks": ["Design API routes", "Create prompt templates", "Add safety review", "Log generations"],
+    "name": "Python Automation Toolkit",
+    "prd": "A CLI toolkit that reads/writes files, calls APIs, and processes data with tests and type hints.",
+    "architecture": "Packaged Python project with modules, argparse CLI, pytest tests, and CI-ready linting.",
+    "techStack": [
+      "Python",
+      "pytest",
+      "Poetry",
+      "requests",
+      "mypy"
+    ],
+    "tasks": [
+      "Define scope",
+      "Build core features",
+      "Test and document",
+      "Ship and push to GitHub"
+    ],
     "progress": 0,
     "githubUrl": ""
   },
   "days": [
     {
-      "day": 32,
-      "title": "REST API Design",
+      "day": 31,
+      "title": "Python Setup & Virtual Environments",
       "duration": "2h",
-      "learningObjective": "Design resource-oriented endpoints for planner days, notes, and projects.",
-      "videos": ["REST API design fundamentals"],
-      "docs": ["https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods"],
-      "reading": ["HTTP methods", "Status codes", "Pagination"],
-      "practice": ["Draft OpenAPI-style route list", "Map dashboard actions to endpoints"],
-      "tasks": ["Create API route document", "Define request and response shapes"],
-      "miniProject": "Document the first API contract for the dashboard.",
-      "interviewQuestions": ["What makes an API RESTful?", "When should an endpoint return 201?"],
-      "notes": "Keep examples short and implementation-ready.",
+      "learningObjective": "Install Python and isolate dependencies with venv.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create and activate a venv",
+        "Install a package with pip"
+      ],
+      "tasks": [
+        "Learn: Python Setup & Virtual Environments (45 min)",
+        "Code: apply python setup & virtual environments in practice (45 min)",
+        "Notes + GitHub commit for Day 31 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why use virtual environments?",
+        "Difference between pip and a package manager?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 32,
+      "title": "Variables, Types, Operators",
+      "duration": "2h",
+      "learningObjective": "Work with core types and operators.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Experiment in the REPL",
+        "Convert between types"
+      ],
+      "tasks": [
+        "Learn: Variables, Types, Operators (45 min)",
+        "Code: apply variables, types, operators in practice (45 min)",
+        "Notes + GitHub commit for Day 32 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Mutable vs immutable types?",
+        "What is duck typing?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 33,
+      "title": "Strings & Formatting",
+      "duration": "2h",
+      "learningObjective": "Manipulate and format strings with f-strings.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Use slicing and methods",
+        "Format with f-strings"
+      ],
+      "tasks": [
+        "Learn: Strings & Formatting (45 min)",
+        "Code: apply strings & formatting in practice (45 min)",
+        "Notes + GitHub commit for Day 33 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What are f-strings?",
+        "How do you reverse a string?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 34,
+      "title": "Lists & Tuples",
+      "duration": "4h",
+      "learningObjective": "Use ordered sequences and understand mutability.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Practice list methods",
+        "Unpack tuples"
+      ],
+      "tasks": [
+        "Learn: Lists & Tuples (45 min)",
+        "Code: apply lists & tuples in practice (45 min)",
+        "Notes + GitHub commit for Day 34 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "List vs tuple?",
+        "What is tuple unpacking?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 35,
+      "title": "Dictionaries & Sets",
+      "duration": "4h",
+      "learningObjective": "Use key-value maps and unique collections.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Build and iterate a dict",
+        "Deduplicate with a set"
+      ],
+      "tasks": [
+        "Learn: Dictionaries & Sets (45 min)",
+        "Code: apply dictionaries & sets in practice (45 min)",
+        "Notes + GitHub commit for Day 35 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "When use a set?",
+        "How do you merge two dicts?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 36,
+      "title": "Conditionals & Loops",
+      "duration": "2h",
+      "learningObjective": "Control flow with if/for/while and comprehensions.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write loop-based solutions to 5 problems",
+        "Use enumerate and zip"
+      ],
+      "tasks": [
+        "Learn: Conditionals & Loops (45 min)",
+        "Code: apply conditionals & loops in practice (45 min)",
+        "Notes + GitHub commit for Day 36 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does enumerate return?",
+        "break vs continue?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 37,
+      "title": "Functions & Scope",
+      "duration": "2h",
+      "learningObjective": "Write reusable functions and understand scope.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Refactor a script into functions",
+        "Use default and keyword args"
+      ],
+      "tasks": [
+        "Learn: Functions & Scope (45 min)",
+        "Code: apply functions & scope in practice (45 min)",
+        "Notes + GitHub commit for Day 37 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is *args/**kwargs?",
+        "Explain LEGB scope."
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 38,
+      "title": "Closures & Decorators",
+      "duration": "2h",
+      "learningObjective": "Create decorators using closures.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write a timing decorator",
+        "Use functools.wraps"
+      ],
+      "tasks": [
+        "Learn: Closures & Decorators (45 min)",
+        "Code: apply closures & decorators in practice (45 min)",
+        "Notes + GitHub commit for Day 38 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a closure?",
+        "How does a decorator work?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 39,
+      "title": "Modules & Packages",
+      "duration": "2h",
+      "learningObjective": "Organize code into modules and packages.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Split code into modules",
+        "Create a package with __init__"
+      ],
+      "tasks": [
+        "Learn: Modules & Packages (45 min)",
+        "Code: apply modules & packages in practice (45 min)",
+        "Notes + GitHub commit for Day 39 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is __name__ == \"__main__\"?",
+        "How does import resolution work?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 40,
+      "title": "File I/O",
+      "duration": "2h",
+      "learningObjective": "Read and write files safely.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Read and write text files",
+        "Use context managers"
+      ],
+      "tasks": [
+        "Learn: File I/O (45 min)",
+        "Code: apply file i/o in practice (45 min)",
+        "Notes + GitHub commit for Day 40 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why use a context manager?",
+        "What does with do?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 41,
+      "title": "Exceptions & Error Handling",
+      "duration": "4h",
+      "learningObjective": "Handle errors with try/except and custom exceptions.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Catch and raise exceptions",
+        "Define a custom exception"
+      ],
+      "tasks": [
+        "Learn: Exceptions & Error Handling (45 min)",
+        "Code: apply exceptions & error handling in practice (45 min)",
+        "Notes + GitHub commit for Day 41 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "try/except/else/finally order?",
+        "When create custom exceptions?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 42,
+      "title": "Comprehensions",
+      "duration": "4h",
+      "learningObjective": "Build lists, dicts, and sets concisely.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Rewrite loops as comprehensions",
+        "Write a nested comprehension"
+      ],
+      "tasks": [
+        "Learn: Comprehensions (45 min)",
+        "Code: apply comprehensions in practice (45 min)",
+        "Notes + GitHub commit for Day 42 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "When is a comprehension too complex?",
+        "Dict comprehension syntax?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 43,
+      "title": "Iterators & Generators",
+      "duration": "2h",
+      "learningObjective": "Produce values lazily with generators.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write a generator function",
+        "Use yield for a pipeline"
+      ],
+      "tasks": [
+        "Learn: Iterators & Generators (45 min)",
+        "Code: apply iterators & generators in practice (45 min)",
+        "Notes + GitHub commit for Day 43 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Difference between iterator and iterable?",
+        "Why use generators?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 44,
+      "title": "OOP: Classes & Objects",
+      "duration": "2h",
+      "learningObjective": "Model data and behavior with classes.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Define a class with methods",
+        "Use instance vs class attributes"
+      ],
+      "tasks": [
+        "Learn: OOP: Classes & Objects (45 min)",
+        "Code: apply oop: classes & objects in practice (45 min)",
+        "Notes + GitHub commit for Day 44 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is self?",
+        "Instance vs class attribute?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 45,
+      "title": "Inheritance & Polymorphism",
+      "duration": "2h",
+      "learningObjective": "Reuse behavior with inheritance.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a subclass",
+        "Override a method"
+      ],
+      "tasks": [
+        "Learn: Inheritance & Polymorphism (45 min)",
+        "Code: apply inheritance & polymorphism in practice (45 min)",
+        "Notes + GitHub commit for Day 45 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is method resolution order?",
+        "Composition vs inheritance?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 46,
+      "title": "Dunder Methods & Dataclasses",
+      "duration": "2h",
+      "learningObjective": "Customize objects and use @dataclass.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Implement __repr__ and __eq__",
+        "Convert a class to a dataclass"
+      ],
+      "tasks": [
+        "Learn: Dunder Methods & Dataclasses (45 min)",
+        "Code: apply dunder methods & dataclasses in practice (45 min)",
+        "Notes + GitHub commit for Day 46 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does __init__ do?",
+        "When use a dataclass?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 47,
+      "title": "Type Hints & mypy",
+      "duration": "2h",
+      "learningObjective": "Add static types and check with mypy.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Annotate functions",
+        "Run mypy on the project"
+      ],
+      "tasks": [
+        "Learn: Type Hints & mypy (45 min)",
+        "Code: apply type hints & mypy in practice (45 min)",
+        "Notes + GitHub commit for Day 47 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Do type hints affect runtime?",
+        "What is Optional?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 48,
+      "title": "Standard Library Tour",
+      "duration": "4h",
+      "learningObjective": "Use collections, itertools, pathlib, and more.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Use Counter and defaultdict",
+        "Use pathlib for paths"
+      ],
+      "tasks": [
+        "Learn: Standard Library Tour (45 min)",
+        "Code: apply standard library tour in practice (45 min)",
+        "Notes + GitHub commit for Day 48 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is defaultdict?",
+        "Why prefer pathlib?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 49,
+      "title": "Working with JSON & CSV",
+      "duration": "4h",
+      "learningObjective": "Parse and write JSON and CSV data.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Load and dump JSON",
+        "Read a CSV into dicts"
+      ],
+      "tasks": [
+        "Learn: Working with JSON & CSV (45 min)",
+        "Code: apply working with json & csv in practice (45 min)",
+        "Notes + GitHub commit for Day 49 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "json.load vs json.loads?",
+        "How do you handle CSV headers?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 50,
+      "title": "HTTP Requests",
+      "duration": "2h",
+      "learningObjective": "Call APIs with the requests library.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "GET and POST to a public API",
+        "Handle status codes and JSON"
+      ],
+      "tasks": [
+        "Learn: HTTP Requests (45 min)",
+        "Code: apply http requests in practice (45 min)",
+        "Notes + GitHub commit for Day 50 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you send headers?",
+        "How do you handle timeouts?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 51,
+      "title": "Regular Expressions",
+      "duration": "2h",
+      "learningObjective": "Match and extract text with re.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write patterns for emails and dates",
+        "Use groups and findall"
+      ],
+      "tasks": [
+        "Learn: Regular Expressions (45 min)",
+        "Code: apply regular expressions in practice (45 min)",
+        "Notes + GitHub commit for Day 51 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a capture group?",
+        "Greedy vs lazy matching?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 52,
+      "title": "Datetime & Timezones",
+      "duration": "2h",
+      "learningObjective": "Work with dates, times, and timezones.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Parse and format datetimes",
+        "Convert between timezones"
+      ],
+      "tasks": [
+        "Learn: Datetime & Timezones (45 min)",
+        "Code: apply datetime & timezones in practice (45 min)",
+        "Notes + GitHub commit for Day 52 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why use timezone-aware datetimes?",
+        "What is UTC?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 53,
+      "title": "Dependency Management",
+      "duration": "2h",
+      "learningObjective": "Manage dependencies with pip and Poetry.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a pyproject.toml",
+        "Pin and lock dependencies"
+      ],
+      "tasks": [
+        "Learn: Dependency Management (45 min)",
+        "Code: apply dependency management in practice (45 min)",
+        "Notes + GitHub commit for Day 53 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why lock dependencies?",
+        "requirements.txt vs Poetry?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 54,
+      "title": "Testing with pytest",
+      "duration": "2h",
+      "learningObjective": "Write and run unit tests.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write tests for the toolkit",
+        "Use fixtures and parametrize"
+      ],
+      "tasks": [
+        "Learn: Testing with pytest (45 min)",
+        "Code: apply testing with pytest in practice (45 min)",
+        "Notes + GitHub commit for Day 54 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a fixture?",
+        "Why parametrize tests?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 55,
+      "title": "Logging",
+      "duration": "4h",
+      "learningObjective": "Log instead of print, with levels and handlers.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Configure the logging module",
+        "Log to file and console"
+      ],
+      "tasks": [
+        "Learn: Logging (45 min)",
+        "Code: apply logging in practice (45 min)",
+        "Notes + GitHub commit for Day 55 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why log instead of print?",
+        "What are log levels?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 56,
+      "title": "Async IO Basics",
+      "duration": "4h",
+      "learningObjective": "Run concurrent IO with asyncio.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write an async function",
+        "Run tasks with gather"
+      ],
+      "tasks": [
+        "Learn: Async IO Basics (45 min)",
+        "Code: apply async io basics in practice (45 min)",
+        "Notes + GitHub commit for Day 56 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is the event loop?",
+        "async vs threads?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 57,
+      "title": "Databases from Python",
+      "duration": "2h",
+      "learningObjective": "Query PostgreSQL with psycopg.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Connect and run a query",
+        "Use parameterized statements"
+      ],
+      "tasks": [
+        "Learn: Databases from Python (45 min)",
+        "Code: apply databases from python in practice (45 min)",
+        "Notes + GitHub commit for Day 57 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why parameterize queries?",
+        "What is a cursor?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 58,
+      "title": "CLI Apps",
+      "duration": "2h",
+      "learningObjective": "Build command-line tools with argparse/click.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add subcommands to the toolkit",
+        "Parse flags and args"
+      ],
+      "tasks": [
+        "Learn: CLI Apps (45 min)",
+        "Code: apply cli apps in practice (45 min)",
+        "Notes + GitHub commit for Day 58 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "argparse vs click?",
+        "How do you handle bad input?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 59,
+      "title": "Code Quality",
+      "duration": "2h",
+      "learningObjective": "Format and lint with black and ruff.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Run black and ruff",
+        "Fix lint errors"
+      ],
+      "tasks": [
+        "Learn: Code Quality (45 min)",
+        "Code: apply code quality in practice (45 min)",
+        "Notes + GitHub commit for Day 59 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why use a formatter?",
+        "What does a linter catch?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 60,
+      "title": "Project: Python Automation Toolkit",
+      "duration": "2h",
+      "learningObjective": "Ship a tested, typed, packaged CLI toolkit.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Finalize CLI and tests",
+        "Add README and CI config"
+      ],
+      "tasks": [
+        "Learn: Project: Python Automation Toolkit (45 min)",
+        "Code: apply project: python automation toolkit in practice (45 min)",
+        "Notes + GitHub commit for Day 60 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Walk through your project structure.",
+        "How is it tested?"
+      ],
+      "notes": "",
       "completed": false
     }
   ]

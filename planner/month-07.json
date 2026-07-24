@@ -1,0 +1,777 @@
+{
+  "month": 7,
+  "title": "LangGraph + MCP + AI Agents",
+  "goal": "Build reliable, tool-using AI agents and multi-step workflows.",
+  "project": {
+    "name": "AI Agent Platform",
+    "prd": "A platform that runs multi-step agents with tools, memory, MCP integration, and tracing.",
+    "architecture": "LangGraph state machine + tool layer + MCP servers, exposed via FastAPI with observability.",
+    "techStack": [
+      "LangGraph",
+      "MCP",
+      "Claude API",
+      "LangChain",
+      "FastAPI"
+    ],
+    "tasks": [
+      "Define scope",
+      "Build core features",
+      "Test and document",
+      "Ship and push to GitHub"
+    ],
+    "progress": 0,
+    "githubUrl": ""
+  },
+  "days": [
+    {
+      "day": 181,
+      "title": "What are AI Agents",
+      "duration": "4h",
+      "learningObjective": "Define agents and where they beat plain prompting.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "List agent use cases",
+        "Identify when NOT to use an agent"
+      ],
+      "tasks": [
+        "Learn: What are AI Agents (45 min)",
+        "Code: apply what are ai agents in practice (45 min)",
+        "Notes + GitHub commit for Day 181 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is an AI agent?",
+        "When is an agent overkill?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 182,
+      "title": "Agent Loops (ReAct)",
+      "duration": "4h",
+      "learningObjective": "Understand the reason-act-observe loop.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Trace a ReAct loop by hand",
+        "Diagram the loop"
+      ],
+      "tasks": [
+        "Learn: Agent Loops (ReAct) (45 min)",
+        "Code: apply agent loops (react) in practice (45 min)",
+        "Notes + GitHub commit for Day 182 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is the ReAct pattern?",
+        "What ends the loop?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 183,
+      "title": "Tools & Tool Schemas",
+      "duration": "2h",
+      "learningObjective": "Define tools the agent can call.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write two tool schemas",
+        "Handle tool results"
+      ],
+      "tasks": [
+        "Learn: Tools & Tool Schemas (45 min)",
+        "Code: apply tools & tool schemas in practice (45 min)",
+        "Notes + GitHub commit for Day 183 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What makes a good tool schema?",
+        "How do you validate tool inputs?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 184,
+      "title": "LangChain Basics",
+      "duration": "2h",
+      "learningObjective": "Use LangChain building blocks.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Build a simple chain",
+        "Swap the model"
+      ],
+      "tasks": [
+        "Learn: LangChain Basics (45 min)",
+        "Code: apply langchain basics in practice (45 min)",
+        "Notes + GitHub commit for Day 184 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does LangChain provide?",
+        "What is a chain?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 185,
+      "title": "LangGraph Concepts",
+      "duration": "2h",
+      "learningObjective": "Model agents as graphs of nodes and edges.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Diagram a graph",
+        "Define nodes and edges"
+      ],
+      "tasks": [
+        "Learn: LangGraph Concepts (45 min)",
+        "Code: apply langgraph concepts in practice (45 min)",
+        "Notes + GitHub commit for Day 185 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why model an agent as a graph?",
+        "What is graph state?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 186,
+      "title": "Building a Simple Graph",
+      "duration": "2h",
+      "learningObjective": "Build and run a minimal LangGraph.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a two-node graph",
+        "Run it end to end"
+      ],
+      "tasks": [
+        "Learn: Building a Simple Graph (45 min)",
+        "Code: apply building a simple graph in practice (45 min)",
+        "Notes + GitHub commit for Day 186 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a node?",
+        "How does data flow between nodes?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 187,
+      "title": "State Management",
+      "duration": "2h",
+      "learningObjective": "Manage shared state across nodes.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Define a state schema",
+        "Update state in a node"
+      ],
+      "tasks": [
+        "Learn: State Management (45 min)",
+        "Code: apply state management in practice (45 min)",
+        "Notes + GitHub commit for Day 187 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How is state shared?",
+        "How do you reduce state?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 188,
+      "title": "Conditional Edges & Routing",
+      "duration": "4h",
+      "learningObjective": "Branch based on state or model output.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add a conditional edge",
+        "Route to different tools"
+      ],
+      "tasks": [
+        "Learn: Conditional Edges & Routing (45 min)",
+        "Code: apply conditional edges & routing in practice (45 min)",
+        "Notes + GitHub commit for Day 188 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How does routing work?",
+        "How do you avoid infinite loops?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 189,
+      "title": "Multi-step Workflows",
+      "duration": "4h",
+      "learningObjective": "Chain multiple reasoning/tool steps.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Build a 3-step workflow",
+        "Handle intermediate results"
+      ],
+      "tasks": [
+        "Learn: Multi-step Workflows (45 min)",
+        "Code: apply multi-step workflows in practice (45 min)",
+        "Notes + GitHub commit for Day 189 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you sequence steps?",
+        "How do you pass results forward?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 190,
+      "title": "Memory in Agents",
+      "duration": "2h",
+      "learningObjective": "Give agents short- and long-term memory.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add conversation memory",
+        "Persist memory across runs"
+      ],
+      "tasks": [
+        "Learn: Memory in Agents (45 min)",
+        "Code: apply memory in agents in practice (45 min)",
+        "Notes + GitHub commit for Day 190 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Short vs long-term memory?",
+        "How do you store agent memory?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 191,
+      "title": "Human-in-the-loop",
+      "duration": "2h",
+      "learningObjective": "Pause for human approval mid-run.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add an approval checkpoint",
+        "Resume after input"
+      ],
+      "tasks": [
+        "Learn: Human-in-the-loop (45 min)",
+        "Code: apply human-in-the-loop in practice (45 min)",
+        "Notes + GitHub commit for Day 191 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "When require human approval?",
+        "How do you pause/resume a graph?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 192,
+      "title": "Streaming Agent Output",
+      "duration": "2h",
+      "learningObjective": "Stream intermediate steps to the UI.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Stream node updates",
+        "Show tool calls live"
+      ],
+      "tasks": [
+        "Learn: Streaming Agent Output (45 min)",
+        "Code: apply streaming agent output in practice (45 min)",
+        "Notes + GitHub commit for Day 192 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why stream agent steps?",
+        "What do you show users mid-run?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 193,
+      "title": "Error Handling & Retries",
+      "duration": "2h",
+      "learningObjective": "Make agents robust to failures.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add retries with backoff",
+        "Handle a failing tool"
+      ],
+      "tasks": [
+        "Learn: Error Handling & Retries (45 min)",
+        "Code: apply error handling & retries in practice (45 min)",
+        "Notes + GitHub commit for Day 193 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you retry a tool call?",
+        "How do you prevent runaway loops?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 194,
+      "title": "Multi-agent Systems",
+      "duration": "2h",
+      "learningObjective": "Coordinate multiple specialized agents.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Design a two-agent system",
+        "Route work between agents"
+      ],
+      "tasks": [
+        "Learn: Multi-agent Systems (45 min)",
+        "Code: apply multi-agent systems in practice (45 min)",
+        "Notes + GitHub commit for Day 194 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "When use multiple agents?",
+        "How do agents communicate?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 195,
+      "title": "Planner / Executor Pattern",
+      "duration": "4h",
+      "learningObjective": "Separate planning from execution.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add a planner node",
+        "Execute the plan step by step"
+      ],
+      "tasks": [
+        "Learn: Planner / Executor Pattern (45 min)",
+        "Code: apply planner / executor pattern in practice (45 min)",
+        "Notes + GitHub commit for Day 195 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is the planner/executor pattern?",
+        "Why separate planning?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 196,
+      "title": "MCP Overview",
+      "duration": "4h",
+      "learningObjective": "Understand the Model Context Protocol.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Read the MCP spec basics",
+        "List MCP primitives"
+      ],
+      "tasks": [
+        "Learn: MCP Overview (45 min)",
+        "Code: apply mcp overview in practice (45 min)",
+        "Notes + GitHub commit for Day 196 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is MCP?",
+        "What does MCP standardize?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 197,
+      "title": "MCP Servers & Tools",
+      "duration": "2h",
+      "learningObjective": "Understand MCP servers, tools, resources.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Explore an existing MCP server",
+        "Call an MCP tool"
+      ],
+      "tasks": [
+        "Learn: MCP Servers & Tools (45 min)",
+        "Code: apply mcp servers & tools in practice (45 min)",
+        "Notes + GitHub commit for Day 197 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does an MCP server expose?",
+        "Tools vs resources in MCP?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 198,
+      "title": "Building an MCP Server",
+      "duration": "2h",
+      "learningObjective": "Build a small MCP server.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Implement a tool on an MCP server",
+        "Test it locally"
+      ],
+      "tasks": [
+        "Learn: Building an MCP Server (45 min)",
+        "Code: apply building an mcp server in practice (45 min)",
+        "Notes + GitHub commit for Day 198 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you expose a tool via MCP?",
+        "How is an MCP server transported?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 199,
+      "title": "Connecting MCP to an Agent",
+      "duration": "2h",
+      "learningObjective": "Wire MCP tools into an agent.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Register MCP tools with the agent",
+        "Run a task using them"
+      ],
+      "tasks": [
+        "Learn: Connecting MCP to an Agent (45 min)",
+        "Code: apply connecting mcp to an agent in practice (45 min)",
+        "Notes + GitHub commit for Day 199 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How does an agent discover MCP tools?",
+        "Why use MCP over hardcoded tools?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 200,
+      "title": "Tool Result Handling",
+      "duration": "2h",
+      "learningObjective": "Feed tool results back correctly.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Format tool results for the model",
+        "Handle large results"
+      ],
+      "tasks": [
+        "Learn: Tool Result Handling (45 min)",
+        "Code: apply tool result handling in practice (45 min)",
+        "Notes + GitHub commit for Day 200 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you return tool results?",
+        "How do you handle huge tool outputs?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 201,
+      "title": "Agent Observability & Tracing",
+      "duration": "2h",
+      "learningObjective": "Trace agent runs for debugging.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add tracing to a run",
+        "Inspect a failed trace"
+      ],
+      "tasks": [
+        "Learn: Agent Observability & Tracing (45 min)",
+        "Code: apply agent observability & tracing in practice (45 min)",
+        "Notes + GitHub commit for Day 201 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What do you trace in an agent?",
+        "How do you debug a bad run?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 202,
+      "title": "Guardrails for Agents",
+      "duration": "4h",
+      "learningObjective": "Constrain agent actions safely.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Restrict allowed tools",
+        "Add output validation"
+      ],
+      "tasks": [
+        "Learn: Guardrails for Agents (45 min)",
+        "Code: apply guardrails for agents in practice (45 min)",
+        "Notes + GitHub commit for Day 202 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you sandbox agent actions?",
+        "What are dangerous tool calls?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 203,
+      "title": "Cost Control in Agent Loops",
+      "duration": "4h",
+      "learningObjective": "Bound cost and steps per run.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Cap steps and tokens",
+        "Log cost per run"
+      ],
+      "tasks": [
+        "Learn: Cost Control in Agent Loops (45 min)",
+        "Code: apply cost control in agent loops in practice (45 min)",
+        "Notes + GitHub commit for Day 203 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you cap agent cost?",
+        "How do you stop expensive loops?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 204,
+      "title": "Evaluating Agents",
+      "duration": "2h",
+      "learningObjective": "Measure agent task success.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Define success criteria",
+        "Score a set of tasks"
+      ],
+      "tasks": [
+        "Learn: Evaluating Agents (45 min)",
+        "Code: apply evaluating agents in practice (45 min)",
+        "Notes + GitHub commit for Day 204 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you evaluate an agent?",
+        "What is task success rate?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 205,
+      "title": "Structured Agent Outputs",
+      "duration": "2h",
+      "learningObjective": "Return typed, validated results.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Force structured final output",
+        "Validate the result"
+      ],
+      "tasks": [
+        "Learn: Structured Agent Outputs (45 min)",
+        "Code: apply structured agent outputs in practice (45 min)",
+        "Notes + GitHub commit for Day 205 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why force structured output?",
+        "How do you validate it?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 206,
+      "title": "Long-running & Background Agents",
+      "duration": "2h",
+      "learningObjective": "Run agents asynchronously.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Run an agent as a background job",
+        "Report progress"
+      ],
+      "tasks": [
+        "Learn: Long-running & Background Agents (45 min)",
+        "Code: apply long-running & background agents in practice (45 min)",
+        "Notes + GitHub commit for Day 206 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you run long agents?",
+        "How do you report progress?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 207,
+      "title": "Agent Security",
+      "duration": "2h",
+      "learningObjective": "Defend against prompt injection.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Test a prompt-injection attack",
+        "Add input sanitization"
+      ],
+      "tasks": [
+        "Learn: Agent Security (45 min)",
+        "Code: apply agent security in practice (45 min)",
+        "Notes + GitHub commit for Day 207 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is prompt injection?",
+        "How do you defend against it?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 208,
+      "title": "Deploying Agents",
+      "duration": "2h",
+      "learningObjective": "Serve agents behind an API.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Expose an agent endpoint",
+        "Add auth and limits"
+      ],
+      "tasks": [
+        "Learn: Deploying Agents (45 min)",
+        "Code: apply deploying agents in practice (45 min)",
+        "Notes + GitHub commit for Day 208 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you deploy an agent?",
+        "How do you handle concurrency?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 209,
+      "title": "Agent Frontend / Chat UI",
+      "duration": "4h",
+      "learningObjective": "Build a UI that shows agent steps.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Render steps and tool calls",
+        "Add human approval UI"
+      ],
+      "tasks": [
+        "Learn: Agent Frontend / Chat UI (45 min)",
+        "Code: apply agent frontend / chat ui in practice (45 min)",
+        "Notes + GitHub commit for Day 209 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you visualize agent steps?",
+        "How do you surface approvals?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 210,
+      "title": "Project: AI Agent Platform",
+      "duration": "4h",
+      "learningObjective": "Ship a multi-step agent platform with tools and tracing.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Finalize graph, tools, MCP",
+        "Add tracing and limits"
+      ],
+      "tasks": [
+        "Learn: Project: AI Agent Platform (45 min)",
+        "Code: apply project: ai agent platform in practice (45 min)",
+        "Notes + GitHub commit for Day 210 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Walk through an agent run.",
+        "How is it observable and safe?"
+      ],
+      "notes": "",
+      "completed": false
+    }
+  ]
+}

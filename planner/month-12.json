@@ -1,0 +1,777 @@
+{
+  "month": 12,
+  "title": "Build Production AI SaaS",
+  "goal": "Combine everything into a production-grade, multi-tenant AI SaaS capstone.",
+  "project": {
+    "name": "Enterprise AI SaaS (Capstone)",
+    "prd": "A multi-tenant AI SaaS with auth, billing, RAG/agents, observability, and a full production deployment.",
+    "architecture": "FastAPI + Postgres + pgvector + Redis + agents, containerized, on Kubernetes/cloud with CI/CD and monitoring.",
+    "techStack": [
+      "FastAPI",
+      "PostgreSQL",
+      "pgvector",
+      "Kubernetes",
+      "Claude API"
+    ],
+    "tasks": [
+      "Define scope",
+      "Build core features",
+      "Test and document",
+      "Ship and push to GitHub"
+    ],
+    "progress": 0,
+    "githubUrl": ""
+  },
+  "days": [
+    {
+      "day": 331,
+      "title": "Capstone Scope & PRD",
+      "duration": "2h",
+      "learningObjective": "Define the product, users, and scope.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write the capstone PRD",
+        "List MVP features"
+      ],
+      "tasks": [
+        "Learn: Capstone Scope & PRD (45 min)",
+        "Code: apply capstone scope & prd in practice (45 min)",
+        "Notes + GitHub commit for Day 331 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you scope an MVP?",
+        "What belongs in a PRD?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 332,
+      "title": "Architecture Design",
+      "duration": "2h",
+      "learningObjective": "Design the end-to-end architecture.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Draw the architecture diagram",
+        "Choose components"
+      ],
+      "tasks": [
+        "Learn: Architecture Design (45 min)",
+        "Code: apply architecture design in practice (45 min)",
+        "Notes + GitHub commit for Day 332 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Walk through your architecture.",
+        "What are the main tradeoffs?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 333,
+      "title": "Tech Stack & Repo Setup",
+      "duration": "2h",
+      "learningObjective": "Set up the monorepo and tooling.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Scaffold the repo",
+        "Configure linting/CI"
+      ],
+      "tasks": [
+        "Learn: Tech Stack & Repo Setup (45 min)",
+        "Code: apply tech stack & repo setup in practice (45 min)",
+        "Notes + GitHub commit for Day 333 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you structure a SaaS repo?",
+        "What tooling do you standardize?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 334,
+      "title": "Auth & Multi-tenancy",
+      "duration": "2h",
+      "learningObjective": "Implement tenant isolation and auth.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add tenant-scoped auth",
+        "Isolate tenant data"
+      ],
+      "tasks": [
+        "Learn: Auth & Multi-tenancy (45 min)",
+        "Code: apply auth & multi-tenancy in practice (45 min)",
+        "Notes + GitHub commit for Day 334 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you isolate tenants?",
+        "Row-level vs schema-per-tenant?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 335,
+      "title": "Database Schema Design",
+      "duration": "4h",
+      "learningObjective": "Design the multi-tenant schema.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Design core tables",
+        "Add tenant keys and indexes"
+      ],
+      "tasks": [
+        "Learn: Database Schema Design (45 min)",
+        "Code: apply database schema design in practice (45 min)",
+        "Notes + GitHub commit for Day 335 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you index multi-tenant tables?",
+        "How do you prevent cross-tenant leaks?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 336,
+      "title": "Core API Development",
+      "duration": "4h",
+      "learningObjective": "Build the core CRUD and domain APIs.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Implement core endpoints",
+        "Add validation and errors"
+      ],
+      "tasks": [
+        "Learn: Core API Development (45 min)",
+        "Code: apply core api development in practice (45 min)",
+        "Notes + GitHub commit for Day 336 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you structure a large API?",
+        "Where does business logic live?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 337,
+      "title": "RAG / Agent Integration",
+      "duration": "2h",
+      "learningObjective": "Add the core AI feature.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Integrate RAG or an agent",
+        "Ground responses"
+      ],
+      "tasks": [
+        "Learn: RAG / Agent Integration (45 min)",
+        "Code: apply rag / agent integration in practice (45 min)",
+        "Notes + GitHub commit for Day 337 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you productionize RAG/agents?",
+        "How do you keep responses grounded?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 338,
+      "title": "Vector Store Integration",
+      "duration": "2h",
+      "learningObjective": "Wire pgvector for per-tenant retrieval.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Store per-tenant embeddings",
+        "Scope retrieval by tenant"
+      ],
+      "tasks": [
+        "Learn: Vector Store Integration (45 min)",
+        "Code: apply vector store integration in practice (45 min)",
+        "Notes + GitHub commit for Day 338 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you isolate vectors per tenant?",
+        "How do you scale the vector store?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 339,
+      "title": "Async Jobs & Queues",
+      "duration": "2h",
+      "learningObjective": "Offload heavy work to workers.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Move ingestion to a queue",
+        "Report job status"
+      ],
+      "tasks": [
+        "Learn: Async Jobs & Queues (45 min)",
+        "Code: apply async jobs & queues in practice (45 min)",
+        "Notes + GitHub commit for Day 339 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What work should be async?",
+        "How do you report progress?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 340,
+      "title": "Caching Layer",
+      "duration": "2h",
+      "learningObjective": "Add caching for performance and cost.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Cache hot reads and LLM calls",
+        "Set invalidation rules"
+      ],
+      "tasks": [
+        "Learn: Caching Layer (45 min)",
+        "Code: apply caching layer in practice (45 min)",
+        "Notes + GitHub commit for Day 340 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What do you cache in a SaaS?",
+        "How do you invalidate safely?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 341,
+      "title": "Billing & Usage Metering",
+      "duration": "2h",
+      "learningObjective": "Meter usage and integrate billing.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Meter API/LLM usage",
+        "Add plan limits"
+      ],
+      "tasks": [
+        "Learn: Billing & Usage Metering (45 min)",
+        "Code: apply billing & usage metering in practice (45 min)",
+        "Notes + GitHub commit for Day 341 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you meter LLM usage?",
+        "How do you enforce plan limits?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 342,
+      "title": "Admin Dashboard",
+      "duration": "4h",
+      "learningObjective": "Build internal admin tooling.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add a tenant/usage admin view",
+        "Add feature flags"
+      ],
+      "tasks": [
+        "Learn: Admin Dashboard (45 min)",
+        "Code: apply admin dashboard in practice (45 min)",
+        "Notes + GitHub commit for Day 342 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What do admins need to see?",
+        "Why use feature flags?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 343,
+      "title": "Frontend Integration",
+      "duration": "4h",
+      "learningObjective": "Connect the React frontend.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Wire auth and core flows",
+        "Add streaming UI"
+      ],
+      "tasks": [
+        "Learn: Frontend Integration (45 min)",
+        "Code: apply frontend integration in practice (45 min)",
+        "Notes + GitHub commit for Day 343 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you handle auth in the frontend?",
+        "How do you stream AI responses?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 344,
+      "title": "Observability & Logging",
+      "duration": "2h",
+      "learningObjective": "Add metrics, logs, and traces.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add structured logging",
+        "Trace a request end to end"
+      ],
+      "tasks": [
+        "Learn: Observability & Logging (45 min)",
+        "Code: apply observability & logging in practice (45 min)",
+        "Notes + GitHub commit for Day 344 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What do you instrument first?",
+        "How do you trace across services?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 345,
+      "title": "Evaluation & Guardrails",
+      "duration": "2h",
+      "learningObjective": "Integrate the eval harness and guardrails.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Run evals in CI",
+        "Add output guardrails"
+      ],
+      "tasks": [
+        "Learn: Evaluation & Guardrails (45 min)",
+        "Code: apply evaluation & guardrails in practice (45 min)",
+        "Notes + GitHub commit for Day 345 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you gate releases on evals?",
+        "What guardrails are essential?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 346,
+      "title": "Rate Limiting & Abuse Prevention",
+      "duration": "2h",
+      "learningObjective": "Protect the service from abuse.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add per-tenant rate limits",
+        "Detect abusive patterns"
+      ],
+      "tasks": [
+        "Learn: Rate Limiting & Abuse Prevention (45 min)",
+        "Code: apply rate limiting & abuse prevention in practice (45 min)",
+        "Notes + GitHub commit for Day 346 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you rate limit per tenant?",
+        "How do you prevent abuse?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 347,
+      "title": "Security Hardening",
+      "duration": "2h",
+      "learningObjective": "Harden the application and infra.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Run a security checklist",
+        "Fix top findings"
+      ],
+      "tasks": [
+        "Learn: Security Hardening (45 min)",
+        "Code: apply security hardening in practice (45 min)",
+        "Notes + GitHub commit for Day 347 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What are the OWASP top risks?",
+        "How do you handle secrets?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 348,
+      "title": "Containerization",
+      "duration": "2h",
+      "learningObjective": "Containerize all services.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write production Dockerfiles",
+        "Compose for local dev"
+      ],
+      "tasks": [
+        "Learn: Containerization (45 min)",
+        "Code: apply containerization in practice (45 min)",
+        "Notes + GitHub commit for Day 348 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What makes a production image?",
+        "How do you keep images small?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 349,
+      "title": "Kubernetes Deployment",
+      "duration": "4h",
+      "learningObjective": "Deploy to Kubernetes.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write manifests/Helm chart",
+        "Add probes and autoscaling"
+      ],
+      "tasks": [
+        "Learn: Kubernetes Deployment (45 min)",
+        "Code: apply kubernetes deployment in practice (45 min)",
+        "Notes + GitHub commit for Day 349 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you deploy this to K8s?",
+        "How does it scale and heal?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 350,
+      "title": "CI/CD Pipeline",
+      "duration": "4h",
+      "learningObjective": "Automate build, test, and deploy.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Build a full pipeline",
+        "Gate on tests and evals"
+      ],
+      "tasks": [
+        "Learn: CI/CD Pipeline (45 min)",
+        "Code: apply ci/cd pipeline in practice (45 min)",
+        "Notes + GitHub commit for Day 350 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What stages are in your pipeline?",
+        "How do you do safe deploys?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 351,
+      "title": "Cloud Deployment",
+      "duration": "2h",
+      "learningObjective": "Deploy to a cloud provider.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Provision infra with IaC",
+        "Deploy the stack"
+      ],
+      "tasks": [
+        "Learn: Cloud Deployment (45 min)",
+        "Code: apply cloud deployment in practice (45 min)",
+        "Notes + GitHub commit for Day 351 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Walk through your cloud setup.",
+        "How do you manage environments?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 352,
+      "title": "Monitoring & Alerting",
+      "duration": "2h",
+      "learningObjective": "Add dashboards and alerts.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Build a metrics dashboard",
+        "Add on-call alerts"
+      ],
+      "tasks": [
+        "Learn: Monitoring & Alerting (45 min)",
+        "Code: apply monitoring & alerting in practice (45 min)",
+        "Notes + GitHub commit for Day 352 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What do you alert on?",
+        "What is an actionable alert?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 353,
+      "title": "Load Testing",
+      "duration": "2h",
+      "learningObjective": "Validate performance under load.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Run a load test",
+        "Fix the top bottleneck"
+      ],
+      "tasks": [
+        "Learn: Load Testing (45 min)",
+        "Code: apply load testing in practice (45 min)",
+        "Notes + GitHub commit for Day 353 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you load test?",
+        "What do you tune first?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 354,
+      "title": "Documentation & Diagrams",
+      "duration": "2h",
+      "learningObjective": "Document the system thoroughly.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write architecture docs",
+        "Add API docs and diagrams"
+      ],
+      "tasks": [
+        "Learn: Documentation & Diagrams (45 min)",
+        "Code: apply documentation & diagrams in practice (45 min)",
+        "Notes + GitHub commit for Day 354 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What docs does a SaaS need?",
+        "How do you keep docs current?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 355,
+      "title": "Demo & Walkthrough Prep",
+      "duration": "2h",
+      "learningObjective": "Prepare a compelling demo.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Script a demo flow",
+        "Record a walkthrough"
+      ],
+      "tasks": [
+        "Learn: Demo & Walkthrough Prep (45 min)",
+        "Code: apply demo & walkthrough prep in practice (45 min)",
+        "Notes + GitHub commit for Day 355 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you demo a product?",
+        "What story do you tell?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 356,
+      "title": "Interview Prep: Backend",
+      "duration": "4h",
+      "learningObjective": "Review backend and database topics.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Answer 10 backend questions",
+        "Review your project code"
+      ],
+      "tasks": [
+        "Learn: Interview Prep: Backend (45 min)",
+        "Code: apply interview prep: backend in practice (45 min)",
+        "Notes + GitHub commit for Day 356 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Explain your API design.",
+        "How do you scale the database?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 357,
+      "title": "Interview Prep: AI Engineering",
+      "duration": "4h",
+      "learningObjective": "Review RAG, agents, and LLM topics.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Answer 10 AI questions",
+        "Explain your AI feature"
+      ],
+      "tasks": [
+        "Learn: Interview Prep: AI Engineering (45 min)",
+        "Code: apply interview prep: ai engineering in practice (45 min)",
+        "Notes + GitHub commit for Day 357 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Explain your RAG/agent design.",
+        "How do you evaluate quality?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 358,
+      "title": "Interview Prep: System Design",
+      "duration": "2h",
+      "learningObjective": "Review and practice system design.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Do a mock design",
+        "Refine your framework"
+      ],
+      "tasks": [
+        "Learn: Interview Prep: System Design (45 min)",
+        "Code: apply interview prep: system design in practice (45 min)",
+        "Notes + GitHub commit for Day 358 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Design your capstone at scale.",
+        "What are the failure modes?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 359,
+      "title": "Portfolio Polish & README",
+      "duration": "2h",
+      "learningObjective": "Polish the portfolio and repository.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write strong READMEs",
+        "Curate the GitHub profile"
+      ],
+      "tasks": [
+        "Learn: Portfolio Polish & README (45 min)",
+        "Code: apply portfolio polish & readme in practice (45 min)",
+        "Notes + GitHub commit for Day 359 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What makes a strong portfolio?",
+        "How do you present projects?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 360,
+      "title": "Capstone Launch & Retrospective",
+      "duration": "2h",
+      "learningObjective": "Launch the capstone and reflect on the year.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Deploy the final version",
+        "Write a year-in-review retrospective"
+      ],
+      "tasks": [
+        "Learn: Capstone Launch & Retrospective (45 min)",
+        "Code: apply capstone launch & retrospective in practice (45 min)",
+        "Notes + GitHub commit for Day 360 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What did you build this year?",
+        "What would you do differently?"
+      ],
+      "notes": "",
+      "completed": false
+    }
+  ]
+}

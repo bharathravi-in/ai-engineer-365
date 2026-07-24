@@ -1,0 +1,777 @@
+{
+  "month": 11,
+  "title": "System Design + AI Evaluation",
+  "goal": "Design scalable systems and rigorously evaluate AI features for production.",
+  "project": {
+    "name": "AI Evaluation Harness",
+    "prd": "A harness that runs eval datasets, LLM-as-judge scoring, and regression tracking for AI features.",
+    "architecture": "Eval dataset store + runner + LLM judge + metrics dashboard, integrated with CI.",
+    "techStack": [
+      "System Design",
+      "LLM Eval",
+      "Python",
+      "FastAPI",
+      "Claude API"
+    ],
+    "tasks": [
+      "Define scope",
+      "Build core features",
+      "Test and document",
+      "Ship and push to GitHub"
+    ],
+    "progress": 0,
+    "githubUrl": ""
+  },
+  "days": [
+    {
+      "day": 301,
+      "title": "System Design Fundamentals",
+      "duration": "4h",
+      "learningObjective": "Learn a framework for design problems.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Practice the design framework",
+        "Estimate scale for a system"
+      ],
+      "tasks": [
+        "Learn: System Design Fundamentals (45 min)",
+        "Code: apply system design fundamentals in practice (45 min)",
+        "Notes + GitHub commit for Day 301 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you approach a design question?",
+        "How do you estimate QPS?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 302,
+      "title": "Scalability Concepts",
+      "duration": "2h",
+      "learningObjective": "Understand vertical vs horizontal scaling.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Identify bottlenecks",
+        "Plan horizontal scaling"
+      ],
+      "tasks": [
+        "Learn: Scalability Concepts (45 min)",
+        "Code: apply scalability concepts in practice (45 min)",
+        "Notes + GitHub commit for Day 302 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Vertical vs horizontal scaling?",
+        "What is a bottleneck?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 303,
+      "title": "Load Balancing",
+      "duration": "2h",
+      "learningObjective": "Distribute traffic across servers.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Compare LB algorithms",
+        "Handle sticky sessions"
+      ],
+      "tasks": [
+        "Learn: Load Balancing (45 min)",
+        "Code: apply load balancing in practice (45 min)",
+        "Notes + GitHub commit for Day 303 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Load balancing algorithms?",
+        "What is a sticky session?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 304,
+      "title": "Caching Strategies",
+      "duration": "2h",
+      "learningObjective": "Apply caching at multiple layers.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Design a cache layer",
+        "Choose an eviction policy"
+      ],
+      "tasks": [
+        "Learn: Caching Strategies (45 min)",
+        "Code: apply caching strategies in practice (45 min)",
+        "Notes + GitHub commit for Day 304 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Cache-aside vs write-through?",
+        "What is cache stampede?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 305,
+      "title": "Database Scaling",
+      "duration": "2h",
+      "learningObjective": "Scale databases with replication/sharding.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Design read replicas",
+        "Plan a sharding key"
+      ],
+      "tasks": [
+        "Learn: Database Scaling (45 min)",
+        "Code: apply database scaling in practice (45 min)",
+        "Notes + GitHub commit for Day 305 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Replication vs sharding?",
+        "How do you pick a shard key?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 306,
+      "title": "CAP Theorem & Consistency",
+      "duration": "2h",
+      "learningObjective": "Reason about consistency tradeoffs.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Place systems on CAP",
+        "Explain eventual consistency"
+      ],
+      "tasks": [
+        "Learn: CAP Theorem & Consistency (45 min)",
+        "Code: apply cap theorem & consistency in practice (45 min)",
+        "Notes + GitHub commit for Day 306 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is the CAP theorem?",
+        "Strong vs eventual consistency?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 307,
+      "title": "Message Queues & Async",
+      "duration": "4h",
+      "learningObjective": "Decouple systems with queues.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Design an async workflow",
+        "Handle retries and DLQs"
+      ],
+      "tasks": [
+        "Learn: Message Queues & Async (45 min)",
+        "Code: apply message queues & async in practice (45 min)",
+        "Notes + GitHub commit for Day 307 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why use a message queue?",
+        "How do you ensure idempotency?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 308,
+      "title": "API Gateway & Rate Limiting",
+      "duration": "4h",
+      "learningObjective": "Front services with a gateway.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Design gateway responsibilities",
+        "Add rate limiting"
+      ],
+      "tasks": [
+        "Learn: API Gateway & Rate Limiting (45 min)",
+        "Code: apply api gateway & rate limiting in practice (45 min)",
+        "Notes + GitHub commit for Day 308 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does an API gateway do?",
+        "How do you rate limit fairly?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 309,
+      "title": "Microservices vs Monolith",
+      "duration": "2h",
+      "learningObjective": "Choose an architecture style.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "List tradeoffs",
+        "Decide for a scenario"
+      ],
+      "tasks": [
+        "Learn: Microservices vs Monolith (45 min)",
+        "Code: apply microservices vs monolith in practice (45 min)",
+        "Notes + GitHub commit for Day 309 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "When choose microservices?",
+        "What are their costs?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 310,
+      "title": "Event-driven Architecture",
+      "duration": "2h",
+      "learningObjective": "Design around events.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Model an event flow",
+        "Handle ordering"
+      ],
+      "tasks": [
+        "Learn: Event-driven Architecture (45 min)",
+        "Code: apply event-driven architecture in practice (45 min)",
+        "Notes + GitHub commit for Day 310 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is event-driven architecture?",
+        "How do you handle event ordering?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 311,
+      "title": "Designing for Reliability",
+      "duration": "2h",
+      "learningObjective": "Add redundancy and graceful degradation.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Design for failure",
+        "Add a fallback path"
+      ],
+      "tasks": [
+        "Learn: Designing for Reliability (45 min)",
+        "Code: apply designing for reliability in practice (45 min)",
+        "Notes + GitHub commit for Day 311 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is graceful degradation?",
+        "How do you avoid single points of failure?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 312,
+      "title": "Observability",
+      "duration": "2h",
+      "learningObjective": "Design metrics, logs, and traces.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Define key metrics/SLIs",
+        "Add tracing to a flow"
+      ],
+      "tasks": [
+        "Learn: Observability (45 min)",
+        "Code: apply observability in practice (45 min)",
+        "Notes + GitHub commit for Day 312 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Metrics vs logs vs traces?",
+        "What is an SLI/SLO?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 313,
+      "title": "Design: URL Shortener",
+      "duration": "2h",
+      "learningObjective": "Design a URL shortener at scale.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Estimate scale and storage",
+        "Design the key generation"
+      ],
+      "tasks": [
+        "Learn: Design: URL Shortener (45 min)",
+        "Code: apply design: url shortener in practice (45 min)",
+        "Notes + GitHub commit for Day 313 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you generate short keys?",
+        "How do you scale reads?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 314,
+      "title": "Design: Chat System",
+      "duration": "4h",
+      "learningObjective": "Design a real-time chat system.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Design message delivery",
+        "Handle presence and history"
+      ],
+      "tasks": [
+        "Learn: Design: Chat System (45 min)",
+        "Code: apply design: chat system in practice (45 min)",
+        "Notes + GitHub commit for Day 314 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you deliver messages in real time?",
+        "How do you store chat history?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 315,
+      "title": "Design: RAG System",
+      "duration": "4h",
+      "learningObjective": "Design a production RAG system.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Design ingestion and retrieval at scale",
+        "Plan freshness and caching"
+      ],
+      "tasks": [
+        "Learn: Design: RAG System (45 min)",
+        "Code: apply design: rag system in practice (45 min)",
+        "Notes + GitHub commit for Day 315 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you scale ingestion?",
+        "How do you keep the index fresh?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 316,
+      "title": "Design: Agent Platform",
+      "duration": "2h",
+      "learningObjective": "Design a scalable agent platform.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Design run isolation and limits",
+        "Plan observability"
+      ],
+      "tasks": [
+        "Learn: Design: Agent Platform (45 min)",
+        "Code: apply design: agent platform in practice (45 min)",
+        "Notes + GitHub commit for Day 316 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you isolate agent runs?",
+        "How do you bound cost?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 317,
+      "title": "LLM Evaluation Fundamentals",
+      "duration": "2h",
+      "learningObjective": "Understand why and how to evaluate LLMs.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "List failure modes to catch",
+        "Define quality dimensions"
+      ],
+      "tasks": [
+        "Learn: LLM Evaluation Fundamentals (45 min)",
+        "Code: apply llm evaluation fundamentals in practice (45 min)",
+        "Notes + GitHub commit for Day 317 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why is LLM eval hard?",
+        "What dimensions do you evaluate?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 318,
+      "title": "Building Eval Datasets",
+      "duration": "2h",
+      "learningObjective": "Curate representative eval sets.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Build a labeled eval set",
+        "Cover edge cases"
+      ],
+      "tasks": [
+        "Learn: Building Eval Datasets (45 min)",
+        "Code: apply building eval datasets in practice (45 min)",
+        "Notes + GitHub commit for Day 318 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What makes a good eval set?",
+        "How many cases do you need?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 319,
+      "title": "LLM-as-Judge",
+      "duration": "2h",
+      "learningObjective": "Score outputs with a judge model.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write a judge prompt",
+        "Validate judge reliability"
+      ],
+      "tasks": [
+        "Learn: LLM-as-Judge (45 min)",
+        "Code: apply llm-as-judge in practice (45 min)",
+        "Notes + GitHub commit for Day 319 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is LLM-as-judge?",
+        "How do you trust the judge?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 320,
+      "title": "Offline vs Online Eval",
+      "duration": "2h",
+      "learningObjective": "Compare pre-ship and in-production eval.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Design an offline suite",
+        "Design online metrics"
+      ],
+      "tasks": [
+        "Learn: Offline vs Online Eval (45 min)",
+        "Code: apply offline vs online eval in practice (45 min)",
+        "Notes + GitHub commit for Day 320 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Offline vs online eval?",
+        "What do you measure in production?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 321,
+      "title": "RAG Evaluation Metrics",
+      "duration": "4h",
+      "learningObjective": "Measure retrieval and answer quality.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Compute faithfulness/relevance",
+        "Track recall@k"
+      ],
+      "tasks": [
+        "Learn: RAG Evaluation Metrics (45 min)",
+        "Code: apply rag evaluation metrics in practice (45 min)",
+        "Notes + GitHub commit for Day 321 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is faithfulness?",
+        "How do you measure groundedness?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 322,
+      "title": "Agent Evaluation",
+      "duration": "4h",
+      "learningObjective": "Measure agent task success and cost.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Define task success",
+        "Track steps and cost"
+      ],
+      "tasks": [
+        "Learn: Agent Evaluation (45 min)",
+        "Code: apply agent evaluation in practice (45 min)",
+        "Notes + GitHub commit for Day 322 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you evaluate an agent?",
+        "What is trajectory evaluation?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 323,
+      "title": "Regression Testing for Prompts",
+      "duration": "2h",
+      "learningObjective": "Catch regressions when prompts change.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add prompt regression tests",
+        "Run them in CI"
+      ],
+      "tasks": [
+        "Learn: Regression Testing for Prompts (45 min)",
+        "Code: apply regression testing for prompts in practice (45 min)",
+        "Notes + GitHub commit for Day 323 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you regression-test prompts?",
+        "Why version prompts?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 324,
+      "title": "A/B Testing LLM Features",
+      "duration": "2h",
+      "learningObjective": "Compare variants with experiments.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Design an A/B test",
+        "Pick success metrics"
+      ],
+      "tasks": [
+        "Learn: A/B Testing LLM Features (45 min)",
+        "Code: apply a/b testing llm features in practice (45 min)",
+        "Notes + GitHub commit for Day 324 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you A/B test an LLM feature?",
+        "What is statistical significance?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 325,
+      "title": "Monitoring LLMs in Production",
+      "duration": "2h",
+      "learningObjective": "Track quality, cost, and drift live.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add production LLM metrics",
+        "Detect drift"
+      ],
+      "tasks": [
+        "Learn: Monitoring LLMs in Production (45 min)",
+        "Code: apply monitoring llms in production in practice (45 min)",
+        "Notes + GitHub commit for Day 325 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What do you monitor for LLMs?",
+        "What is drift?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 326,
+      "title": "Guardrails & Safety Evaluation",
+      "duration": "2h",
+      "learningObjective": "Evaluate safety and guardrails.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Test jailbreak resistance",
+        "Measure refusal accuracy"
+      ],
+      "tasks": [
+        "Learn: Guardrails & Safety Evaluation (45 min)",
+        "Code: apply guardrails & safety evaluation in practice (45 min)",
+        "Notes + GitHub commit for Day 326 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you evaluate safety?",
+        "What is a jailbreak?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 327,
+      "title": "Cost & Latency SLOs",
+      "duration": "2h",
+      "learningObjective": "Set and enforce SLOs for AI features.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Define latency/cost SLOs",
+        "Alert on breaches"
+      ],
+      "tasks": [
+        "Learn: Cost & Latency SLOs (45 min)",
+        "Code: apply cost & latency slos in practice (45 min)",
+        "Notes + GitHub commit for Day 327 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you set an SLO?",
+        "How do you balance cost vs quality?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 328,
+      "title": "Building an Eval Harness",
+      "duration": "4h",
+      "learningObjective": "Assemble a reusable eval harness.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Wire dataset → runner → judge",
+        "Report metrics"
+      ],
+      "tasks": [
+        "Learn: Building an Eval Harness (45 min)",
+        "Code: apply building an eval harness in practice (45 min)",
+        "Notes + GitHub commit for Day 328 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What are the parts of an eval harness?",
+        "How do you integrate it with CI?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 329,
+      "title": "Mock System Design Interview",
+      "duration": "4h",
+      "learningObjective": "Practice a full design interview.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Do a timed mock design",
+        "Get and apply feedback"
+      ],
+      "tasks": [
+        "Learn: Mock System Design Interview (45 min)",
+        "Code: apply mock system design interview in practice (45 min)",
+        "Notes + GitHub commit for Day 329 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Walk through a system design end to end.",
+        "How do you handle scale follow-ups?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 330,
+      "title": "Project: AI Evaluation Harness",
+      "duration": "2h",
+      "learningObjective": "Ship an eval harness with judge scoring and CI integration.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Finalize runner and judge",
+        "Add a metrics dashboard"
+      ],
+      "tasks": [
+        "Learn: Project: AI Evaluation Harness (45 min)",
+        "Code: apply project: ai evaluation harness in practice (45 min)",
+        "Notes + GitHub commit for Day 330 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Walk through your eval pipeline.",
+        "How does it catch regressions?"
+      ],
+      "notes": "",
+      "completed": false
+    }
+  ]
+}

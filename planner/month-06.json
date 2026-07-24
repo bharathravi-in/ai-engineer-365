@@ -1,0 +1,777 @@
+{
+  "month": 6,
+  "title": "RAG + Vector Databases",
+  "goal": "Build retrieval-augmented generation systems grounded in your own documents.",
+  "project": {
+    "name": "PDF Chat / Resume Reviewer",
+    "prd": "Chat over uploaded PDFs with citations, then extend it into an AI resume reviewer.",
+    "architecture": "Ingest → chunk → embed → store in pgvector → retrieve → grounded generation with citations.",
+    "techStack": [
+      "pgvector",
+      "Embeddings",
+      "Claude API",
+      "FastAPI",
+      "Chroma"
+    ],
+    "tasks": [
+      "Define scope",
+      "Build core features",
+      "Test and document",
+      "Ship and push to GitHub"
+    ],
+    "progress": 0,
+    "githubUrl": ""
+  },
+  "days": [
+    {
+      "day": 151,
+      "title": "Why RAG",
+      "duration": "2h",
+      "learningObjective": "Understand when and why to use retrieval augmentation.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "List RAG vs fine-tuning tradeoffs",
+        "Identify a RAG use case"
+      ],
+      "tasks": [
+        "Learn: Why RAG (45 min)",
+        "Code: apply why rag in practice (45 min)",
+        "Notes + GitHub commit for Day 151 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What problem does RAG solve?",
+        "RAG vs fine-tuning?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 152,
+      "title": "Document Loading & Parsing",
+      "duration": "2h",
+      "learningObjective": "Extract text from PDFs and other formats.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Parse a PDF to text",
+        "Handle a messy document"
+      ],
+      "tasks": [
+        "Learn: Document Loading & Parsing (45 min)",
+        "Code: apply document loading & parsing in practice (45 min)",
+        "Notes + GitHub commit for Day 152 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why is PDF parsing hard?",
+        "How do you handle tables/images?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 153,
+      "title": "Chunking Strategies",
+      "duration": "4h",
+      "learningObjective": "Split documents into retrievable chunks.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Chunk by tokens with overlap",
+        "Compare chunk sizes"
+      ],
+      "tasks": [
+        "Learn: Chunking Strategies (45 min)",
+        "Code: apply chunking strategies in practice (45 min)",
+        "Notes + GitHub commit for Day 153 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why chunk documents?",
+        "What does overlap do?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 154,
+      "title": "Embeddings Deep Dive",
+      "duration": "4h",
+      "learningObjective": "Generate and store text embeddings.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Embed chunks",
+        "Inspect vector dimensions"
+      ],
+      "tasks": [
+        "Learn: Embeddings Deep Dive (45 min)",
+        "Code: apply embeddings deep dive in practice (45 min)",
+        "Notes + GitHub commit for Day 154 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What determines embedding quality?",
+        "How do you pick an embedding model?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 155,
+      "title": "Vector Similarity",
+      "duration": "2h",
+      "learningObjective": "Measure similarity with cosine/dot/L2.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Compute cosine similarity",
+        "Rank chunks by similarity"
+      ],
+      "tasks": [
+        "Learn: Vector Similarity (45 min)",
+        "Code: apply vector similarity in practice (45 min)",
+        "Notes + GitHub commit for Day 155 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is cosine similarity?",
+        "Cosine vs dot product?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 156,
+      "title": "Vector DB Overview",
+      "duration": "2h",
+      "learningObjective": "Compare pgvector, Chroma, Qdrant, Pinecone.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "List tradeoffs of each",
+        "Pick one for the project"
+      ],
+      "tasks": [
+        "Learn: Vector DB Overview (45 min)",
+        "Code: apply vector db overview in practice (45 min)",
+        "Notes + GitHub commit for Day 156 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why use a vector DB?",
+        "When is pgvector enough?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 157,
+      "title": "pgvector Setup",
+      "duration": "2h",
+      "learningObjective": "Enable and configure pgvector in Postgres.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a vector column",
+        "Add a vector index"
+      ],
+      "tasks": [
+        "Learn: pgvector Setup (45 min)",
+        "Code: apply pgvector setup in practice (45 min)",
+        "Notes + GitHub commit for Day 157 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What index types does pgvector support?",
+        "Why index vectors?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 158,
+      "title": "Storing & Querying Embeddings",
+      "duration": "2h",
+      "learningObjective": "Store chunks and run similarity search.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Insert embedded chunks",
+        "Query nearest neighbors"
+      ],
+      "tasks": [
+        "Learn: Storing & Querying Embeddings (45 min)",
+        "Code: apply storing & querying embeddings in practice (45 min)",
+        "Notes + GitHub commit for Day 158 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a nearest-neighbor query?",
+        "How does an ANN index differ from exact?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 159,
+      "title": "Retrieval Pipeline",
+      "duration": "2h",
+      "learningObjective": "Build ingest → retrieve end to end.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Wire ingestion and retrieval",
+        "Return top-k chunks"
+      ],
+      "tasks": [
+        "Learn: Retrieval Pipeline (45 min)",
+        "Code: apply retrieval pipeline in practice (45 min)",
+        "Notes + GitHub commit for Day 159 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is top-k?",
+        "Where does retrieval fit in the pipeline?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 160,
+      "title": "RAG Prompt Construction",
+      "duration": "4h",
+      "learningObjective": "Assemble context + question into a prompt.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Build a grounded prompt",
+        "Add instructions to use only context"
+      ],
+      "tasks": [
+        "Learn: RAG Prompt Construction (45 min)",
+        "Code: apply rag prompt construction in practice (45 min)",
+        "Notes + GitHub commit for Day 160 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you stop the model straying from context?",
+        "How much context is too much?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 161,
+      "title": "Chroma / Qdrant Basics",
+      "duration": "4h",
+      "learningObjective": "Use a dedicated vector store.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Insert and query in Chroma",
+        "Attach metadata"
+      ],
+      "tasks": [
+        "Learn: Chroma / Qdrant Basics (45 min)",
+        "Code: apply chroma / qdrant basics in practice (45 min)",
+        "Notes + GitHub commit for Day 161 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why choose a dedicated store?",
+        "What is a collection?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 162,
+      "title": "Metadata Filtering",
+      "duration": "2h",
+      "learningObjective": "Filter retrieval by metadata.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Filter by document/source",
+        "Combine filters with search"
+      ],
+      "tasks": [
+        "Learn: Metadata Filtering (45 min)",
+        "Code: apply metadata filtering in practice (45 min)",
+        "Notes + GitHub commit for Day 162 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why filter by metadata?",
+        "How does filtering affect recall?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 163,
+      "title": "Hybrid Search",
+      "duration": "2h",
+      "learningObjective": "Combine keyword and vector search.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Run keyword + vector",
+        "Merge and score results"
+      ],
+      "tasks": [
+        "Learn: Hybrid Search (45 min)",
+        "Code: apply hybrid search in practice (45 min)",
+        "Notes + GitHub commit for Day 163 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why hybrid search?",
+        "When does keyword beat vector?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 164,
+      "title": "Reranking",
+      "duration": "2h",
+      "learningObjective": "Reorder retrieved chunks with a reranker.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add a reranking step",
+        "Compare with/without"
+      ],
+      "tasks": [
+        "Learn: Reranking (45 min)",
+        "Code: apply reranking in practice (45 min)",
+        "Notes + GitHub commit for Day 164 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does a reranker do?",
+        "Why rerank after retrieval?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 165,
+      "title": "RAG Retrieval Evaluation",
+      "duration": "2h",
+      "learningObjective": "Measure retrieval quality.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Build a small eval set",
+        "Compute recall@k"
+      ],
+      "tasks": [
+        "Learn: RAG Retrieval Evaluation (45 min)",
+        "Code: apply rag retrieval evaluation in practice (45 min)",
+        "Notes + GitHub commit for Day 165 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is recall@k?",
+        "How do you know retrieval is good?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 166,
+      "title": "Handling Large Documents",
+      "duration": "2h",
+      "learningObjective": "Scale ingestion for big documents.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Batch embed large files",
+        "Track ingestion progress"
+      ],
+      "tasks": [
+        "Learn: Handling Large Documents (45 min)",
+        "Code: apply handling large documents in practice (45 min)",
+        "Notes + GitHub commit for Day 166 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you ingest large corpora?",
+        "How do you avoid rate limits?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 167,
+      "title": "Citations & Attribution",
+      "duration": "4h",
+      "learningObjective": "Return sources with answers.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Attach chunk sources to answers",
+        "Render citations"
+      ],
+      "tasks": [
+        "Learn: Citations & Attribution (45 min)",
+        "Code: apply citations & attribution in practice (45 min)",
+        "Notes + GitHub commit for Day 167 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why cite sources?",
+        "How do you map answer to source?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 168,
+      "title": "Chat over PDFs",
+      "duration": "4h",
+      "learningObjective": "Assemble the full PDF chat flow.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Upload → ingest → chat",
+        "Show cited passages"
+      ],
+      "tasks": [
+        "Learn: Chat over PDFs (45 min)",
+        "Code: apply chat over pdfs in practice (45 min)",
+        "Notes + GitHub commit for Day 168 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Walk through the PDF chat flow.",
+        "How do you handle a question with no answer?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 169,
+      "title": "Multi-document RAG",
+      "duration": "2h",
+      "learningObjective": "Retrieve across many documents.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Ingest multiple PDFs",
+        "Scope queries to a document set"
+      ],
+      "tasks": [
+        "Learn: Multi-document RAG (45 min)",
+        "Code: apply multi-document rag in practice (45 min)",
+        "Notes + GitHub commit for Day 169 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you scope retrieval?",
+        "How do you avoid cross-document leakage?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 170,
+      "title": "Caching & Cost in RAG",
+      "duration": "2h",
+      "learningObjective": "Cache embeddings and answers.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Cache embeddings",
+        "Reuse retrieved context"
+      ],
+      "tasks": [
+        "Learn: Caching & Cost in RAG (45 min)",
+        "Code: apply caching & cost in rag in practice (45 min)",
+        "Notes + GitHub commit for Day 170 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What can you cache in RAG?",
+        "How do you cut embedding cost?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 171,
+      "title": "Chunk Size Tuning",
+      "duration": "2h",
+      "learningObjective": "Tune chunking for your data.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Sweep chunk sizes",
+        "Measure answer quality"
+      ],
+      "tasks": [
+        "Learn: Chunk Size Tuning (45 min)",
+        "Code: apply chunk size tuning in practice (45 min)",
+        "Notes + GitHub commit for Day 171 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How does chunk size affect quality?",
+        "How do you tune it?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 172,
+      "title": "Query Rewriting",
+      "duration": "2h",
+      "learningObjective": "Improve retrieval with query expansion.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Rewrite a user query",
+        "Generate sub-queries"
+      ],
+      "tasks": [
+        "Learn: Query Rewriting (45 min)",
+        "Code: apply query rewriting in practice (45 min)",
+        "Notes + GitHub commit for Day 172 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why rewrite queries?",
+        "What is query expansion?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 173,
+      "title": "Hallucination Guardrails",
+      "duration": "2h",
+      "learningObjective": "Force answers to stay grounded.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add abstain-if-unsure logic",
+        "Detect unsupported claims"
+      ],
+      "tasks": [
+        "Learn: Hallucination Guardrails (45 min)",
+        "Code: apply hallucination guardrails in practice (45 min)",
+        "Notes + GitHub commit for Day 173 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you keep RAG grounded?",
+        "When should the system say \"I don't know\"?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 174,
+      "title": "RAG Observability",
+      "duration": "4h",
+      "learningObjective": "Trace and debug retrieval and generation.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Log retrieved chunks",
+        "Trace a bad answer"
+      ],
+      "tasks": [
+        "Learn: RAG Observability (45 min)",
+        "Code: apply rag observability in practice (45 min)",
+        "Notes + GitHub commit for Day 174 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What do you log in a RAG system?",
+        "How do you debug a wrong answer?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 175,
+      "title": "Incremental Indexing",
+      "duration": "4h",
+      "learningObjective": "Update the index as documents change.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add/update/delete a document",
+        "Re-embed changed chunks"
+      ],
+      "tasks": [
+        "Learn: Incremental Indexing (45 min)",
+        "Code: apply incremental indexing in practice (45 min)",
+        "Notes + GitHub commit for Day 175 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you keep an index fresh?",
+        "How do you handle deletions?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 176,
+      "title": "Access Control on Documents",
+      "duration": "2h",
+      "learningObjective": "Restrict retrieval by user permissions.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Filter by user access",
+        "Test isolation between users"
+      ],
+      "tasks": [
+        "Learn: Access Control on Documents (45 min)",
+        "Code: apply access control on documents in practice (45 min)",
+        "Notes + GitHub commit for Day 176 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you enforce per-user access?",
+        "Why is metadata filtering a security concern?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 177,
+      "title": "RAG Evaluation Harness",
+      "duration": "2h",
+      "learningObjective": "Automate end-to-end RAG evaluation.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Score answers with an LLM judge",
+        "Track metrics over changes"
+      ],
+      "tasks": [
+        "Learn: RAG Evaluation Harness (45 min)",
+        "Code: apply rag evaluation harness in practice (45 min)",
+        "Notes + GitHub commit for Day 177 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is LLM-as-judge?",
+        "What metrics matter for RAG?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 178,
+      "title": "Deploying a RAG Service",
+      "duration": "2h",
+      "learningObjective": "Serve RAG behind an API.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Expose ingest and query endpoints",
+        "Add auth and limits"
+      ],
+      "tasks": [
+        "Learn: Deploying a RAG Service (45 min)",
+        "Code: apply deploying a rag service in practice (45 min)",
+        "Notes + GitHub commit for Day 178 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you deploy RAG?",
+        "How do you handle concurrent ingestion?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 179,
+      "title": "RAG Frontend Integration",
+      "duration": "2h",
+      "learningObjective": "Connect a UI to the RAG API.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add upload and chat UI",
+        "Show citations in the UI"
+      ],
+      "tasks": [
+        "Learn: RAG Frontend Integration (45 min)",
+        "Code: apply rag frontend integration in practice (45 min)",
+        "Notes + GitHub commit for Day 179 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you show sources in UI?",
+        "How do you stream RAG answers?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 180,
+      "title": "Project: PDF Chat / Resume Reviewer",
+      "duration": "2h",
+      "learningObjective": "Ship grounded PDF chat and extend to resume review.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Finalize ingestion + chat + citations",
+        "Add resume-review prompts"
+      ],
+      "tasks": [
+        "Learn: Project: PDF Chat / Resume Reviewer (45 min)",
+        "Code: apply project: pdf chat / resume reviewer in practice (45 min)",
+        "Notes + GitHub commit for Day 180 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Walk through your RAG pipeline.",
+        "How do you evaluate its quality?"
+      ],
+      "notes": "",
+      "completed": false
+    }
+  ]
+}

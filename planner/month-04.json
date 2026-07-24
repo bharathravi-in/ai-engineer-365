@@ -1,0 +1,777 @@
+{
+  "month": 4,
+  "title": "Docker + Kubernetes",
+  "goal": "Containerize services and orchestrate them reliably with Kubernetes.",
+  "project": {
+    "name": "Containerized & Orchestrated App",
+    "prd": "Dockerize the FastAPI + Postgres + Redis stack and deploy it to Kubernetes with autoscaling.",
+    "architecture": "Multi-stage Docker images, Compose for local dev, K8s Deployments/Services/Ingress for prod.",
+    "techStack": [
+      "Docker",
+      "Docker Compose",
+      "Kubernetes",
+      "Helm",
+      "kubectl"
+    ],
+    "tasks": [
+      "Define scope",
+      "Build core features",
+      "Test and document",
+      "Ship and push to GitHub"
+    ],
+    "progress": 0,
+    "githubUrl": ""
+  },
+  "days": [
+    {
+      "day": 91,
+      "title": "Containers vs VMs",
+      "duration": "4h",
+      "learningObjective": "Understand containers, images, and isolation.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Run a public image",
+        "Inspect a running container"
+      ],
+      "tasks": [
+        "Learn: Containers vs VMs (45 min)",
+        "Code: apply containers vs vms in practice (45 min)",
+        "Notes + GitHub commit for Day 91 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Container vs VM?",
+        "What is an image layer?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 92,
+      "title": "Docker Installation & CLI",
+      "duration": "2h",
+      "learningObjective": "Use core docker CLI commands.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Pull, run, stop, rm containers",
+        "List images and containers"
+      ],
+      "tasks": [
+        "Learn: Docker Installation & CLI (45 min)",
+        "Code: apply docker installation & cli in practice (45 min)",
+        "Notes + GitHub commit for Day 92 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does docker run do?",
+        "Difference between image and container?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 93,
+      "title": "Images & Dockerfile",
+      "duration": "2h",
+      "learningObjective": "Write a Dockerfile for a Python app.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write a Dockerfile",
+        "Build the image"
+      ],
+      "tasks": [
+        "Learn: Images & Dockerfile (45 min)",
+        "Code: apply images & dockerfile in practice (45 min)",
+        "Notes + GitHub commit for Day 93 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does each Dockerfile instruction do?",
+        "Why order layers carefully?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 94,
+      "title": "Building & Tagging Images",
+      "duration": "2h",
+      "learningObjective": "Build, tag, and version images.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Tag an image with a version",
+        "Rebuild after a change"
+      ],
+      "tasks": [
+        "Learn: Building & Tagging Images (45 min)",
+        "Code: apply building & tagging images in practice (45 min)",
+        "Notes + GitHub commit for Day 94 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why tag images?",
+        "What is the latest tag pitfall?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 95,
+      "title": "Docker Volumes",
+      "duration": "2h",
+      "learningObjective": "Persist data with volumes and bind mounts.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Mount a volume for Postgres",
+        "Use a bind mount for code"
+      ],
+      "tasks": [
+        "Learn: Docker Volumes (45 min)",
+        "Code: apply docker volumes in practice (45 min)",
+        "Notes + GitHub commit for Day 95 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Volume vs bind mount?",
+        "Where does volume data live?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 96,
+      "title": "Docker Networking",
+      "duration": "2h",
+      "learningObjective": "Connect containers over networks.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a user-defined network",
+        "Connect two containers by name"
+      ],
+      "tasks": [
+        "Learn: Docker Networking (45 min)",
+        "Code: apply docker networking in practice (45 min)",
+        "Notes + GitHub commit for Day 96 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do containers find each other?",
+        "What is the default bridge network?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 97,
+      "title": "Env Variables & Secrets",
+      "duration": "4h",
+      "learningObjective": "Configure containers via environment.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Pass env vars at run",
+        "Use an env file"
+      ],
+      "tasks": [
+        "Learn: Env Variables & Secrets (45 min)",
+        "Code: apply env variables & secrets in practice (45 min)",
+        "Notes + GitHub commit for Day 97 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you handle secrets in Docker?",
+        "Why avoid baking secrets into images?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 98,
+      "title": "Docker Compose Basics",
+      "duration": "4h",
+      "learningObjective": "Define multi-service apps in Compose.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write a compose file",
+        "Bring the stack up/down"
+      ],
+      "tasks": [
+        "Learn: Docker Compose Basics (45 min)",
+        "Code: apply docker compose basics in practice (45 min)",
+        "Notes + GitHub commit for Day 98 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does Compose solve?",
+        "depends_on limitations?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 99,
+      "title": "Multi-container Apps",
+      "duration": "2h",
+      "learningObjective": "Wire app + db + cache with Compose.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add Postgres and Redis services",
+        "Use service names as hosts"
+      ],
+      "tasks": [
+        "Learn: Multi-container Apps (45 min)",
+        "Code: apply multi-container apps in practice (45 min)",
+        "Notes + GitHub commit for Day 99 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do services communicate?",
+        "How do you seed a DB in Compose?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 100,
+      "title": "Dockerizing the Stack",
+      "duration": "2h",
+      "learningObjective": "Containerize FastAPI + Postgres + Redis together.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Compose the full stack",
+        "Run migrations in a container"
+      ],
+      "tasks": [
+        "Learn: Dockerizing the Stack (45 min)",
+        "Code: apply dockerizing the stack in practice (45 min)",
+        "Notes + GitHub commit for Day 100 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Where do migrations run?",
+        "How do you wait for the DB?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 101,
+      "title": "Multi-stage Builds",
+      "duration": "2h",
+      "learningObjective": "Shrink images with multi-stage builds.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add a builder stage",
+        "Copy only artifacts to final stage"
+      ],
+      "tasks": [
+        "Learn: Multi-stage Builds (45 min)",
+        "Code: apply multi-stage builds in practice (45 min)",
+        "Notes + GitHub commit for Day 101 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why use multi-stage builds?",
+        "What goes in the final image?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 102,
+      "title": "Image Optimization",
+      "duration": "2h",
+      "learningObjective": "Reduce image size and build time.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Use a slim base image",
+        "Leverage layer caching"
+      ],
+      "tasks": [
+        "Learn: Image Optimization (45 min)",
+        "Code: apply image optimization in practice (45 min)",
+        "Notes + GitHub commit for Day 102 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you cut image size?",
+        "What breaks layer caching?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 103,
+      "title": "Docker Registry & Push",
+      "duration": "2h",
+      "learningObjective": "Push images to a registry.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Push to Docker Hub or GHCR",
+        "Pull on another machine"
+      ],
+      "tasks": [
+        "Learn: Docker Registry & Push (45 min)",
+        "Code: apply docker registry & push in practice (45 min)",
+        "Notes + GitHub commit for Day 103 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a registry?",
+        "How do you authenticate to a registry?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 104,
+      "title": "Logging & Debugging",
+      "duration": "4h",
+      "learningObjective": "Inspect logs and debug containers.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Read logs and exec into a container",
+        "Debug a crash loop"
+      ],
+      "tasks": [
+        "Learn: Logging & Debugging (45 min)",
+        "Code: apply logging & debugging in practice (45 min)",
+        "Notes + GitHub commit for Day 104 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you view container logs?",
+        "How do you exec into a container?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 105,
+      "title": "Kubernetes Concepts",
+      "duration": "4h",
+      "learningObjective": "Understand the K8s control plane and objects.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Diagram the cluster components",
+        "Read a manifest"
+      ],
+      "tasks": [
+        "Learn: Kubernetes Concepts (45 min)",
+        "Code: apply kubernetes concepts in practice (45 min)",
+        "Notes + GitHub commit for Day 105 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is the control plane?",
+        "What is a node?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 106,
+      "title": "kubectl & Minikube",
+      "duration": "2h",
+      "learningObjective": "Set up a local cluster and use kubectl.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Start Minikube",
+        "Run kubectl get/describe"
+      ],
+      "tasks": [
+        "Learn: kubectl & Minikube (45 min)",
+        "Code: apply kubectl & minikube in practice (45 min)",
+        "Notes + GitHub commit for Day 106 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does kubectl do?",
+        "What is a kubeconfig?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 107,
+      "title": "Pods",
+      "duration": "2h",
+      "learningObjective": "Deploy and inspect the smallest unit, the Pod.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a pod from YAML",
+        "Get logs and exec in"
+      ],
+      "tasks": [
+        "Learn: Pods (45 min)",
+        "Code: apply pods in practice (45 min)",
+        "Notes + GitHub commit for Day 107 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a Pod?",
+        "Why not run pods directly in prod?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 108,
+      "title": "Deployments & ReplicaSets",
+      "duration": "2h",
+      "learningObjective": "Manage stateless apps with Deployments.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a Deployment",
+        "Scale replicas"
+      ],
+      "tasks": [
+        "Learn: Deployments & ReplicaSets (45 min)",
+        "Code: apply deployments & replicasets in practice (45 min)",
+        "Notes + GitHub commit for Day 108 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does a Deployment manage?",
+        "What is a ReplicaSet?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 109,
+      "title": "Services",
+      "duration": "2h",
+      "learningObjective": "Expose pods with ClusterIP/NodePort/LoadBalancer.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Expose a Deployment with a Service",
+        "Reach it via DNS"
+      ],
+      "tasks": [
+        "Learn: Services (45 min)",
+        "Code: apply services in practice (45 min)",
+        "Notes + GitHub commit for Day 109 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Service types?",
+        "How does service discovery work?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 110,
+      "title": "ConfigMaps & Secrets",
+      "duration": "2h",
+      "learningObjective": "Externalize config and secrets.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a ConfigMap",
+        "Mount a Secret as env"
+      ],
+      "tasks": [
+        "Learn: ConfigMaps & Secrets (45 min)",
+        "Code: apply configmaps & secrets in practice (45 min)",
+        "Notes + GitHub commit for Day 110 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "ConfigMap vs Secret?",
+        "Are Secrets encrypted by default?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 111,
+      "title": "Volumes & PersistentVolumes",
+      "duration": "4h",
+      "learningObjective": "Persist state with PV/PVC.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a PVC",
+        "Mount it in a pod"
+      ],
+      "tasks": [
+        "Learn: Volumes & PersistentVolumes (45 min)",
+        "Code: apply volumes & persistentvolumes in practice (45 min)",
+        "Notes + GitHub commit for Day 111 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a PVC?",
+        "How does dynamic provisioning work?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 112,
+      "title": "Ingress",
+      "duration": "4h",
+      "learningObjective": "Route external HTTP traffic with Ingress.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add an Ingress rule",
+        "Route by path/host"
+      ],
+      "tasks": [
+        "Learn: Ingress (45 min)",
+        "Code: apply ingress in practice (45 min)",
+        "Notes + GitHub commit for Day 112 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Ingress vs LoadBalancer Service?",
+        "What is an ingress controller?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 113,
+      "title": "Namespaces & Resource Limits",
+      "duration": "2h",
+      "learningObjective": "Isolate workloads and set requests/limits.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create a namespace",
+        "Set CPU/memory limits"
+      ],
+      "tasks": [
+        "Learn: Namespaces & Resource Limits (45 min)",
+        "Code: apply namespaces & resource limits in practice (45 min)",
+        "Notes + GitHub commit for Day 113 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why set resource limits?",
+        "requests vs limits?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 114,
+      "title": "Health Checks",
+      "duration": "2h",
+      "learningObjective": "Add liveness and readiness probes.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add probes to a Deployment",
+        "Watch pods restart"
+      ],
+      "tasks": [
+        "Learn: Health Checks (45 min)",
+        "Code: apply health checks in practice (45 min)",
+        "Notes + GitHub commit for Day 114 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Liveness vs readiness?",
+        "What happens when a probe fails?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 115,
+      "title": "Horizontal Pod Autoscaling",
+      "duration": "2h",
+      "learningObjective": "Scale pods on CPU/metrics.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add an HPA",
+        "Load test to trigger scaling"
+      ],
+      "tasks": [
+        "Learn: Horizontal Pod Autoscaling (45 min)",
+        "Code: apply horizontal pod autoscaling in practice (45 min)",
+        "Notes + GitHub commit for Day 115 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How does HPA decide to scale?",
+        "What metrics can it use?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 116,
+      "title": "Helm Basics",
+      "duration": "2h",
+      "learningObjective": "Package K8s apps with Helm charts.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Install a chart",
+        "Template values"
+      ],
+      "tasks": [
+        "Learn: Helm Basics (45 min)",
+        "Code: apply helm basics in practice (45 min)",
+        "Notes + GitHub commit for Day 116 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What problem does Helm solve?",
+        "What is a values file?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 117,
+      "title": "Deploying the App to K8s",
+      "duration": "2h",
+      "learningObjective": "Deploy FastAPI + Postgres + Redis to the cluster.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write manifests for the stack",
+        "Verify with kubectl"
+      ],
+      "tasks": [
+        "Learn: Deploying the App to K8s (45 min)",
+        "Code: apply deploying the app to k8s in practice (45 min)",
+        "Notes + GitHub commit for Day 117 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you deploy a stateful DB?",
+        "How do apps read secrets?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 118,
+      "title": "Rolling Updates & Rollbacks",
+      "duration": "4h",
+      "learningObjective": "Ship changes without downtime.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Trigger a rolling update",
+        "Roll back a bad deploy"
+      ],
+      "tasks": [
+        "Learn: Rolling Updates & Rollbacks (45 min)",
+        "Code: apply rolling updates & rollbacks in practice (45 min)",
+        "Notes + GitHub commit for Day 118 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do rolling updates work?",
+        "How do you roll back?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 119,
+      "title": "Monitoring Basics",
+      "duration": "4h",
+      "learningObjective": "Observe cluster and app health.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "View metrics and events",
+        "Read pod resource usage"
+      ],
+      "tasks": [
+        "Learn: Monitoring Basics (45 min)",
+        "Code: apply monitoring basics in practice (45 min)",
+        "Notes + GitHub commit for Day 119 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What do you monitor in K8s?",
+        "What is kube-state-metrics?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 120,
+      "title": "Project: Orchestrated App",
+      "duration": "2h",
+      "learningObjective": "Ship the full stack running on Kubernetes.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Finalize manifests/Helm chart",
+        "Document the deploy"
+      ],
+      "tasks": [
+        "Learn: Project: Orchestrated App (45 min)",
+        "Code: apply project: orchestrated app in practice (45 min)",
+        "Notes + GitHub commit for Day 120 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Walk through your deployment.",
+        "How does it scale and recover?"
+      ],
+      "notes": "",
+      "completed": false
+    }
+  ]
+}

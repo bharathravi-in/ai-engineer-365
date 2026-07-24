@@ -23,6 +23,21 @@ ai-engineer-365/
 - Resource library for official docs, books, practice websites, and cheat sheets.
 - Markdown notes editor with live preview.
 - Monthly project tracker with PRD, architecture, tech stack, tasks, progress, and GitHub link fields.
+- **Add Entry** page: a small UI to add new planner days and months without editing JSON by hand.
+- Local persistence: added days/months, completion state, and notes are saved to the browser (localStorage) and survive reloads.
+- JSON export/import: download any month as `month-XX.json` to commit under `planner/`, or import an existing month file.
+
+## Adding planner content and pushing it to the repo
+
+The repository JSON files under `planner/` are the source of truth. The dashboard layers anything you add through the UI on top of them, so you can build the plan interactively and then commit it:
+
+1. Open the **Add Entry** page in the app.
+2. Add a day (pick its month + day number) or a whole month with its project brief.
+3. Your additions persist locally and immediately appear across the Dashboard, Planner, Notes, and Projects pages.
+4. In the **Export & sync** panel, download the relevant `month-XX.json`.
+5. Move the file into `planner/` and commit it, e.g. `feat(day-004): add PostgreSQL indexing plan`.
+
+Use **Reset local changes** to clear local additions; committed JSON is never touched.
 
 ## Tech stack
 
@@ -31,7 +46,7 @@ ai-engineer-365/
 - State: Zustand
 - Charts: Recharts
 - Markdown: react-markdown
-- Storage: JSON now, Supabase later
+- Storage: JSON files + browser localStorage now, Supabase later
 
 ## Run locally
 

@@ -1,0 +1,777 @@
+{
+  "month": 5,
+  "title": "AI Fundamentals + LLMs",
+  "goal": "Understand modern AI/ML and build applications on large language models.",
+  "project": {
+    "name": "AI Chatbot",
+    "prd": "A chatbot with system prompts, streaming, tool calling, and conversation memory over the Claude API.",
+    "architecture": "FastAPI backend calling the Claude API with streaming and tools; React chat frontend.",
+    "techStack": [
+      "Python",
+      "Claude API",
+      "FastAPI",
+      "NumPy",
+      "Pandas"
+    ],
+    "tasks": [
+      "Define scope",
+      "Build core features",
+      "Test and document",
+      "Ship and push to GitHub"
+    ],
+    "progress": 0,
+    "githubUrl": ""
+  },
+  "days": [
+    {
+      "day": 121,
+      "title": "What is AI / ML / DL",
+      "duration": "2h",
+      "learningObjective": "Distinguish AI, machine learning, and deep learning.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Map real products to categories",
+        "Summarize the ML workflow"
+      ],
+      "tasks": [
+        "Learn: What is AI / ML / DL (45 min)",
+        "Code: apply what is ai / ml / dl in practice (45 min)",
+        "Notes + GitHub commit for Day 121 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "ML vs deep learning?",
+        "What is a model?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 122,
+      "title": "NumPy Essentials",
+      "duration": "2h",
+      "learningObjective": "Work with arrays and vectorized operations.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Create and reshape arrays",
+        "Vectorize a loop"
+      ],
+      "tasks": [
+        "Learn: NumPy Essentials (45 min)",
+        "Code: apply numpy essentials in practice (45 min)",
+        "Notes + GitHub commit for Day 122 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why is NumPy fast?",
+        "What is broadcasting?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 123,
+      "title": "Pandas Essentials",
+      "duration": "2h",
+      "learningObjective": "Load and manipulate tabular data.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Load a CSV into a DataFrame",
+        "Filter and group rows"
+      ],
+      "tasks": [
+        "Learn: Pandas Essentials (45 min)",
+        "Code: apply pandas essentials in practice (45 min)",
+        "Notes + GitHub commit for Day 123 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Series vs DataFrame?",
+        "How do you group and aggregate?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 124,
+      "title": "Data Cleaning & EDA",
+      "duration": "2h",
+      "learningObjective": "Explore and clean a dataset.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Handle missing values",
+        "Plot distributions"
+      ],
+      "tasks": [
+        "Learn: Data Cleaning & EDA (45 min)",
+        "Code: apply data cleaning & eda in practice (45 min)",
+        "Notes + GitHub commit for Day 124 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you handle NaNs?",
+        "What is EDA?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 125,
+      "title": "ML Concepts",
+      "duration": "4h",
+      "learningObjective": "Understand supervised vs unsupervised learning.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Classify example tasks",
+        "Pick features for a problem"
+      ],
+      "tasks": [
+        "Learn: ML Concepts (45 min)",
+        "Code: apply ml concepts in practice (45 min)",
+        "Notes + GitHub commit for Day 125 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Classification vs regression?",
+        "What is clustering?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 126,
+      "title": "Training, Metrics, Overfitting",
+      "duration": "4h",
+      "learningObjective": "Split data and evaluate models.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Do a train/test split",
+        "Compute accuracy/precision/recall"
+      ],
+      "tasks": [
+        "Learn: Training, Metrics, Overfitting (45 min)",
+        "Code: apply training, metrics, overfitting in practice (45 min)",
+        "Notes + GitHub commit for Day 126 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is overfitting?",
+        "Precision vs recall?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 127,
+      "title": "Neural Network Intuition",
+      "duration": "2h",
+      "learningObjective": "Build intuition for how neural nets learn.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Sketch a simple network",
+        "Explain gradient descent in words"
+      ],
+      "tasks": [
+        "Learn: Neural Network Intuition (45 min)",
+        "Code: apply neural network intuition in practice (45 min)",
+        "Notes + GitHub commit for Day 127 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a weight?",
+        "What is backpropagation (intuition)?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 128,
+      "title": "Embeddings Explained",
+      "duration": "2h",
+      "learningObjective": "Understand vector embeddings of meaning.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Embed a few sentences",
+        "Compare similarity"
+      ],
+      "tasks": [
+        "Learn: Embeddings Explained (45 min)",
+        "Code: apply embeddings explained in practice (45 min)",
+        "Notes + GitHub commit for Day 128 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is an embedding?",
+        "Why are similar items close in vector space?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 129,
+      "title": "Transformers & Attention",
+      "duration": "2h",
+      "learningObjective": "Grasp the intuition behind attention.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Explain attention in your words",
+        "Diagram a transformer block"
+      ],
+      "tasks": [
+        "Learn: Transformers & Attention (45 min)",
+        "Code: apply transformers & attention in practice (45 min)",
+        "Notes + GitHub commit for Day 129 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does attention do?",
+        "Why did transformers replace RNNs?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 130,
+      "title": "What are LLMs",
+      "duration": "2h",
+      "learningObjective": "Understand how LLMs are trained and used.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "List LLM capabilities and limits",
+        "Compare model sizes"
+      ],
+      "tasks": [
+        "Learn: What are LLMs (45 min)",
+        "Code: apply what are llms in practice (45 min)",
+        "Notes + GitHub commit for Day 130 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How is an LLM trained?",
+        "What is a base vs instruct model?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 131,
+      "title": "Tokenization",
+      "duration": "2h",
+      "learningObjective": "See how text becomes tokens.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Tokenize sample text",
+        "Count tokens for a prompt"
+      ],
+      "tasks": [
+        "Learn: Tokenization (45 min)",
+        "Code: apply tokenization in practice (45 min)",
+        "Notes + GitHub commit for Day 131 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a token?",
+        "Why do tokens matter for cost?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 132,
+      "title": "Calling the Claude API",
+      "duration": "4h",
+      "learningObjective": "Send your first Messages API request.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Call the Claude API",
+        "Parse the response"
+      ],
+      "tasks": [
+        "Learn: Calling the Claude API (45 min)",
+        "Code: apply calling the claude api in practice (45 min)",
+        "Notes + GitHub commit for Day 132 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is the Messages API?",
+        "What is a role in a message?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 133,
+      "title": "Prompt Engineering Basics",
+      "duration": "4h",
+      "learningObjective": "Write clear, effective prompts.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Rewrite a vague prompt",
+        "Add explicit instructions"
+      ],
+      "tasks": [
+        "Learn: Prompt Engineering Basics (45 min)",
+        "Code: apply prompt engineering basics in practice (45 min)",
+        "Notes + GitHub commit for Day 133 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What makes a prompt effective?",
+        "Why give examples?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 134,
+      "title": "System Prompts & Roles",
+      "duration": "2h",
+      "learningObjective": "Steer behavior with a system prompt.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write a system prompt for a persona",
+        "Test role separation"
+      ],
+      "tasks": [
+        "Learn: System Prompts & Roles (45 min)",
+        "Code: apply system prompts & roles in practice (45 min)",
+        "Notes + GitHub commit for Day 134 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a system prompt?",
+        "user vs assistant roles?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 135,
+      "title": "Few-shot & Chain-of-thought",
+      "duration": "2h",
+      "learningObjective": "Improve results with examples and reasoning.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add few-shot examples",
+        "Ask for step-by-step reasoning"
+      ],
+      "tasks": [
+        "Learn: Few-shot & Chain-of-thought (45 min)",
+        "Code: apply few-shot & chain-of-thought in practice (45 min)",
+        "Notes + GitHub commit for Day 135 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is few-shot prompting?",
+        "When does CoT help?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 136,
+      "title": "Structured Output",
+      "duration": "2h",
+      "learningObjective": "Get reliable JSON or typed output.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Force JSON output",
+        "Validate against a schema"
+      ],
+      "tasks": [
+        "Learn: Structured Output (45 min)",
+        "Code: apply structured output in practice (45 min)",
+        "Notes + GitHub commit for Day 136 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you get reliable JSON?",
+        "Why validate model output?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 137,
+      "title": "Sampling Parameters",
+      "duration": "2h",
+      "learningObjective": "Control randomness with temperature and top-p.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Compare temperatures",
+        "Set max tokens"
+      ],
+      "tasks": [
+        "Learn: Sampling Parameters (45 min)",
+        "Code: apply sampling parameters in practice (45 min)",
+        "Notes + GitHub commit for Day 137 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What does temperature do?",
+        "What is top-p?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 138,
+      "title": "Tool / Function Calling",
+      "duration": "2h",
+      "learningObjective": "Let the model call your tools.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Define a tool schema",
+        "Handle a tool call"
+      ],
+      "tasks": [
+        "Learn: Tool / Function Calling (45 min)",
+        "Code: apply tool / function calling in practice (45 min)",
+        "Notes + GitHub commit for Day 138 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How does tool calling work?",
+        "Who executes the tool?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 139,
+      "title": "Streaming Responses",
+      "duration": "4h",
+      "learningObjective": "Stream tokens for responsive UX.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Stream a completion",
+        "Render tokens as they arrive"
+      ],
+      "tasks": [
+        "Learn: Streaming Responses (45 min)",
+        "Code: apply streaming responses in practice (45 min)",
+        "Notes + GitHub commit for Day 139 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why stream responses?",
+        "How do you handle stream errors?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 140,
+      "title": "Context Windows & Budgeting",
+      "duration": "4h",
+      "learningObjective": "Manage the context window and token budget.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Trim history to fit context",
+        "Estimate token usage"
+      ],
+      "tasks": [
+        "Learn: Context Windows & Budgeting (45 min)",
+        "Code: apply context windows & budgeting in practice (45 min)",
+        "Notes + GitHub commit for Day 140 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is a context window?",
+        "What happens when you exceed it?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 141,
+      "title": "Prompt Caching",
+      "duration": "2h",
+      "learningObjective": "Cache repeated prompt prefixes to cut cost/latency.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Mark a cacheable prefix",
+        "Measure savings"
+      ],
+      "tasks": [
+        "Learn: Prompt Caching (45 min)",
+        "Code: apply prompt caching in practice (45 min)",
+        "Notes + GitHub commit for Day 141 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is prompt caching?",
+        "When does it help most?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 142,
+      "title": "Handling Hallucinations",
+      "duration": "2h",
+      "learningObjective": "Reduce and detect fabricated answers.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add grounding instructions",
+        "Ask the model to cite/abstain"
+      ],
+      "tasks": [
+        "Learn: Handling Hallucinations (45 min)",
+        "Code: apply handling hallucinations in practice (45 min)",
+        "Notes + GitHub commit for Day 142 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Why do LLMs hallucinate?",
+        "How do you reduce hallucinations?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 143,
+      "title": "Cost & Latency Optimization",
+      "duration": "2h",
+      "learningObjective": "Balance quality, cost, and speed.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Pick a model per task",
+        "Cut prompt size"
+      ],
+      "tasks": [
+        "Learn: Cost & Latency Optimization (45 min)",
+        "Code: apply cost & latency optimization in practice (45 min)",
+        "Notes + GitHub commit for Day 143 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you choose a model tier?",
+        "What drives cost?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 144,
+      "title": "Multimodal Basics",
+      "duration": "2h",
+      "learningObjective": "Send images to a vision-capable model.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Send an image + question",
+        "Extract text from an image"
+      ],
+      "tasks": [
+        "Learn: Multimodal Basics (45 min)",
+        "Code: apply multimodal basics in practice (45 min)",
+        "Notes + GitHub commit for Day 144 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What is multimodal input?",
+        "When use vision models?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 145,
+      "title": "Safety & Guardrails",
+      "duration": "2h",
+      "learningObjective": "Add moderation and safety guardrails.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Filter unsafe input/output",
+        "Add a refusal path"
+      ],
+      "tasks": [
+        "Learn: Safety & Guardrails (45 min)",
+        "Code: apply safety & guardrails in practice (45 min)",
+        "Notes + GitHub commit for Day 145 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What are guardrails?",
+        "How do you moderate content?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 146,
+      "title": "LLM Evaluation Basics",
+      "duration": "4h",
+      "learningObjective": "Measure output quality systematically.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Write 5 eval cases",
+        "Score outputs against expectations"
+      ],
+      "tasks": [
+        "Learn: LLM Evaluation Basics (45 min)",
+        "Code: apply llm evaluation basics in practice (45 min)",
+        "Notes + GitHub commit for Day 146 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you evaluate an LLM feature?",
+        "What is an eval set?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 147,
+      "title": "Building a Chat Loop",
+      "duration": "4h",
+      "learningObjective": "Assemble a multi-turn chat backend.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Maintain message history",
+        "Stream responses to a client"
+      ],
+      "tasks": [
+        "Learn: Building a Chat Loop (45 min)",
+        "Code: apply building a chat loop in practice (45 min)",
+        "Notes + GitHub commit for Day 147 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you manage turn history?",
+        "How do you cap history length?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 148,
+      "title": "Conversation Memory",
+      "duration": "2h",
+      "learningObjective": "Persist and summarize conversation state.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Store history per session",
+        "Summarize old turns"
+      ],
+      "tasks": [
+        "Learn: Conversation Memory (45 min)",
+        "Code: apply conversation memory in practice (45 min)",
+        "Notes + GitHub commit for Day 148 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "How do you handle long chats?",
+        "What is memory summarization?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 149,
+      "title": "Chatbot UX Patterns",
+      "duration": "2h",
+      "learningObjective": "Design good chat interactions.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Add loading/streaming states",
+        "Handle errors gracefully"
+      ],
+      "tasks": [
+        "Learn: Chatbot UX Patterns (45 min)",
+        "Code: apply chatbot ux patterns in practice (45 min)",
+        "Notes + GitHub commit for Day 149 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "What makes chat UX good?",
+        "How do you show tool use?"
+      ],
+      "notes": "",
+      "completed": false
+    },
+    {
+      "day": 150,
+      "title": "Project: AI Chatbot",
+      "duration": "2h",
+      "learningObjective": "Ship a streaming chatbot with tools and memory.",
+      "videos": [],
+      "docs": [],
+      "reading": [],
+      "practice": [
+        "Finalize backend and frontend",
+        "Add a few tools"
+      ],
+      "tasks": [
+        "Learn: Project: AI Chatbot (45 min)",
+        "Code: apply project: ai chatbot in practice (45 min)",
+        "Notes + GitHub commit for Day 150 (30 min)"
+      ],
+      "miniProject": "",
+      "interviewQuestions": [
+        "Walk through a chat request.",
+        "How does tool calling work here?"
+      ],
+      "notes": "",
+      "completed": false
+    }
+  ]
+}
