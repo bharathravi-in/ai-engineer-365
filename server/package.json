@@ -1,0 +1,25 @@
+{
+  "name": "ai-engineer-365-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Node.js API that sits between the React app and Supabase. Holds the service-role key and re-enforces all authorization rules.",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.110.8",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^24.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.9.0"
+  }
+}
