@@ -9,18 +9,22 @@
     "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "typescript": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "@mui/material": "latest",
-    "@emotion/react": "latest",
-    "@emotion/styled": "latest",
-    "zustand": "latest",
-    "recharts": "latest",
-    "react-markdown": "latest",
-    "@mui/icons-material": "latest"
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9.2.0",
+    "@mui/material": "^9.2.0",
+    "@supabase/supabase-js": "^2.110.8",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "recharts": "^3.10.0",
+    "zustand": "^5.0.14"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.0.4",
+    "typescript": "^5.9.0",
+    "vite": "^8.1.5"
+  }
 }
