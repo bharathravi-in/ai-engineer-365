@@ -1,0 +1,36 @@
+# One-click free deploy on Render (https://render.com).
+# Render → New → Blueprint → connect this repo. It builds the Dockerfile (which
+# bundles the React app into the API) and serves everything at a free
+# https://<name>.onrender.com subdomain. Set the `sync:false` values in the
+# Render dashboard (they are secrets / project-specific). Render passes env vars
+# to the Docker build, so the VITE_* values are baked into the frontend.
+#
+# Note: the free web-service plan sleeps after ~15 min idle (≈30s cold start).
+services:
+  - type: web
+    name: skillmap
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 8787
+      # Public (baked into the frontend build):
+      - key: VITE_SUPABASE_URL
+        sync: false
+      - key: VITE_SUPABASE_ANON_KEY
+        sync: false
+      - key: VITE_API_URL
+        value: /api
+      # Server-only secrets:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      # Set to your Render URL, e.g. https://skillmap.onrender.com
+      - key: CORS_ORIGIN
+        sync: false
