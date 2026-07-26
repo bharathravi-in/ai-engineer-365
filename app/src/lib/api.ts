@@ -1,5 +1,4 @@
 import { supabase } from './supabase';
-import type { DayRow, MonthRow, PlanStatus, dayModelToRow } from './mappers';
 
 /**
  * Base URL of the Node API. In dev this defaults to '/api', which the Vite dev
@@ -40,90 +39,108 @@ async function apiFetch<T>(path: string, opts: RequestInit = {}): Promise<T> {
 }
 
 // -------------------------------------------------------------------------
-// Plans (public / admin-aware, resolved server-side from the JWT)
-// -------------------------------------------------------------------------
-export function getPlans() {
-  return apiFetch<{ months: MonthRow[]; days: DayRow[] }>('/plans');
-}
-
-// -------------------------------------------------------------------------
-// Current user
+// Current user profile (drives the admin gate)
 // -------------------------------------------------------------------------
 export type MeProfile = { id: string; email: string | null; is_admin: boolean };
-
 export function getMe() {
   return apiFetch<MeProfile>('/me');
 }
 
-export function getMyState() {
-  return apiFetch<{
-    progress: Array<{ day_number: number; completed: boolean }>;
-    notes: Array<{ day_number: number; content: string }>;
-  }>('/me/state');
-}
+// -------------------------------------------------------------------------
+// Tracks (multi-track roadmap platform)
+// -------------------------------------------------------------------------
+export type Resource = { kind: string; title: string; url: string };
+export type TrackSummary = {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: string;
+  color: string;
+  difficulty: string;
+  module_count: number;
+  topic_count: number;
+  total_hours: number;
+};
+export type Topic = {
+  id: string;
+  module_id: string;
+  slug: string;
+  title: string;
+  description: string;
+  est_hours: number;
+  resources: Resource[];
+  sort_order: number;
+};
+export type Module = { id: string; slug: string; title: string; goal: string; sort_order: number; topics: Topic[] };
+export type TrackDetail = { track: Omit<TrackSummary, 'module_count' | 'topic_count' | 'total_hours'>; modules: Module[] };
+export type Enrollment = {
+  track_id: string;
+  start_date: string;
+  weekday_hours: number;
+  weekend_hours: number;
+};
 
-export function putProgress(day: number, completed: boolean) {
-  return apiFetch<{ ok: true }>(`/me/progress/${day}`, {
+export function getTracks() {
+  return apiFetch<{ tracks: TrackSummary[] }>('/tracks');
+}
+export function getTrack(slug: string) {
+  return apiFetch<TrackDetail>(`/tracks/${slug}`);
+}
+export function getMyEnrollments() {
+  return apiFetch<{ enrollments: Enrollment[] }>('/tracks/me/enrollments');
+}
+export function enrollInTrack(body: Enrollment) {
+  return apiFetch<{ ok: true }>('/tracks/enroll', { method: 'POST', body: JSON.stringify(body) });
+}
+export function leaveTrack(trackId: string) {
+  return apiFetch<{ ok: true }>(`/tracks/enroll/${trackId}`, { method: 'DELETE' });
+}
+export function getTrackState(trackId: string) {
+  return apiFetch<{
+    progress: Array<{ topic_id: string; completed: boolean }>;
+    notes: Array<{ topic_id: string; content: string }>;
+  }>(`/tracks/me/state/${trackId}`);
+}
+export function putTopicProgress(topicId: string, completed: boolean) {
+  return apiFetch<{ ok: true }>(`/tracks/me/progress/${topicId}`, {
     method: 'PUT',
     body: JSON.stringify({ completed }),
   });
 }
-
-export function putNote(day: number, content: string) {
-  return apiFetch<{ ok: true }>(`/me/notes/${day}`, {
+export function putTopicNote(topicId: string, content: string) {
+  return apiFetch<{ ok: true }>(`/tracks/me/notes/${topicId}`, {
     method: 'PUT',
     body: JSON.stringify({ content }),
   });
 }
 
 // -------------------------------------------------------------------------
-// Admin CRUD
+// Admin: author study plans (tracks / modules / topics)
 // -------------------------------------------------------------------------
-export type MonthInputBody = {
-  month_number: number;
-  title: string;
-  goal: string;
-  project: unknown;
-  status: PlanStatus;
-};
-
-export function adminSaveMonth(body: MonthInputBody) {
-  return apiFetch<{ ok: true }>('/admin/months', {
-    method: 'POST',
-    body: JSON.stringify(body),
-  });
+export function adminSaveTrack(body: Record<string, unknown>) {
+  return apiFetch<{ ok: true }>('/tracks/admin/track', { method: 'POST', body: JSON.stringify(body) });
 }
-
-/** dayRow is the mappers.ts dayModelToRow() output; caller adds month/status. */
-export function adminSaveDay(
-  monthNumber: number,
-  dayRow: ReturnType<typeof dayModelToRow>,
-  status: PlanStatus,
-) {
-  return apiFetch<{ ok: true }>('/admin/days', {
-    method: 'POST',
-    body: JSON.stringify({ ...dayRow, month_number: monthNumber, status }),
-  });
+export function adminDeleteTrack(id: string) {
+  return apiFetch<{ ok: true }>(`/tracks/admin/track/${id}`, { method: 'DELETE' });
 }
-
-export function adminSetMonthStatus(monthNumber: number, status: PlanStatus) {
-  return apiFetch<{ ok: true }>(`/admin/months/${monthNumber}/status`, {
-    method: 'PATCH',
-    body: JSON.stringify({ status }),
-  });
+export function adminSaveModule(body: Record<string, unknown>) {
+  return apiFetch<{ ok: true }>('/tracks/admin/module', { method: 'POST', body: JSON.stringify(body) });
 }
-
-export function adminSetDayStatus(dayNumber: number, status: PlanStatus) {
-  return apiFetch<{ ok: true }>(`/admin/days/${dayNumber}/status`, {
-    method: 'PATCH',
-    body: JSON.stringify({ status }),
-  });
+export function adminDeleteModule(id: string) {
+  return apiFetch<{ ok: true }>(`/tracks/admin/module/${id}`, { method: 'DELETE' });
 }
-
-export function adminDeleteDay(dayNumber: number) {
-  return apiFetch<{ ok: true }>(`/admin/days/${dayNumber}`, { method: 'DELETE' });
+export function adminSaveTopic(body: Record<string, unknown>) {
+  return apiFetch<{ ok: true }>('/tracks/admin/topic', { method: 'POST', body: JSON.stringify(body) });
 }
-
-export function adminDeleteMonth(monthNumber: number) {
-  return apiFetch<{ ok: true }>(`/admin/months/${monthNumber}`, { method: 'DELETE' });
+export function adminDeleteTopic(id: string) {
+  return apiFetch<{ ok: true }>(`/tracks/admin/topic/${id}`, { method: 'DELETE' });
+}
+/** Create a whole track (modules + topics + resources) from one JSON document. */
+export function adminImportTrack(body: unknown) {
+  return apiFetch<{ ok: true; slug: string; modules: number; topics: number }>(
+    '/tracks/admin/import',
+    { method: 'POST', body: JSON.stringify(body) },
+  );
 }

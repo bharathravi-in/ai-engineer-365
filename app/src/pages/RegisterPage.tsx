@@ -3,27 +3,33 @@ import { Alert, Button, Divider, Stack, TextField } from '@mui/material';
 import { useDashboardStore } from '../store';
 import AuthLayout from '../components/AuthLayout';
 
-/** Standalone, full-page sign-in screen (no app sidebar). */
-export default function LoginPage() {
-  const signIn = useDashboardStore((s) => s.signIn);
+/** Standalone, full-page registration screen (no app sidebar). */
+export default function RegisterPage() {
+  const signUp = useDashboardStore((s) => s.signUp);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [busy, setBusy] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [message, setMessage] = useState<{ type: 'error' | 'success'; text: string } | null>(null);
 
   const submit = async () => {
     setBusy(true);
-    setError(null);
-    const { error } = await signIn(email.trim(), password);
+    setMessage(null);
+    const { error } = await signUp(email.trim(), password);
     setBusy(false);
-    if (error) setError(error);
-    else window.location.hash = 'dashboard'; // onAuthStateChange loads the user's progress
+    if (error) {
+      setMessage({ type: 'error', text: error });
+    } else {
+      setMessage({
+        type: 'success',
+        text: 'Account created. If email confirmation is enabled, confirm via the email we sent, then sign in.',
+      });
+    }
   };
 
   return (
-    <AuthLayout title="Sign in" subtitle="Sign in to track your progress and save notes across devices.">
+    <AuthLayout title="Create your account" subtitle="Register to start tracking your 360-day roadmap.">
       <Stack spacing={2} component="form" onSubmit={(e) => { e.preventDefault(); void submit(); }}>
-        {error && <Alert severity="error">{error}</Alert>}
+        {message && <Alert severity={message.type}>{message.text}</Alert>}
         <TextField
           label="Email"
           type="email"
@@ -41,14 +47,15 @@ export default function LoginPage() {
           onChange={(e) => setPassword(e.target.value)}
           fullWidth
           required
-          autoComplete="current-password"
+          autoComplete="new-password"
+          helperText="At least 6 characters."
         />
         <Button type="submit" variant="contained" size="large" disabled={busy || !email || !password}>
-          {busy ? 'Signing in…' : 'Sign in'}
+          {busy ? 'Creating account…' : 'Sign up'}
         </Button>
-        <Divider>New here?</Divider>
-        <Button href="#register" variant="outlined">
-          Create an account
+        <Divider>Already registered?</Divider>
+        <Button href="#login" variant="outlined">
+          Sign in instead
         </Button>
       </Stack>
     </AuthLayout>

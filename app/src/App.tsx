@@ -1,11 +1,10 @@
-import { useEffect, useMemo, useState, type ReactElement } from 'react';
+import { lazy, Suspense, useEffect, useMemo, useState, type ReactElement } from 'react';
 import {
   AppBar,
   Box,
-  Chip,
+  CircularProgress,
   Container,
   CssBaseline,
-  Divider,
   Drawer,
   IconButton,
   List,
@@ -19,82 +18,59 @@ import {
   Typography,
   useMediaQuery,
 } from '@mui/material';
-import DashboardIcon from '@mui/icons-material/Dashboard';
+import ExploreIcon from '@mui/icons-material/Explore';
+import MapIcon from '@mui/icons-material/Map';
 import EventNoteIcon from '@mui/icons-material/EventNote';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
-import NotesIcon from '@mui/icons-material/Notes';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
 import DarkModeIcon from '@mui/icons-material/DarkModeOutlined';
 import LightModeIcon from '@mui/icons-material/LightModeOutlined';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import DashboardPage from './pages/DashboardPage';
-import PlannerPage from './pages/PlannerPage';
-import MonthsPage from './pages/MonthsPage';
-import ResourceLibraryPage from './pages/ResourceLibraryPage';
-import NotesPage from './pages/NotesPage';
-import ProjectsPage from './pages/ProjectsPage';
-import PlannerEditorPage from './pages/PlannerEditorPage';
-import AdminPage from './pages/AdminPage';
-import LoginPage from './pages/LoginPage';
 import { buildTheme } from './theme';
 import { useDashboardStore, useIsAdmin } from './store';
+import { useTrackStore } from './trackStore';
+import ErrorBoundary from './components/ErrorBoundary';
+
+// Route-level code splitting: each page is its own chunk, loaded on demand.
+const TracksCatalogPage = lazy(() => import('./pages/TracksCatalogPage'));
+const TrackRoadmapPage = lazy(() => import('./pages/TrackRoadmapPage'));
+const PlannerSchedulePage = lazy(() => import('./pages/PlannerSchedulePage'));
+const AdminTracksPage = lazy(() => import('./pages/AdminTracksPage'));
+const LoginPage = lazy(() => import('./pages/LoginPage'));
+const RegisterPage = lazy(() => import('./pages/RegisterPage'));
+const AccountPage = lazy(() => import('./pages/AccountPage'));
+
+const Loading = () => (
+  <Box sx={{ display: 'grid', placeItems: 'center', minHeight: '50vh' }}>
+    <CircularProgress />
+  </Box>
+);
 
 const drawerWidth = 264;
+const APP_NAME = 'SkillMap';
 
-type RouteId =
-  | 'dashboard'
-  | 'planner'
-  | 'months'
-  | 'add'
-  | 'resources'
-  | 'notes'
-  | 'projects'
-  | 'admin'
-  | 'account';
+type RouteId = 'catalog' | 'track' | 'planner' | 'account' | 'admin' | 'login' | 'register';
+const baseIds: RouteId[] = ['catalog', 'track', 'planner', 'account', 'admin', 'login', 'register'];
+const authRouteIds: RouteId[] = ['login', 'register'];
 
-type Section = { id: RouteId; label: string; icon: ReactElement };
-
-const baseSections: Section[] = [
-  { id: 'dashboard', label: 'Dashboard', icon: <DashboardIcon /> },
-  { id: 'planner', label: 'Daily Planner', icon: <EventNoteIcon /> },
-  { id: 'months', label: 'Months', icon: <CalendarMonthIcon /> },
-  { id: 'resources', label: 'Resources', icon: <LibraryBooksIcon /> },
-  { id: 'notes', label: 'Notes', icon: <NotesIcon /> },
-  { id: 'projects', label: 'Projects', icon: <RocketLaunchIcon /> },
-  { id: 'add', label: 'Add Entry (JSON)', icon: <AddCircleOutlineIcon /> },
-];
-
-const allRouteIds: RouteId[] = [...baseSections.map((s) => s.id), 'admin', 'account'];
-
-function currentRoute(): RouteId {
-  const hash = window.location.hash.replace('#', '') as RouteId;
-  return allRouteIds.includes(hash) ? hash : 'dashboard';
+function parseHash(): { base: RouteId; param?: string } {
+  const raw = window.location.hash.replace(/^#/, '');
+  const [base, param] = raw.split('/');
+  return { base: (baseIds.includes(base as RouteId) ? (base as RouteId) : 'catalog'), param };
 }
 
-function Page({ route }: { route: RouteId }) {
-  switch (route) {
+function Page({ base, param }: { base: RouteId; param?: string }) {
+  switch (base) {
+    case 'track':
+      return <TrackRoadmapPage slug={param} />;
     case 'planner':
-      return <PlannerPage />;
-    case 'months':
-      return <MonthsPage />;
-    case 'add':
-      return <PlannerEditorPage />;
-    case 'resources':
-      return <ResourceLibraryPage />;
-    case 'notes':
-      return <NotesPage />;
-    case 'projects':
-      return <ProjectsPage />;
-    case 'admin':
-      return <AdminPage />;
+      return <PlannerSchedulePage />;
     case 'account':
-      return <LoginPage />;
+      return <AccountPage />;
+    case 'admin':
+      return <AdminTracksPage />;
     default:
-      return <DashboardPage />;
+      return <TracksCatalogPage />;
   }
 }
 
@@ -105,8 +81,9 @@ function App() {
   const supabaseEnabled = useDashboardStore((state) => state.supabaseEnabled);
   const user = useDashboardStore((state) => state.user);
   const isAdmin = useIsAdmin();
+  const currentTrack = useTrackStore((s) => s.current?.track);
   const theme = useMemo(() => buildTheme(mode), [mode]);
-  const [route, setRoute] = useState<RouteId>(currentRoute());
+  const [{ base: route, param }, setRoute] = useState(parseHash());
   const [mobileOpen, setMobileOpen] = useState(false);
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
@@ -114,20 +91,34 @@ function App() {
     void initApp();
   }, [initApp]);
 
+  type Section = { id: string; href: string; label: string; icon: ReactElement; active: boolean };
   const sections = useMemo<Section[]>(() => {
-    // The local JSON editor ("Add Entry") is offline-only; when Supabase is on,
-    // content is authored in the DB-backed Admin panel instead.
-    const list = baseSections.filter((s) => !(supabaseEnabled && s.id === 'add'));
-    if (isAdmin) list.push({ id: 'admin', label: 'Admin', icon: <AdminPanelSettingsIcon /> });
+    const list: Section[] = [
+      { id: 'catalog', href: '#catalog', label: 'Explore roadmaps', icon: <ExploreIcon />, active: route === 'catalog' },
+    ];
+    if (currentTrack) {
+      list.push({ id: 'track', href: `#track/${currentTrack.slug}`, label: 'My roadmap', icon: <MapIcon />, active: route === 'track' });
+    }
+    list.push({ id: 'planner', href: '#planner', label: 'Day planner', icon: <EventNoteIcon />, active: route === 'planner' });
+    if (isAdmin) list.push({ id: 'admin', href: '#admin', label: 'Admin', icon: <AdminPanelSettingsIcon />, active: route === 'admin' });
     if (supabaseEnabled) {
-      list.push({ id: 'account', label: user ? 'Account' : 'Sign in', icon: <AccountCircleIcon /> });
+      list.push(
+        user
+          ? { id: 'account', href: '#account', label: 'Account', icon: <AccountCircleIcon />, active: route === 'account' }
+          : { id: 'login', href: '#login', label: 'Sign in', icon: <AccountCircleIcon />, active: false },
+      );
     }
     return list;
-  }, [isAdmin, supabaseEnabled, user]);
+  }, [route, currentTrack, isAdmin, supabaseEnabled, user]);
+
+  const isAuthRoute = authRouteIds.includes(route);
+  useEffect(() => {
+    if (user && isAuthRoute) window.location.hash = 'catalog';
+  }, [user, isAuthRoute]);
 
   useEffect(() => {
     const onHash = () => {
-      setRoute(currentRoute());
+      setRoute(parseHash());
       setMobileOpen(false);
       window.scrollTo({ top: 0 });
     };
@@ -135,86 +126,69 @@ function App() {
     return () => window.removeEventListener('hashchange', onHash);
   }, []);
 
+  // Standalone auth pages render outside the sidebar shell (all hooks above).
+  if (supabaseEnabled && isAuthRoute && !user) {
+    return (
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Suspense fallback={<Loading />}>
+          {route === 'register' ? <RegisterPage /> : <LoginPage />}
+        </Suspense>
+      </ThemeProvider>
+    );
+  }
+
   const drawer = (
-    <Box
-      sx={{
-        height: '100%',
-        color: '#e6ebf5',
-        background: 'linear-gradient(180deg, #4338ca 0%, #4f46e5 42%, #6d28d9 100%)',
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
-      <Box sx={{ px: 3, py: 3.5 }}>
-        <Stack direction="row" spacing={1.2} sx={{ alignItems: 'center' }}>
-          <Box
-            sx={{
-              width: 38,
-              height: 38,
-              borderRadius: 2,
-              display: 'grid',
-              placeItems: 'center',
-              fontSize: 20,
-              background: 'rgba(255,255,255,0.16)',
-            }}
-          >
-            🚀
-          </Box>
+    <Box sx={{ height: '100%', color: '#c7d2e5', background: '#0b0f1c', borderRight: '1px solid rgba(148,163,184,0.10)', display: 'flex', flexDirection: 'column' }}>
+      <Box sx={{ px: 2.5, py: 3 }}>
+        <Stack direction="row" spacing={1.3} sx={{ alignItems: 'center' }}>
+          <Box sx={{ width: 36, height: 36, borderRadius: 2.5, display: 'grid', placeItems: 'center', fontSize: 18, background: 'linear-gradient(135deg,#6366f1,#7c3aed)', boxShadow: '0 6px 16px rgba(99,102,241,0.45)' }}>🗺️</Box>
           <Box>
-            <Typography variant="h6" sx={{ lineHeight: 1.1 }}>
-              AI Engineer 365
-            </Typography>
-            <Typography variant="caption" sx={{ opacity: 0.8 }}>
-              Learning Management
-            </Typography>
+            <Typography sx={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 800, fontSize: 18, color: '#fff', lineHeight: 1.1 }}>{APP_NAME}</Typography>
+            <Typography variant="caption" sx={{ color: 'rgba(148,163,184,0.85)' }}>Study roadmaps</Typography>
           </Box>
         </Stack>
       </Box>
-      <Divider sx={{ borderColor: 'rgba(255,255,255,0.14)' }} />
-      <List sx={{ px: 1.5, py: 2, flexGrow: 1 }}>
-        {sections.map((section) => {
-          const active = route === section.id;
-          return (
-            <ListItemButton
-              key={section.id}
-              component="a"
-              href={`#${section.id}`}
-              selected={active}
-              sx={{
-                borderRadius: 2.5,
-                mb: 0.5,
-                color: active ? '#fff' : 'rgba(255,255,255,0.82)',
-                background: active ? 'rgba(255,255,255,0.18)' : 'transparent',
-                '&:hover': { background: 'rgba(255,255,255,0.12)' },
-                '&.Mui-selected, &.Mui-selected:hover': { background: 'rgba(255,255,255,0.2)' },
-              }}
-            >
-              <ListItemIcon sx={{ color: 'inherit', minWidth: 40 }}>{section.icon}</ListItemIcon>
-              <ListItemText primary={section.label} sx={{ '& .MuiListItemText-primary': { fontWeight: active ? 700 : 500 } }} />
-            </ListItemButton>
-          );
-        })}
+      <List sx={{ px: 1.25, flexGrow: 1 }}>
+        <Typography variant="overline" sx={{ px: 1.5, color: 'rgba(148,163,184,0.6)' }}>Menu</Typography>
+        {sections.map((section) => (
+          <ListItemButton
+            key={section.id}
+            component="a"
+            href={section.href}
+            selected={section.active}
+            sx={{
+              borderRadius: 2.5, mb: 0.25, py: 0.9,
+              color: section.active ? '#fff' : 'rgba(199,210,229,0.85)',
+              background: section.active ? 'rgba(99,102,241,0.18)' : 'transparent',
+              position: 'relative',
+              '&:before': section.active ? { content: '""', position: 'absolute', left: 0, top: 8, bottom: 8, width: 3, borderRadius: 99, background: '#818cf8' } : {},
+              '&:hover': { background: 'rgba(148,163,184,0.10)' },
+              '&.Mui-selected, &.Mui-selected:hover': { background: 'rgba(99,102,241,0.20)' },
+            }}
+          >
+            <ListItemIcon sx={{ color: section.active ? '#a5b4fc' : 'inherit', minWidth: 38 }}>{section.icon}</ListItemIcon>
+            <ListItemText primary={section.label} sx={{ '& .MuiListItemText-primary': { fontWeight: section.active ? 700 : 500, fontSize: 14 } }} />
+          </ListItemButton>
+        ))}
       </List>
-      <Box sx={{ px: 3, pb: 3 }}>
-        <Chip
-          label="365-day roadmap"
-          size="small"
-          sx={{ background: 'rgba(255,255,255,0.16)', color: '#fff', mb: 1.5 }}
-        />
-        <Typography variant="caption" sx={{ opacity: 0.75, display: 'block' }}>
-          12 months · 12 projects · one portfolio.
-        </Typography>
+      <Box sx={{ p: 2 }}>
+        <Box sx={{ p: 1.75, borderRadius: 3, background: 'rgba(148,163,184,0.08)', border: '1px solid rgba(148,163,184,0.12)' }}>
+          <Typography variant="caption" sx={{ color: '#fff', fontWeight: 700, display: 'block', mb: 0.25 }}>Roadmaps for every stack</Typography>
+          <Typography variant="caption" sx={{ color: 'rgba(148,163,184,0.8)', lineHeight: 1.4 }}>
+            Frontend · Backend · DevOps · AI — planned around your hours.
+          </Typography>
+        </Box>
       </Box>
     </Box>
   );
 
-  const activeLabel = sections.find((s) => s.id === route)?.label ?? 'Dashboard';
+  const activeLabel = sections.find((s) => s.active)?.label ?? (route === 'track' ? 'Roadmap' : APP_NAME);
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box sx={{ display: 'flex', minHeight: '100vh', bgcolor: 'background.default' }}>
-        {/* Top bar: theme toggle everywhere, menu button on mobile */}
         <AppBar
           position="fixed"
           elevation={0}
@@ -234,9 +208,7 @@ function App() {
                 <MenuIcon />
               </IconButton>
             )}
-            <Typography variant="subtitle1" sx={{ fontWeight: 700, flexGrow: 1 }}>
-              {activeLabel}
-            </Typography>
+            <Typography variant="subtitle1" sx={{ fontWeight: 700, flexGrow: 1 }}>{activeLabel}</Typography>
             <Tooltip title={mode === 'dark' ? 'Switch to light' : 'Switch to dark'}>
               <IconButton onClick={toggleTheme}>{mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}</IconButton>
             </Tooltip>
@@ -249,9 +221,7 @@ function App() {
             open={isDesktop ? true : mobileOpen}
             onClose={() => setMobileOpen(false)}
             ModalProps={{ keepMounted: true }}
-            sx={{
-              '& .MuiDrawer-paper': { width: drawerWidth, border: 0, boxSizing: 'border-box' },
-            }}
+            sx={{ '& .MuiDrawer-paper': { width: drawerWidth, border: 0, boxSizing: 'border-box' } }}
           >
             {drawer}
           </Drawer>
@@ -259,8 +229,12 @@ function App() {
 
         <Box component="main" sx={{ flexGrow: 1, width: { md: `calc(100% - ${drawerWidth}px)` } }}>
           <Toolbar />
-          <Container maxWidth="xl" sx={{ py: 4 }}>
-            <Page route={route} />
+          <Container maxWidth="lg" sx={{ py: 4 }}>
+            <ErrorBoundary>
+              <Suspense fallback={<Loading />}>
+                <Page base={route} param={param} />
+              </Suspense>
+            </ErrorBoundary>
           </Container>
         </Box>
       </Box>
